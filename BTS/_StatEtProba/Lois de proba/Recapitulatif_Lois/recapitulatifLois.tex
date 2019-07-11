@@ -1,0 +1,37 @@
+\documentclass[a4paper,12pt,landscape]{scrartcl}
+
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Récapitulatif des lois de probabilités}
+
+%\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|}
+\cline{1-6}
+                                           & \textbf{Type de variable} & \multicolumn{2}{l|}{\textbf{Signification des paramètre(s)}}     & \textbf{Moyenne}     & \textbf{Écart-type}             \\ \cline{1-6}
+\textbf{Binomiale $\mathcal{B}(n,p)$}      & Discrète               & Nombre essais              & Probabilité succès              & $n \cdot p$          & $\sqrt{n \cdot p \cdot (1-p)}$  \\ \cline{1-6}
+\textbf{Normale $\mathcal{N}(\mu,\sigma)$} & Continue               & Moyenne                    & Écart-type                      & $\mu$                & $\sigma$                        \\ \cline{1-6}
+\textbf{Poisson $\mathcal{P}(\lambda)$}    & Discrète               & \multicolumn{2}{l|}{Moyenne}                                 & $\lambda$            & $\sqrt{\lambda}$                \\ \cline{1-6}
+\textbf{Exponentielle}                     & Continue               & \multicolumn{2}{l|}{Vitesse caractéristique de décroissance} & $\dfrac{1}{\lambda}$ & $\dfrac{1}{\lambda}$            \\ \cline{1-6}
+\end{tabular}
+\end{center}
+\end{table}
+
+\end{document}
+

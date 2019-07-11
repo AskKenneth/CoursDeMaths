@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+\newcommand{\hasnotesprof}{0}
+
+
+% Title Page
+\title{Probabilités -- loi normale}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{Introduction}
+
+Également appelée loi de Gauss\footnote{De \href{https://fr.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich Gauss}}, la loi normale est utilisée en probabilités pour modéliser de nombreux phénomènes.
+
+On la retrouve notamment pour modéliser des caractères observables et mesurables d'une population d'individus similaires, comme la taille pour des humains de même genre ou la longueur du bec d'oiseaux de la même espèce\footnote{Travaux de \href{https://fr.wikipedia.org/wiki/Pinsons_de_Darwin}{Darwin}}.
+
+\section{Densité de probabilité}
+
+Une variable aléatoire continue est définie par sa densité de probabilité $f(x)$.
+
+Dans le cas de la loi normale de moyenne $\mu$ et d'écart-type $\sigma$:
+
+\begin{equation}
+    f(x) = \dfrac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{1}{2} \left(\frac{x-\mu}{\sigma}\right)^2}
+    \label{eq:gaussienne}
+\end{equation}
+
+Cette équation n'est pas à connaître, mais voici l'allure de la représentation graphique de $f(x)$ pour quelques valeurs de $\mu$ et $\sigma$:
+
+%Arguments : {xmin}{xmax}{X}{Y}{légende}{échelle}
+\begin{figure}[]
+\centering
+\begin{multicols}{2}
+\begin{subfigure}[b]{1\linewidth}
+    \simpleplot{-6}{6}{\x}{0.39894*exp(-0.5*\x^2)}{}{1}
+\caption{Loi normale centrée réduite: $\mu=0$ et $\sigma=1$}
+\label{fig:norm01}
+\end{subfigure}
+
+\begin{subfigure}[b]{1\linewidth}
+    \simpleplot{-6}{6}{\x}{0.39894*exp(-0.5*(\x-2)^2)}{}{1}
+\caption{Loi normale: $\mu=2$ et $\sigma=1$}
+\label{fig:norm21}
+\end{subfigure}
+
+\begin{subfigure}[b]{1\linewidth}
+    \simpleplot{-6}{6}{\x}{0.79788*exp(-0.5*((\x)/0.5)^2)}{}{1}
+    \caption{Loi normale: $\mu=0$ et $\sigma=0.5$}
+\label{fig:r_is_.8}
+\end{subfigure}
+
+\begin{subfigure}[b]{1\linewidth}
+    \simpleplot{-6}{6}{\x}{7.9788*exp(-0.5*((\x+3)/0.1)^2)}{}{1}
+    \caption{Loi normale: $\mu=-3$ et $\sigma=0.1$}
+\label{fig:r_is_0}
+\end{subfigure}
+\end{multicols}
+
+\caption{Lien entre l'apparence de la courbe de la fonction densité de probabilité et les parmètres de la loi.}
+\label{fig:gaussiennes}
+\end{figure}
+
+\end{document}
+

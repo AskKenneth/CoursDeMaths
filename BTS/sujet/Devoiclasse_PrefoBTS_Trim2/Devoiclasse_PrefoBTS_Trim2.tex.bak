@@ -1,0 +1,156 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Devoir en classe, préformation BTS}
+
+\author{\rotatebox{180}{\textsc{Mathématiques}} \\ 60 minutes}
+
+\begin{document}
+
+\newcommand{\fewlines}{3}
+\newcommand{\midlines}{4}
+\newcommand{\manylines}{6}
+
+\maketitle
+
+{\Large Nom:} 
+\hspace{60mm}
+{\Large Prénom:}
+\vspace{4mm}
+
+Note : la calculatrice est autorisée. Donc sauf mention contraire, tout résultat donné sans la moindre étape de calcul ne sera pas pris en compte.
+
+On rappelle que résoudre une équation, c'est donner l'\emph{ensemble} des solutions. Par exemple: $\mathcal{S} = \left\lbrace 3 \right\rbrace$, $\mathcal{S} = \left[\dfrac{-4 \pi}{7} ; +\infty \right[$ ou encore $\mathcal{S} = \left\lbrace \dfrac{1}{2} ; 4 \right\rbrace$, etc.
+
+ \exo{Équations du 2\textsuperscript{nd} degré à une inconnue}
+
+Résoudre les équations suivantes en donnant les valeurs \emph{exactes}:
+
+\question{} $3x^{2} - 4x -4 = 0$
+
+\lignes{\fewlines}
+
+\question{} $7x^{2} -8x -8 = 0$
+
+\lignes{\fewlines}
+
+\question{} $-3x^{2} + 8x = 5$
+
+\lignes{\fewlines}
+
+\question{} $-4x^{2} + 3x - 4 = 0$
+
+\lignes{\fewlines}
+
+\question{} Factoriser $7x^{2} -8x -8$
+
+\lignes{\fewlines}
+
+
+\exo{Dérivation}
+
+Donner la dérivée des fonctions suivantes:
+
+\question{} $f_1(x) = -3x^{2} + 8x - 5$
+
+\lignes{\fewlines}
+
+\question{} $f_2(x) = 8x^3$
+
+\lignes{\fewlines}
+
+\question{} $f_3(x) = 10^{12}$
+
+\lignes{\fewlines}
+
+
+
+\exo{Systèmes de deux équations à deux inconnues linéaires}
+
+Résoudre les systèmes suivants:
+
+\question{} 
+
+\[
+\left \{
+\begin{array}{c @{=} c}
+    2x - 3y & 7 \\
+    x  + 5y & -3 \\
+\end{array}
+\right.
+\]
+
+\lignes{\midlines}
+
+\question{} 
+
+\[
+\left \{
+\begin{array}{c @{=} c}
+    3x + 4y & 32 \\
+    7x + 6y & 58 \\
+\end{array}
+\right.
+\]
+
+\lignes{\midlines}
+
+\question{} 
+
+Jean-Marie a acheté 5 torchons et 3 serviettes. Il a payé 23.90€.
+
+Marie-Pierre a acheté 4 torchons et 2 serviettes. Elle a payé 17.60€.
+
+Quel est le prix d'un torchon ? Quel est le prix d'une serviette ?
+
+\lignes{\manylines}
+
+\exo{Système de deux équations à deux inconnues non-linéaires}
+
+Résoudre le système suivant:
+
+\[
+\left \{
+\begin{array}{c @{=} c}
+    x + 3y & 0 \\
+    4x^2 + 5y^2 & 41 \\
+\end{array}
+\right.
+\]
+
+\lignes{\manylines}
+
+\begin{center}
+Fin.
+\end{center}
+
+\section*{Formulaires}
+
+\input{../../formulaires/Polynomes_2ndDegre/Polynomes_2ndDegre}
+
+\input{../../formulaires/Derivees/Formulaire_Derivees_content}
+
+\trait
+
+\end{document}
+

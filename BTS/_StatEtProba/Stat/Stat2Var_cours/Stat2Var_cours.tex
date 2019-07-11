@@ -1,0 +1,495 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose: kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+% \setmainfont[Scale=.8]{OpenDyslexic} 
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+\renewcommand{\hasnotesprof}{0}
+
+% Title Page
+\title{Statistiques à deux variables \writenoteword{}}
+ 
+
+
+ \author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{Intérêt}
+
+Les statistiques à deux variables on pour but d'observer conjointement deux séries statistiques afin de mettre en évidence la présence ou non d'un lien appelé \emph{corrélation}.
+
+\subsection{Rappels}
+
+\paragraph{Variance}
+On appelle \emph{variance} de la série statistique $x_i$ la grandeur:
+
+\begin{equation}
+V_x = \overline{x^2} - \overline{x}^2
+\label{eq:variance}
+\end{equation}
+
+\paragraph{Écart-type}
+On appelle \emph{écart-type} de la série statistique $x_i$ la grandeur:
+
+\begin{equation}
+\et_x = \sqrt{V_x}
+\label{eq:ecarttype}
+\end{equation}
+
+\subsection{Le cas étudié pour les exemples}
+
+\paragraph{Premier cas:}
+on effectue une enquête auprès d'un échantillon de 10 étudiants en BTS optique lunetterie pris au hasard parmi les anciens élèves. Le tableau ci-dessous donne l'ancienneté $A$ (en nombre d'années depuis l'obtention du diplôme) et le salaire brut annuel $S$ (en milliers d'euros).
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\textbf{$A$ (série $x$)} & {3} & {1} & {7} & {2} & {5} & {3} & {1} & {9} & {5} & {4}\\
+\hline
+\textbf{$S$(série $y$)} & {35} & {32} & {38} & {36} & {37} & {33} & {34} & {38} & {40} & {34}\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Série statistique 1}
+\label{tab:prems}
+\end{table}
+
+On place les points de coordonnées $(x_i;y_i)$ dans un repère orthogonal. On obtient un \emph{nuage de points} (Fig. \ref{fig:prems}).
+
+ %\draw plot[mark=+] file {pics/prems.txt};
+\begin{figure}[h]
+\begin{center}
+\diagXY{pics/prems.txt}{0}{1}
+\end{center} 
+\caption{Nuage de points de la série statistique}
+\label{fig:prems}
+\end{figure}
+
+\subsection{Point moyen}
+
+On considère une série statistique à deux variables. Elle est constituée de $p$ couples $(x_i;y_i)$. Le nuage de points associé à cette série statistique est l'ensemble des points $M_i(x_i;y_i)$. 
+
+\begin{definition}{point moyen}
+Le point moyen du nuage de points $M_i(x_i;y_i)$ est le point $G(\overline{x};\overline{y})$. 
+\end{definition}
+
+\exemple{}
+
+Calculer les coordonnées du point moyen $G$ relatif à la série statistique présentée tableau \ref{tab:prems} page \pageref{tab:prems}.
+
+\cadre{4}
+
+\section{Ajustement d'un nuage de points}
+
+\subsection{Définitions}
+
+%Définitions
+
+\subsubsection{Covariance}
+
+\begin{equation}
+\cov_{xy} = \overline{x \cdot y} - \overline{x} \cdot \overline{y}
+\end{equation}
+
+Remarque. En statistiques à une variable, la variance est la covariance de la variable avec elle-même: $V_x = \cov_{xx}$
+
+\subsubsection{Coefficient de corrélation}
+
+Lorsque l'on étudie conjointement deux variables statistiques, plusieurs scénarios peuvent se produire:
+
+\begin{enumerate}
+\item les variables sont totalement indépendantes l'une de l'autre (fig. \ref{fig:r_is_0} page \pageref{fig:r_is_0});
+\item les variables sont liées et il semble qu'on peut prédire l'une si on connaît l'autre (fig. \ref{fig:r_is_1});
+\item \label{point:cas_intermediaire} entre ces deux cas, les variables peuvent sembler liées mais la précision de la prédiction est variable (fig. \ref{fig:r_is_.95} et \ref{fig:r_is_.8}).
+\end{enumerate}
+
+Ce lien entre les deux variables s'appelle la \emph{corrélation}. Comme le laisse supposer l'énumération précédente (en particulier le point \ref{point:cas_intermediaire}), il est quantifiable.
+
+\begin{definition}{Coefficient de corrélation linéaire} 
+$r = \dfrac{\cov_{xy}}{\et_x \et_y}$
+\end{definition}
+
+Avec:
+
+\begin{itemize}
+\item $\cov_{xy}$ la covariance de la série statistique $(x;y)$;
+\item $\et_x$ l'écart-type de la variable $x$;
+\item $\et_y$ l'écart-type de la variable $y$.
+\end{itemize}
+
+Quelques exemples de nuages avec des valeurs de $r$ différentes sont visibles figure \ref{fig:r} page \pageref{fig:r}.
+
+Remarque: il se peut que si deux variables sont corrélées, lorsqu'une variable augmente, l'autre diminue. La covariance est alors négative d'où $r<0$. On parle alors de \emph{corrélation négative} (Fig. \ref{fig:r_is_-.95}). 
+
+%Mettre les 4 images
+
+\newcommand{\plotscales}{.8}
+
+\begin{figure}[]
+\centering
+\begin{subfigure}[b]{.45\linewidth}
+\diagXY[\plotscales]{pics/r_is_1.txt}{0}{1}
+\caption{$r=1$, $r^2=1$}
+\label{fig:r_is_1}
+\end{subfigure}
+\begin{subfigure}[b]{.45\linewidth}
+\diagXY[\plotscales]{pics/r_is_.95.txt}{0}{1}
+\caption{$r=0.98$, $r^2=0.96$}
+\label{fig:r_is_.95}
+\end{subfigure}
+
+\begin{subfigure}[b]{.45\linewidth}
+\diagXY[\plotscales]{pics/r_is_.8.txt}{0}{1}
+\caption{$r=0.8$, $r^2=0.64$}
+\label{fig:r_is_.8}
+\end{subfigure}
+\begin{subfigure}[b]{.45\linewidth}
+\diagXY[\plotscales]{pics/r_is_0.txt}{0}{1}
+\caption{$r=0.02$, $r^2=4 \times 10^{-4}$}
+\label{fig:r_is_0}
+\end{subfigure}
+
+\begin{subfigure}[b]{.45\linewidth}
+\diagXY[\plotscales]{pics/r_is_-.95.txt}{0}{1}
+\caption{$r=-0.98$, $r^2=0.96$} 
+\label{fig:r_is_-.95}
+\end{subfigure}
+\caption{Lien entre l'apparence du nuage et la valeur de $r$.}
+\label{fig:r}
+\end{figure}
+
+Il arrive aussi d'utiliser $r^2$ pour faire état de la corrélation entre deux variables. 
+
+Il est à noter que plus $|r|$ est proche de $1$ plus un ajustement affine est pertinent: dans le cas de la figure \ref{fig:r_is_0}, un ajustement affine n'aurait aucun sens. La pertinence dépend également du degré d'exigence vis-à-vis de la prédiction que nous allons réaliser. 
+
+\subsection[Ajustement affine]{Ajustement affine d'une série statistique à deux variables}
+Il va s'agir ici de déterminer l'équation d'une droite\footnote{Tous les ajustements ne se font pas à l'aide d'une droite, il existe des ajustements à base d'exponentielles, de polynômes, de logarithmes, etc. Seuls les ajustements affines ou exponentiels que nous verrons en partie sont au programme pour nous.} approchant au mieux le nuage de points. Cela a pour but de pouvoir extrapoler le lien entre les deux variables à l'aide d'une fonction simple (ici, une fonction affine). 
+
+Il existe plusieurs méthodes pour trouver un ajustement affine. Nous allons en voir deux. Il est important de noter que ces deux méthodes \emph{ne} mènent \emph{pas} à la même équation de droite d'ajustement. On trouve des résultats proches la plupart du temps, mais pas parfaitement identiques. 
+
+\subsubsection{Ajustement par la méthode des moindres carrés} 
+
+\paragraph{Détermination de la droite d'ajustement}
+On rappelle que pour que l'ajustement\footnote{On parle aussi de droite de \emph{régression}.} affine soit pertinent, il faut que le coefficient de corrélation linéaire $r$ soit proche de 1 en valeur absolue. 
+
+La droite de régression de $y$ en $x$ (que l'on peut noter $D_{y/x}$), est la droite dont l'équation va permettre d'estimer $y$ en fonction de $x$. Comme (presque) toute droite, son équation est de la forme $y=ax+b$. Avec ici:
+
+\begin{equation}
+    a = \frac{\cov_{xy}}{V_x} 
+    \label{eq:a}
+\end{equation}
+
+\begin{equation}
+    b = \overline{y} - a \overline{x}
+    \label{eq:b}
+\end{equation}
+
+On peut également trouver l'équation de la droite de régression de $x$ en $y$ (que l'on peut noter $D_{x/y}$):
+
+\begin{equation}
+    a' = \frac{\cov_{xy}}{V_y} 
+    \label{eq:a2}
+\end{equation}
+
+\begin{equation}
+    b' = \overline{x} - a' \overline{y}
+    \label{eq:b2}
+\end{equation}
+
+Les droites $D_{y/x}$ et $D_{x/y}$ \emph{ne} sont \emph{pas} identiques, mais elles passent toutes deux par le point moyen $G(\overline{x};\overline{y})$.
+
+\paragraph{Exemple}
+Soient les variables $x$ et $y$ table \ref{tab:example}:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $x$ & 3  & 6  & 8  & 20 & 37 & 43 & 44  & 46  \\ \hline
+        $y$ & 29 & 27 & 26 & 78 & 87 & 91 & 120 & 114 \\ \hline
+    \end{tabular}
+    \caption{Série statistique utilisée pour les exemples}
+    \label{tab:example}
+\end{table}
+
+Calculer le coefficient de corrélation. %0.9579
+
+\cadre{3}
+
+Est-il pertinent de procéder à une régression linéaire dans ce cas?
+
+\cadre{2}
+
+Calculer l'équation de la droite de régression de $y$ en $x$. %2.011 x + 19.46
+
+\cadre{4}
+
+\subsubsection{Ajustement par la méthode de Mayer}
+Cette méthode\footnote{Johann Tobias Mayer, astronome devant l'éternel (et devant l'infini aussi) mit au point cette méthode pour repérer un point sur la lune et aider les navigateurs à repérer leur longitude.} -- aussi appelée méthode de la \emph{double moyenne} -- est plus simple d'un point de vue algorithmique et plus légère en calcul que la méthode des moindres carrés. Elle est également plus approximative. 
+
+\paragraph{Détermination de la droite d'ajustement de Mayer}
+Pour trouver l'équation de la droite de Mayer, il suffit d'appliquer les instructions suivantes:
+
+\begin{enumerate}
+    \item on range les couples $(x_i;y_i)$ dans l'ordre croissant;
+    \item on calcule les coordonnées du point moyen du point moyen $G_1$ du premier \og{}demi-nuage\fg{}, c'est-à-dire correspondant aux couples $(x_i;y_i)$ pour $i$ allant de $1$ à $p/2$;
+    \item on calcule les coordonnées du point moyen du point moyen $G_2$ du deuxième \og{}demi-nuage\fg{}, c'est-à-dire correspondant aux couples $(x_i;y_i)$ pour $i$ allant de $p/2+1$ à $p$;
+    \item la droite de régression de Mayer est la droite $(G_1G_2)$.
+\end{enumerate}
+
+\paragraph{Exemple}
+Reprenons les variables $x$ et $y$ de la table \ref{tab:example}. 
+
+Calculer les coordonnées des points $G_1$ et $G_2$.
+
+\cadre{3}
+
+En déduire l'équation de la droite de Mayer.
+
+\cadre{3}
+
+Que remarque-t-on?
+
+\cadre{2}
+
+\subsubsection*{Conclusion}
+Nous avons vu deux techniques permettant de trouver un ajustement affine d'une série statistiques. Celle convoquant les notions les plus simples et nécessitant le temps de calcul le plus faible donnant un résultat moins précis. 
+
+On pourra remarquer que ces deux méthodes se basent sur des moyennes et sont donc sensibles aux valeurs aberrantes. La méthode \emph{med-med} (hors programme) qui comme son nom l'indique, est basée sur des médianes est moins impactée par ce défaut.
+
+
+\subsection[Ajustement exponentiel]{Ajustement exponentiel d'une série statistique à deux variables}
+
+Dans ce paragraphe, nous allons voir que l'ajustement pertinent entre deux variables peut être exponentiel plutôt qu'affine.  
+
+Prenons les données de la table \ref{tab:expo}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $x$ & 4  & 5  & 8  & 10 & 11 & 12 & 15  & 20  \\ \hline
+        $y$ & 2 & 3 & 8 & 13 & 17 & 23 & 51 & 190 \\ \hline
+    \end{tabular}
+    \caption{}
+    \label{tab:expo}
+\end{table}
+
+Et le nuage de points correspondant figure \ref{fig:expo}.
+
+\begin{figure}[h]
+\begin{center}
+\diagXY{pics/expo.txt}{0}{1} 
+\end{center} 
+\caption{Nuage de points de la série statistique}
+\label{fig:expo}
+\end{figure}
+
+Calculer le coefficient de corrélation de $y$ en $x$ de cette série. %0.855828937621291
+
+\cadre{3}
+
+Un ajustement linéaire est-il pertinent?
+
+\cadre{2}
+
+Comme le laisse supposer le titre de cette section, il est possible de faire un peu mieux et on ne va pas s'en priver.
+
+On introduit la variable $z$ définie comme suit: $z = \ln y$. On obtient alors le tableau suivant, avec $z$ arrondi à $10^{-2}$.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $x$ & 4  & 5  & 8  & 10 & 11 & 12 & 15  & 20  \\ \hline
+        $z$ & 0.69 & 1.09 & 2.07 & 2.56 & 2.83 & 3.13 & 3.93 & 5.24 \\ \hline
+    \end{tabular}
+\end{center}
+
+Calculer le coefficient de corrélation de $z$ en $x$ de cette série. %0.998431683347129
+
+\cadre{3}
+
+Un ajustement linéaire est-il pertinent? Comparer avec le coefficient de corrélation de $y$ en $x$. %Bah ouais ma gueule tcon ou quoi...
+
+\cadre{4}
+
+Donner l'équation de la droite de régression de $z$ en $x$. Arrondir le coefficient directeur et l'ordonnée à l'origine à $10^{-3}$. %a = 0.281083652275212 et b = -0.28855035126918
+
+\cadre{4}
+
+En déduire une expression approchée de $z$ en fonction de $x$.
+
+\cadre{3}
+
+En déduire une expression de $y$ en fonction de $x$.
+
+\cadre{4}
+
+\section*{Exercices}
+
+\exo[1]{}
+
+\noteprof{Exo tiré de \href{https://huit.re/1Sc-4yr-}{https://huit.re/1Sc-4yr-}}
+
+Voici une série statistique à deux variables:
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+$x_i$ & -48  & -41  & -35  & -30  & -27  & -17  & -8   & 1    & 7    & 9    \\ \hline
+$y_i$ & -100 & -109 & -113 & -121 & -125 & -131 & -138 & -145 & -151 & -155 \\ \hline
+\end{tabular}
+\end{center}
+
+\question{}
+Calculer le coefficient de corrélation linéaire de cette série. Un ajustement linéaire vous semble-t-il judicieux?  \noteprof{-0.994875}
+
+\question{}
+Calculer les coordonnées du point moyen $G$ de cette série. \noteprof{$(-18.9;128.8)$}
+
+\question{}
+Calculer les coordonnées des points moyens $G_1$ et $G_2$ correspondant respectivement aux 5 premiers couples $(x_i;y_i)$ et aux 5 dernier couples $(x_i;y_i)$. \noteprof{$G_1(-36.2;-113.6)$ et $G_2(-1.6;-144)$}
+
+\question{}
+En déduire l'équation de la droite de Mayer $(G_1;G_2)$ en arrondissant les coefficients à 3 chiffres significatifs. \noteprof{$y = -0.879x-145$}
+
+\question{}
+Donner à l'aide de la calculatrice l'équation de la droite de régression de $y$ en $x$ en arrondissant les coefficients à 3 chiffres significatifs. Comparer avec les résultats de la question précédente. \noteprof{$y = -0.901x-146$}
+
+\exo[2]{Fioul}
+
+Chaque semaine, pendant six semaines, l'intendant d'un lycée note la température extérieure moyenne $x$ en \textdegree C et la consommation de fioul de la chaudière $y$ en Litres.
+
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+        \hline
+        \textbf{Semaine N\textdegree}    & 1   & 2   & 3   & 4   & 5   & 6   \\ \hline
+        \textbf{$x$ en \textdegree{}C} & -12 & -6  & -3  & 0   & 6   & 9   \\ \hline
+        \textbf{$y$ en L}                               & 510 & 400 & 350 & 320 & 220 & 180 \\ \hline
+    \end{tabular}
+\end{center}
+
+\question{}
+Placer les six points de cette série statistique dans le repère fourni où, en abscisses, 0,5 cm représente 2\textdegree{}C et, en ordonnées, 1 cm représente 100 L.
+
+\begin{center}
+    \papmilli{-3}{3}{0}{6}{1}
+\end{center}
+
+\question{}
+Calculer les coordonnées du point moyen $G$ de ce nuage de six points dans le repère.
+
+\question{}
+Calculer le coefficient de corrélation linéaire $r$ de la série statistique. \noteprof{-0.997753000358183}
+
+\question{}
+Calculer les coordonnées des points moyens $G_1$ et $G_2$ correspondant respectivement aux trois premiers points et aux trois derniers. %(-20/3;420) et (14/3;240)
+
+En déduire l'équation de la droite de Mayer $(G_1;G_2)$. \noteprof{$a = -15$ et $b = 315$}
+
+\question{}
+Donner l'équation de la droite $(D)$ de régression par la méthode des moindres carrés. \noteprof{$a = -15.5$ et $b = 314.5$}
+
+\question{}
+À partir de l'équation de la droite $(D)$: 
+
+\subquestion{}
+Estimer la consommation pour une température de -20\textdegree{}C. \noteprof{624.5 L}
+
+\subquestion{}
+Estimer à partir de quelle température il n'y aura plus besoin de chauffage, arrondir au degré près. \noteprof{20.3\textdegree{}}
+
+\exo[1]{D'après BTS CG 2015}
+
+Un tableau de valeurs représentant la série statistique $(x_i; y_i)$ est donné ci-dessous:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        année & 2004 & 2005 & 2006 & 2007& 2008&2009&2010&2011\\ \hline
+        $x_i$ & 1    & 2    & 3    & 4  & 5    & 6  & 7  & 8  \\ \hline
+        $y_i$ & 44.7 & 49.6 & 54.3 & 58.7 & 62.8 & 66.7 & 69.7 & 73.2 \\ \hline
+    \end{tabular}
+\end{center}
+
+\question{}\label{q1}
+Placer ces points sur un graphe en prenant 1cm pour 2 en abscisse et 1cm pour 10 en ordonnées.
+
+\question{Coefficient de corrélation.}
+
+\subquestion{}
+Un ajustement affine vous semble-t-il indiqué sur la période 2004 à 2011 ? Justifier.
+
+\subquestion{}
+Calculer le coefficient de corrélation linéaire, arrondi au millième, de cette série.
+Le coefficient calculé confirme-t-il la réponse à la question précédente ? Justifier.
+
+\question{Calculatrice.}
+
+Déterminer, à l’aide de la calculatrice, une équation de la droite de régression de $y$ en $x$ par la méthode des moindres carrés (les coefficients seront arrondis au centième). Tracer cette droite sur le graphe de la question 1. %\ref{q1}. 
+
+\question{}
+Quelle valeur de $y$, arrondi au dixième, a-t-on avec cet ajustement pour l'année 2012?
+
+\question{}
+D'après cet ajustement déterminer par le calcul à partir de quelle année $y$ dépassera les 85\%.
+
+
+\exo[3]{Sécheresse}
+
+Lors d'une période de sécheresse, un agriculteur relève la quantité totale (en m\textsuperscript{3}) utilisée par son exploitation depuis le premier jour et donne le résultat suivant:
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Nombre de jours écoulés $x_i$} & 1 & 3 & 5 & 8 & 10\\ \hline
+\textbf{Volume utilisé (en m\textsuperscript{3}) $y_i$} & 1 & 2 & 2 & 4 & 6 \\ \hline
+\end{tabular}
+\end{center}
+
+Le plan est muni d'un repère orthogonal.
+
+On prendra pour unité sur l'axe des abscisses 1 cm pour 1 jour et sur l'axe des ordonnées 0.5 cm pour 1 m\textsuperscript{3}.
+
+\question{}
+Représenter la série $(x_i;y_i)$.
+
+\question{}
+Calculer le coefficient de corrélation $r$ de $y$ en $x$. En donner l'arrondi à $10^{-3}$ près. \noteprof{0,9597148}
+
+\question{}
+Soit la variable $z$ telle que $z_i = \ln y_i$. Calculer les valeurs de $z_i$. Arrondir les résultats à $10^{-2}$ près. \noteprof{0, 0.693147, 0.693147, 1.386294, 1.791759}
+
+\question{}
+Calculer le coefficient de corrélation $r$ de $z$ en $x$. En donner l'arrondi à $10^{-3}$ près. \noteprof{0,978467}
+
+Laquelle de ces deux régressions semble la plus pertinente?
+
+\question{}
+Donner l'équation de la droite de régression de $z$ en $x$. Arrondir les coefficients à 3 chiffres significatifs. \noteprof{$a = 0,18619$ et $b = -0,0925907$}
+
+\question{}
+En déduire une expression de $z$ en fonction de $x$ puis une expression de $y$ en fonction de $x$.
+
+\end{document}

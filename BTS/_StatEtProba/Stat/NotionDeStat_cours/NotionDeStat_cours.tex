@@ -1,0 +1,448 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage{exercice_sheet}
+
+ 
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{} 
+
+% Title Page
+\title{Statistiques à une variable, notions} 
+
+\author{\textsc{Mathématiques}} 
+
+\date{}
+
+\begin{document} 
+
+\maketitle
+
+\tableofcontents 
+
+\section{Généralités} 
+
+Les statistiques permettent d'étudier une population d'individus (personnes, objets...). Cette étude porte sur certains caractères de la population: couleur d'une voiture, taille, nombre d'enfants par personne...
+À chaque caractère correspondent plusieurs \emph{modalités}. Si ces modalités sont des valeurs numériques le caractère est quantitatif sinon le caractère est qualitatif.
+
+\subsection{Les différents types de variables}
+
+\subsubsection{Variables qualitatives}
+
+Ce type de variable est utilisée dans le cas où le caractère étudié ne peut pas être représenté par un nombre.
+
+Par exemple la couleur d'une voiture où les modalités sont \texttt{rouge}, \texttt{bleu}, \texttt{gris}, etc.
+
+%mettre exemple ?
+
+\subsubsection{Variables quantitatives}
+
+Les variables quantitatives sont utilisées dans le cas où le caractère étudié peut être représenté par un nombre ; lorsqu'il s'agit d'un caractère quantifiable. 
+
+Les variables quantitatives peuvent elles-même être divisées en 2 sous-catégories:
+
+\paragraph{Les variables discrètes:} si les modalités sont des valeurs isolées les unes des autres, comme par exemple le nombre d'enfants ou le résultat d'un lancer de dés.
+
+De façon formelle, on parle de variable \emph{discrète} lorsque les modalités peuvent être indexées par des entiers naturels.
+
+\paragraph{Les variables continues:}si les modalités peuvent prendre toutes les valeurs d'un intervalle (tailles, vitesses, certaines mesures physiques, flux monétaires, etc.).
+
+\subsection{Vocabulaire}
+
+Nous utiliserons l'exemple du tableau \ref{TabExemple} pour illustrer  les points de vocabulaire de ce paragraphe.
+
+\begin{table}[h] 
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l}
+\cline{1-8}
+\textbf{Nombre d'enfants $x_i$} & 0 & 1     & 2     & 3     & 4     & 5 & 6     &                                                     \\ \cline{1-8}
+\textbf{Effectifs $n_i$}        & 8 & 16    & 22    & 12    & 5     & 0 & 2     & \begin{tabular}[c]{@{}l@{}}$N = $\\ 65\end{tabular} \\ \cline{1-8}
+\textbf{Fréquence $f_i$}        & 0.123 & 0.246 & 0.338 & 0.185 & 0.077 & 0 & 0.031 &                                                     \\ \cline{1-8}
+\end{tabular}
+\caption{Exemple nombre d'enfants par employé dans une société de 65 employés}
+\label{TabExemple}
+\end{center}
+\end{table}
+
+\subsubsection{Maximum, minimum}
+
+\paragraph{Maximum}
+C'est la plus grande valeur de la série statistique.
+
+\paragraph{Minimum}
+C'est la plus petite valeur de la série statistique.
+
+\subsubsection{Effectif}
+
+Les effectifs représentent le nombre d'occurrences d'une modalité. Si dans la classe de 25 il y a 4 élèves qui ont eu la note 12, l'effectif de la note 12 est 4. Il est normalement appelé $n_i$ (voir table \ref{TabExemple}, page \pageref{TabExemple}).
+  
+L'effectif total est la somme de tous les effectifs, habituellement appelé $N$.
+
+\subsubsection{Fréquence}
+
+La fréquence $f_i$ est donnée par $f_i = \frac{n_i}{N}$. Elle est comprise entre $0$ et $1$ et peut être donnée par un nombre en écriture décimale, un pourcentage ou une fraction.
+
+%On utilise une \emph{variable} pour représenter ces modalités, souvent appelée $x$. 
+
+\subsection{Effectif cumulé et fréquence cumulée}
+
+Dans cette partie, nous reprendrons l'exemple du tableau \ref{TabExemple}.
+
+\subsubsection{Effectif cumulé}
+
+L'effectif cumulé croissant d'une classe est la somme des effectifs de ladite classe et de celles qui la précèdent.
+
+L'effectif cumulé décroissant d'une classe est la somme des effectifs de la classe et de celles qui la suivent.
+
+\begin{center}
+\begin{tabular}{l|l|ll}
+\hline
+\multicolumn{1}{|l|}{\textbf{Nb. d’enfants $x_i$}} & \textbf{Eff. $n_i$} & \multicolumn{1}{l|}{\textbf{Eff. cum. croissants}} & \multicolumn{1}{l|}{\textbf{Eff. cum. décroissants}} \\ \hline
+\multicolumn{1}{|l|}{0}                            & 8                   & \multicolumn{1}{l|}{8}                                & \multicolumn{1}{l|}{65}                                 \\ \hline
+\multicolumn{1}{|l|}{1}                            & 16                  & \multicolumn{1}{l|}{24}                               & \multicolumn{1}{l|}{57}                                 \\ \hline
+\multicolumn{1}{|l|}{2}                            & 22                  & \multicolumn{1}{l|}{46}                               & \multicolumn{1}{l|}{41}                                 \\ \hline
+\multicolumn{1}{|l|}{3}                            & 12                  & \multicolumn{1}{l|}{58}                               & \multicolumn{1}{l|}{19}                                 \\ \hline
+\multicolumn{1}{|l|}{4}                            & 5                   & \multicolumn{1}{l|}{63}                               & \multicolumn{1}{l|}{7}                                  \\ \hline
+\multicolumn{1}{|l|}{5}                            & 0                   & \multicolumn{1}{l|}{63}                               & \multicolumn{1}{l|}{2}                                  \\ \hline
+\multicolumn{1}{|l|}{6}                            & 2                   & \multicolumn{1}{l|}{65}                               & \multicolumn{1}{l|}{2}                                  \\ \hline
+                                                   & $N= 65$               &                                                       &                                                         \\ \cline{2-2}
+\end{tabular}
+\end{center}
+
+
+\subsubsection{Fréquence cumulée}
+
+\begin{center}
+\begin{tabular}{l|l|ll}
+\hline
+\multicolumn{1}{|l|}{\textbf{Nb. d'enfants $x_i$}} & \textbf{freq. $f_i$} & \multicolumn{1}{l|}{\textbf{freq. cum. croissante}} & \multicolumn{1}{l|}{\textbf{freq. cum. décroissante}} \\ \hline
+\multicolumn{1}{|l|}{0}                               & 0,12                     & \multicolumn{1}{l|}{0,12}                           & \multicolumn{1}{l|}{1}                                \\ \hline
+\multicolumn{1}{|l|}{1}                               & 0,25                     & \multicolumn{1}{l|}{0,37}                           & \multicolumn{1}{l|}{0,88}                             \\ \hline
+\multicolumn{1}{|l|}{2}                               & 0,34                     & \multicolumn{1}{l|}{0,71}                           & \multicolumn{1}{l|}{0,63}                             \\ \hline
+\multicolumn{1}{|l|}{3}                               & 0,18                     & \multicolumn{1}{l|}{0,89}                           & \multicolumn{1}{l|}{0,29}                             \\ \hline
+\multicolumn{1}{|l|}{4}                               & 0,08                     & \multicolumn{1}{l|}{0,97}                           & \multicolumn{1}{l|}{0,11}                             \\ \hline
+\multicolumn{1}{|l|}{5}                               & 0                        & \multicolumn{1}{l|}{0,97}                           & \multicolumn{1}{l|}{0,03}                             \\ \hline
+\multicolumn{1}{|l|}{6}                               & 0,03                     & \multicolumn{1}{l|}{1}                              & \multicolumn{1}{l|}{0,03}                             \\ \hline
+                                                      & $N= 65$                    &                                                     &                                                       \\ \cline{2-2}
+\end{tabular}
+\end{center}
+
+Ainsi, on peut facilement répondre aux questions suivantes:
+
+\begin{itemize}
+\item combien d'individus ont au plus 5 enfants? Quelle proportion en \% cela représente t-il? 
+
+\cadre{2} 
+
+\item quel pourcentage d'individus ont au moins deux enfants? Combien d'individus cela représente t-il?
+
+\cadre{2}
+\end{itemize}
+
+\section{Paramètres de position}
+
+\subsection{La moyenne}
+
+\begin{definition}{la moyenne} 
+La moyenne est la valeur que devraient avoir tous les éléments de la population pour que le total soit inchangé.
+\end{definition}
+
+La moyenne d'une variable $x$ se note $\overline{x}$ se calcule comme suit:
+\begin{equation}
+\overline{x} = \frac{1}{N} \sum_{i=1}^p n_i x_i = \sum_{i=1}^p f_i x_i
+\end{equation}
+
+Où:
+
+\begin{itemize}
+\item les valeurs $x_i$ sont les \emph{modalités}\footnote{Ce sont en fait les différentes valeurs prises par la variable.} de la variable;
+\item $p$ est le nombre de modalités de la variable.
+\item $n_i$ est l'effectif;
+\item $f_i$ la fréquence;
+\item $N$ est l'effectif total;
+\end{itemize}
+
+On peut l'écrire sans le symbole $\sum$:
+
+$$\overline{x} = \frac{n_1 x_1 + n_2 x_2 + \ldots + n_p x_p}{N}$$
+
+\exemple{}
+
+Reprenons l'exemple du tableau \ref{TabExemple}. $\overline{x}$ représente le nombre moyen d'enfants par employé. Pour le calculer, on procède comme suit:
+
+$$\overline{x} = \dfrac{0 \times 8 + 1 \times 16 + 2 \times 22 + 3 \times 12 + 4 \times 5 + 5 \times 0 + 6 \times 2 }{65} \approx 1.97$$
+
+On peut donc affirmer qu'il y a presque 2 enfants par employé en moyenne.
+
+
+\subsection{La médiane} \label{mediane}
+
+\begin{definition}{la médiane}
+La médiane est la valeur séparant l'ensemble en deux parties égales. Elle est notée $m$ ou $Q_2$. Pour cette dernière notation, nous verrons plus loin pourquoi.
+\end{definition}
+
+\paragraph{En pratique:}
+
+\begin{itemize}
+ \item[\textbf{Effectif impair:}] voici les tailles en cm dans un groupe de 7 personnes, triées du plus petit au plus grand:
+
+164, 165, 177, $\underbrace{178}_{Q_2}$, 179, 184, 188.
+
+Ici, la médiane est 178 cm, car c'est la plus petite valeur telle que 50\% de l'effectif soit inférieur ou égal.
+
+Il s'agit en fait de l'élément de rang $\frac{N+1}{2}$ de la série.
+
+ \item [\textbf{Effectif pair:}] ajoutons une personne de 208 cm au groupe précédent. L'effectif est maintenant de 8.  
+ 
+ Cette fois, il n'y a pas de valeur centrale. Il faut donc faire la moyenne entre la valeur de rang $\frac{N}{2}$ et la valeur suivante.
+ 
+ Exemple ici pour un effectif $N = 8$, on fera la moyenne entre la 4\textsuperscript{ème} et la 5\textsuperscript{ème} valeur: 
+ 164, 165, 177, $\underbrace{178}_{\mbox{4ème}}$, $\underbrace{179}_{\mbox{5ème}}$ , 184, 188, 208.
+ 
+ La médiane est donc ici: 
+ 
+ \begin{equation*}
+  Q_2 = \frac{178+179}{2} = 178.5 \mbox{cm}
+ \end{equation*}
+
+ Il s'agit en fait de la moyenne entre les éléments de rangs $\frac{N}{2}$ et $\frac{N}{2}+1$.
+
+\end{itemize}
+
+On remarque que si on remplace la personne de 164 cm par une personne beaucoup plus petite, par exemple 140 cm, cela va changer la moyenne de taille du groupe, mais cela ne changera pas la médiane. C'est une des propriétés -- et dans certains cas un des intérêts -- de la médiane: son insensibilité aux valeurs extrêmes, celles-ci pouvant représenter des cas particuliers peu représentatifs de la population générale.
+
+\section{Paramètres de dispersion}
+
+Maintenant que nous savons ce qu'est une moyenne, imaginons deux classes de 25 élèves dans lesquelles la moyenne ce trimestre est 12. Est-ce que cela signifie que les deux classes sont identiques? 
+
+Pas forcément. On peut très bien avoir une classe où tous les élèves ont 12, et une autre où la moitié a 20 et l'autre moitié a 4 (cas extrême s'il en est). 
+
+On voit donc que la moyenne $\overline{x}$ seule ne suffit pas à indiquer si la classe est homogène ou non. 
+
+Pour cela, il existe d'autres paramètres, appelés \emph{paramètres de dispersion}.
+
+\subsection{Variance et écart-type}
+
+\subsubsection{Variance}
+
+La \emph{variance} d'une variable $x$ est donnée par les formules suivantes:
+
+\begin{equation}
+\label{EqnVar1}
+V_x = \frac{1}{N} \sum_{i=1}^{p}n_i x_i^2 - \overline{x}^2
+\end{equation}
+
+On montre que cette formule est équivalente à:
+
+\begin{equation}
+\label{EqnVar2}
+V_x = \frac{1}{N} \sum_{i=1}^{p}n_i (x_i - \overline{x})^2
+\end{equation}
+
+On remarque dans la formule (\ref{EqnVar1}) que la première partie $\frac{1}{N} \sum_{i=1}^{n}n_i x_i^2$ est la moyenne des carrés: $\frac{1}{N} \sum_{i=1}^{n}n_i x_i^2 = \overline{x_i^2}$, alors que $\overline{x}^2$ est le carré de la moyenne. La variance peut donc également s'écrire de la façon suivante:
+
+\begin{equation}
+\label{EqnVarSimple}
+V_x = \overline{x^2} - \overline{x}^2
+\end{equation}
+
+La formule (\ref{EqnVarSimple}) se lit \og moyenne des carrés moins carré de la moyenne \fg{}.
+
+\subsubsection{Écart-type}
+
+L'écart-type, noté $\sigma$, est la racine carrée de la variance. Pour une variable $x$, la notation sera donc: 
+
+\begin{equation}
+\sigma_x = \sqrt{V_x}
+\end{equation}
+
+On préfère l'utiliser car il est de la même unité que la variable étudiée.
+
+\subsubsection{Exemple pratique}
+
+Utilisons la première formule pour calculer la variance et l'écart-type correspondants à la répartition des notes dans les deux classes. 
+
+Ici, les deux classes (la classe A et la classe B) ont 12 de moyenne. On pourra faire le calcul pour s'en convaincre. Mais le but est de montrer que seule, la moyenne ne donne qu'une information incomplète. 
+
+\begin{figure}[h]
+\begin{multicols}{2}
+\begin{minipage}{0.49\linewidth}
+\begin{center}
+Classe A:
+\end{center}
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Note} & \textbf{Eff. $n_i$} & \textbf{$x_i^2$} & \textbf{$n_i x_i^2$} \\ \hline
+5    & 0              & 25      & 0           \\ \hline
+6    & 0              & 36      & 0           \\ \hline
+7    & 0              & 49      & 0           \\ \hline
+8    & 0              & 64      & 0           \\ \hline
+9    & 0              & 81      & 0           \\ \hline
+10   & 4              & 100     & 400         \\ \hline
+11   & 6              & 121     & 726         \\ \hline
+12   & 6              & 144     & 864         \\ \hline
+13   & 4              & 169     & 676         \\ \hline
+14   & 5              & 196     & 980         \\ \hline
+15   & 0              & 225     & 0           \\ \hline
+16   & 0              & 256     & 0           \\ \hline
+17   & 0              & 289     & 0           \\ \hline
+18   & 0              & 324     & 0           \\ \hline
+19   & 0              & 361     & 0           \\ \hline
+20   & 0              & 400     & 0           \\ \hline
+     & $N = 25$       & $\sum_{i=1}^{n}n_i x_i^2$: & 3646        \\ \hline
+\end{tabular}
+\end{minipage}
+
+\begin{minipage}{0.49\linewidth}
+\begin{center}
+Classe B:
+\end{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Note} & \textbf{Eff. $n_i$} & \textbf{$x_i^2$} & \textbf{$n_i x_i^2$} \\ \hline
+5    & 1              & 25      & 25          \\ \hline
+6    & 0              & 36      & 0           \\ \hline
+7    & 1              & 49      & 49          \\ \hline
+8    & 3              & 64      & 192         \\ \hline
+9    & 2              & 81      & 162         \\ \hline
+10   & 2              & 100     & 200         \\ \hline
+11   & 2              & 121     & 242         \\ \hline
+12   & 3              & 144     & 432         \\ \hline
+13   & 3              & 169     & 507         \\ \hline
+14   & 2              & 196     & 392         \\ \hline
+15   & 1              & 225     & 225         \\ \hline
+16   & 2              & 256     & 512         \\ \hline
+17   & 1              & 289     & 289         \\ \hline
+18   & 1              & 324     & 324         \\ \hline
+19   & 1              & 361     & 361         \\ \hline
+20   & 0              & 400     & 0           \\ \hline
+     &$N = 25$        & $\sum_{i=1}^{n}n_i x_i^2$: & 3912        \\ \hline
+\end{tabular}
+\end{minipage}
+\end{multicols}
+\caption{À gauche, tableau représentant la classe A, à droite, tableau représentant la classe B, toutes deux de moyenne 12 et d'effectif $N=25$.}
+\label{FigTableaux}
+\end{figure}
+
+\paragraph{Classe A:}
+Comme indiqué dans le premier tableau de la figure \ref{FigTableaux} page \pageref{FigTableaux}, $\sum_{i=1}^{n}n_i x_i^2 = 3646$, donc $\overline{x_i^2} = \frac{1}{N} \sum_{i=1}^{n}n_i x_i^2 = \frac{3646}{25} = 145.84$.
+
+D'après l'équation (\ref{EqnVarSimple}), $V_x = 145.84 - 12^2 = 1.84$. On a donc:
+
+\Answer{$V_x = 1.84$}
+
+pour la classe A.
+
+On peut en déduire l'écart-type: $\sigma_x = \sqrt{1.84} \approx 1.36$
+
+\paragraph{Classe B:}
+Comme indiqué dans le second tableau, $\sum_{i=1}^{n}n_i x_i^2 = 3912$, donc $\overline{x_i^2} = \frac{1}{N} \sum_{i=1}^{n}n_i x_i^2 = \frac{3912}{25} = 156.48$.
+
+D'après l'équation (\ref{EqnVarSimple}), $V_x = 156.48 - 12^2 = 12.48$. On a donc:
+
+\Answer{$V_x = 12.48$}
+
+pour la classe B.
+
+On peut en déduire l'écart-type: $\sigma_x = \sqrt{12.48} \approx 3.53$
+
+\paragraph{Interprétation:} les deux classes ont 12 de moyenne et pourtant, on constate que:
+
+\begin{itemize}
+\item tous les élèves de la classe A on des notes proches les unes des autres (entre 10 et 14): il n'y a pas de très mauvaise note ni d'excellente. 
+
+La variance et l'écart-type sont \emph{faibles}. 
+
+On peut en déduire que tous les élèves de cette classe sont de niveaux proches.
+
+\item les élèves de la classe B ont des notes très disparates: certains ont des notes faibles, d'autres des notes excellentes. 
+
+La variance et l'écart-type sont \emph{élevés}. 
+\end{itemize}
+
+On voit ici que la variance et l'écart-type permettent de faire état de la disparité d'une série. 
+
+Ici, ces paramètres permettent de dire si la classe est homogène (tout le monde a à peu près le même niveau) ou au contraire si elle est hétérogène.
+
+\subsection{Quartiles et écarts inter-quartiles}
+
+\subsubsection{Quartiles}
+
+Comme leur nom l'indique, les quartiles séparent la série statistique en 4 parties d'effectifs égaux.
+
+\begin{itemize}
+\item le premier quartile, $Q_1$, est la valeur telle que 25\% des effectifs lui soient inférieurs
+\item le second quartile, $Q_2$, est la valeur telle que 50\% des effectifs lui soient inférieurs\footnote{On remarquera que cette définition correspond à la définition de la médiane, c'est pourquoi on appelle parfois la médiane $Q_2$.}
+\item le troisième quartile, $Q_3$, est la valeur telle que 75\% des effectifs lui soient inférieurs
+\end{itemize}
+
+Autrement dit, ce sont les valeurs qui partagent l'effectif total de la population en quatre groupes d'effectifs égaux. 
+
+À noter que lors du calcul de $Q_1$ et $Q_3$ par un outil informatique (calculatrice, tableur, etc.), le résultat donné peut être différent selon l'outil utilisé car la méthode de calcul n'est pas la même. Mais évidemment, tous les résultats sont corrects vis-à-vis de la définition.
+
+La méthode de calcul que nous allons voir -- la plus simple -- est celle implémentée dans les calculatrices Casio. Les Texas Instrument et autres Excel/LibreOffice utilisent des méthodes de calcul un peu plus complexes. 
+
+La méthode pour calculer $Q_1$ est la suivante:
+
+\begin{enumerate}
+\item On classe la série dans l'ordre croissant;
+\item \label{calculQ1} On prend l'effectif total $N$ et on le multiplie par $\frac{1}{4}$;
+\item Si le résultat ne tombe pas juste, on arrondit à l'entier supérieur;
+\item Le nombre obtenu est le rang du quartile $Q_1$
+\end{enumerate}
+
+Pour obtenir $Q_2$, voir le paragraphe \ref{mediane} page \pageref{mediane}.
+
+Pour obtenir $Q_3$, c'est exactement la même méthode sauf qu'au point \ref{calculQ1}, on remplace $\frac{1}{4}$ par $\frac{3}{4}$.
+
+\exemple{}
+Dans une maternité, on a relevé les masses (en kg) des nouveaux-nés :
+2.5 ; 3.1 ; 2.8 ; 3 ; 2.6 ; 2.5 ; 3.2 ; 4.1 ; 3.6 ; 2.9 ; 3.4
+
+\begin{enumerate}
+\item Voici la série dans l'ordre croissant: 
+
+2.5 ; 2.5 ; 2.6 ; 2.8 ; 2.9 ; 3 ; 3.1 ; 3.2 ; 3.4 ; 3.6 ; 4.1
+\item L'effectif total est $N = 11$. On a donc $11 \times \frac{1}{4} = 2.75$;
+\item Arrondi à l'entier supérieur, cela donne 3;
+\item Il faut donc prendre le 3ème nombre de la série classée dans l'ordre croissant, ici $2.6$. 
+\end{enumerate}
+
+On obtient donc \answer{$Q_1 = 2.6$ kg}
+
+Par la même méthode, on obtient \answer{$Q_3 = 3.4$ kg}
+
+La médiane est $Q_2 = 3$ kg. 
+
+\subsubsection{Écart inter-quartile}
+
+L'écart inter-quartile est l'écart entre $Q_3$ et $Q_1$.
+
+\begin{definition}{Écart inter-quartile}
+L'écart inter-quartile est la différence $I = Q_3 - Q_1$.
+\end{definition}
+
+\exemple{}
+Dans l'exemple précédent (où $Q_1 = 2.6$ et $Q_2 = 3.4$), on obtient l'écart inter-quartile \answer{$I = 3.4 - 2.6 = 0.8$ kg}
+
+\subsection{Étendue}
+
+L'étendue est l'écart entre le maximum de la série et le minimum. 
+
+Si dans un groupe de 5 personnes on a les tailles suivantes (en cm):
+
+198; 165; 195; 183; 187
+
+La plus grande taille est 198 cm et la plus petite taille est 165 cm. L'étendue de cette série est donc $198-165 = 33 \mbox{ cm}$.
+
+
+
+
+%\section*{Exercices}
+%
+%\exo{}
+
+
+\end{document}

@@ -1,0 +1,406 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel, varioref} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+\flushbottom
+\raggedbottom
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+% Title Page
+\title{Équations du second degré}
+
+\author{}
+
+\begin{document}
+
+\selectlanguage{french}
+
+\maketitle
+
+\tableofcontents
+
+\section{Définition}
+
+Une équation du second degré à une inconnue $x$ est une équation pouvant se ramener à la forme standard suivante: \answer{$ax^2 + bx + c = 0$} où $a$ est un réel non nul, $b$ et $c$ sont des réels quelconques.
+
+Le qualificatif \emph{second degré} vient du fait que l'inconnue est portée au maximum à la puissance $2$ dans l'équation.
+
+\exemple{}
+
+\begin{itemize}
+\item L'équation $3x^2 - 2x + 4 = 0$ est une équation du 2\textsuperscript{nd} degré où $a = \ldots$, $b = \ldots$ et $c = \ldots$ 
+\item L'équation $x^2 - x + 1 = 0$ est une équation du 2\textsuperscript{nd} degré où $a = \ldots$, $b = \ldots$ et $c = \ldots$ 
+\item L'équation $5x^2 +3x = 0$ est une équation du 2\textsuperscript{nd} degré où $a = \ldots$, $b = \ldots$ et $c = \ldots$ 
+\item L'équation $1.5x^2 + 3/2 = 0$ est une équation du 2\textsuperscript{nd} degré où $a = \ldots$, $b = \ldots$ et $c = \ldots$ 
+\end{itemize}
+
+\exemple{}
+$5x^2 + 3x = 4x^2 + 8x - 6$ est une équation du second degré car elle peut se
+ramener à la forme standard en appliquant les règles générales régissant les équations:
+
+$5x^2 + 3x = 4x^2 + 8x - 6$
+
+$\Leftrightarrow 5x^2 - 4x^2 + 3x - 8x +6 = 0$
+
+$\Leftrightarrow x^2 + - 5x +6 = 0$
+
+\section{Méthode algébrique de résolution}\label{methode}
+
+On peut montrer qu’une équation du second degré ne peut avoir que zéro, une ou deux solutions. 
+
+\begin{itemize}
+\item on ramène l’équation sous sa forme standard: $ax^2 + bx + c = 0$;
+\item on identifie les valeurs des nombres $a$, $b$ et $c$;
+\item on calcule le nombre $\Delta = b^2 - 4ac$. Ce nombre est appelé le \emph{discriminant}.
+\item on peut conclure suivant la valeur de $\Delta$:
+
+\begin{itemize}
+\item $\Delta < 0$, l'équation n'a pas de solution: $S = \emptyset$.
+\item $\Delta = 0$, a une unique solution: $x_1 = \dfrac{-b}{2a}$.
+
+On écrit l'ensemble des solutions:
+
+$S = \left\lbrace \dfrac{-b}{2a} \right\rbrace$.
+
+\item $\Delta > 0$, l'équation a deux solutions: $x_1 = \dfrac{-b - \sqrt{\Delta}}{2a}$ et $x_2 = \dfrac{-b + \sqrt{\Delta}}{2a}$.
+
+On écrit l'ensemble des solutions:
+
+$S = \left\lbrace \dfrac{-b - \sqrt{\Delta}}{2a} ; \dfrac{-b + \sqrt{\Delta}}{2a} \right\rbrace$.
+
+\end{itemize}
+\end{itemize}
+
+À noter que l'on appelle ces solutions les \textbf{racines} du polynôme.
+
+%\subsection*{En résumé}
+
+%La méthode de résolution se synthétise comme suit:
+
+%Mettre algorithme (http://www.texample.net/tikz/examples/simple-flow-chart/)
+
+\section{Quelques exemples}
+
+\exemple{}
+$x^2 - 5x + 6 = 0$
+
+\begin{itemize}
+\item Ici, l'équation est déjà sous sa forme standard. $a = \ldots$, $b = \ldots$ et $c = \ldots$
+\item on calcule $\Delta = b^2 - 4ac$, soit $\Delta = \ldots\ldots\ldots = \ldots$
+\item $\Delta > 0$, il y a donc 2 solutions: 
+
+$x_1 = \dfrac{-b - \sqrt{\Delta}}{2a}$ et $x_2 = \dfrac{-b + \sqrt{\Delta}}{2a}$.
+
+Soit :
+
+$x_1 = \dfrac{-\ldots - \sqrt{\ldots}}{2\times \ldots}$ et $x_2 = \dfrac{-\ldots + \sqrt{\ldots}}{2\times \ldots}$.
+
+D'où $x_1 = \ldots$ et $x_2 = \ldots$
+
+\item On peut conclure: $S = \left\lbrace 2;3 \right\rbrace$.
+
+\end{itemize}
+
+
+\exemple{}
+$5^2 + 2x + 4 = 2x^2 - 1$
+
+\begin{itemize}
+\item On ramène l'équation sous sa forme standard:
+
+$5^2 + 2x + 4 = 2x^2 - 1$
+
+$\Leftrightarrow 5^2 + 2x + 4 -  2x^2 + 1= 0$
+
+$\Leftrightarrow 3^2 + 2x + 5 = 0$
+
+\item On reconnaît: $a = \ldots$, $b = \ldots$ et $c = \ldots$
+\item on calcule $\Delta = b^2 - 4ac$, soit $\Delta = \ldots\ldots\ldots = \ldots$
+\item $\Delta < 0$, il n'y a donc pas de solution: 
+
+$S = \emptyset$.
+
+\end{itemize}
+
+\exemple{}
+$x^2 +2x + 1 = 0$
+
+\begin{itemize}
+\item L'équation est déjà sous sa forme standard. $a = \ldots$, $b = \ldots$ et $c = \ldots$
+\item on calcule $\Delta = b^2 - 4ac$, soit $\Delta = \ldots\ldots\ldots = \ldots$
+\item $\Delta = 0$, il y a donc 1 solution: 
+
+$x_1 = \dfrac{-b }{2a}$.
+
+Soit :
+
+$x_1 = \dfrac{-\ldots}{2\times \ldots}$
+
+D'où $x_1 = \ldots$.
+
+\item On peut conclure: $S = \left\lbrace \ldots \right\rbrace$
+
+\end{itemize}
+
+\section{Cas particuliers}
+
+La méthode décrite précédemment est générale et peut s'appliquer à \emph{toutes} les équations du second degré.
+
+Il existe néanmoins des cas particuliers pour lesquels on peut résoudre plus simplement.
+
+\subsection{Cas où $b = 0$, $ax^2 + c = 0$}
+
+\exemple{}
+$2x^2 + 4 = 0$
+
+$\Leftrightarrow 2x^2 = -4$
+
+$\Leftrightarrow x^2 = -2$
+
+Un carré ne peut être négatif, il s'agit donc d'une équation sans solution: $S = \emptyset$.
+
+\exemple{}
+$2x^2 - 8 = 0$
+
+$\Leftrightarrow 2x^2 = 8$
+
+$\Leftrightarrow x^2 = 4$
+
+$\Leftrightarrow 
+\left\lbrace
+\begin{array}{ll}
+   x = -2 \\
+   \mbox{ou} \\
+   x = 2 \\
+\end{array}
+\right.
+$ 
+
+$S = \left\lbrace -2 ; 2 \right\rbrace$
+
+\subsection{Cas où $c = 0$, $ax^2 + bx = 0$}
+
+Cette équation se factorise par $x$ : 
+
+\exemple{}
+$5x^2 - 6x = 0$
+
+$\Leftrightarrow x(5x-6) = 0$
+
+Or, on sait que lorsque le produit de plusieurs facteurs est égal à $0$, alors au moins un de ces facteurs est égal à $0$. On obtient donc :
+
+$\left\lbrace
+\begin{array}{ll}
+   x = 0 \\
+   \mbox{ou} \\
+   5x-6 = 0 \\
+\end{array}
+\right.
+$ 
+
+$
+\Leftrightarrow
+\left\lbrace
+\begin{array}{ll}
+   x = 0 \\
+   \mbox{ou} \\
+   x = \dfrac{6}{5} \\
+\end{array}
+\right.
+$ 
+
+L'ensemble des solutions est donc $S = \left\lbrace 0 ; \dfrac{6}{5} \right\rbrace$
+
+\subsection{Cas de l'équation produit $(a_1 x + b_1)(a_2 x + b_2) = 0$}
+
+\exemple{}
+$(2x +1)(3x -5) = 0$ 
+
+De la même manière que dans l'exemple précédent, cette équation est équivalente à:
+
+$\left\lbrace
+\begin{array}{ll}
+   2x +1 = 0 \\
+   \mbox{ou} \\
+   3x -5 = 0 \\
+\end{array}
+\right.
+$ 
+
+$
+\Leftrightarrow
+\left\lbrace
+\begin{array}{ll}
+   x = -\dfrac{1}{2} \\
+   \mbox{ou} \\
+   x = \dfrac{5}{3} \\
+\end{array}
+\right.
+$ 
+
+L'ensemble des solutions est donc $S = \left\lbrace -\dfrac{1}{2} ; \dfrac{5}{3} \right\rbrace$
+
+\section{Factorisation}
+
+\subsection{Méthode}
+
+Une fonction polynomiale du second degré $P(x)$ est une expression qui, sous sa forme développée\footnote{C'est-à-dire la forme où les dernières opérations réalisées sont des additions et/ou des soustractions.} s'écrit:
+
+\Answer{$P(x) = ax^2 + bx + c$}
+
+On recherche les solutions de l'équation $P(x) = 0$ comme vu au paragraphe \vref{methode}. On admet qu'on peut factoriser le polynôme à l'aide des solutions de cette équation (voir paragraphe \vref{methode}) comme suit: 
+
+\begin{itemize}
+\item $\Delta > 0$, l'équation $P(x) = 0$ a deux solutions $x_1$ et $x_2$ et on peut factoriser le polynôme ainsi: \answer{$P(x) = a(x-x_1)(x-x_2)$}
+
+\item $\Delta = 0$, l'équation $P(x) = 0$ a une solution $x_1$ et on peut factoriser le polynôme ainsi: \answer{$P(x) = a(x-x_1)^2$}
+
+\item $\Delta < 0$, l'équation $P(x) = 0$ n'a pas de solution dans $\mathbb{R}$ et on ne peut factoriser le polynôme
+\end{itemize}
+
+\subsection{Exemples}
+
+\exemple{}
+Factoriser le polynôme $P(x) = x^2 - 5x + 6$
+
+On calcule $\Delta$. Ici, $\Delta = 1 > 0$. L'équation a donc 2 solutions qui sont $x_1 = 2$ et $x_2 = 3$. De plus, $a = 1$. Le polynôme se factorise donc\footnote{Pour se convaincre que la méthode fonctionne, il suffit de prendre ce résultat et de le développer, on tombe sur le polynôme donné au départ...} de la façon suivante: $P(x) = a(x - x_1) (x - x_2)$
+
+On obtient donc $P(x) = \ldots\ldots\ldots\ldots$
+
+\exemple{}
+Factoriser le polynôme $P(x) = 3x^2 + 2x + 5$.
+
+$\Delta = -56 < 0$ l'équation $P(x) = 0$ n'a donc pas de solution. 
+
+Le polynôme n'est pas factorisable dans $\mathbb{R}$.
+
+\exemple{}
+Factoriser le polynôme $P(x) = x^2 - 2x + 1$.
+
+$\Delta = 0$. L'équation $P(x) = 0$ a donc une unique solution $x_1 = 1$. 
+
+Le polynôme se factorise donc de la façon suivante: $P(x) = a(x - x_1)^2$. 
+
+De plus, $a = 1$.
+
+On obtient donc $P(x) = \ldots\ldots\ldots\ldots$
+
+\section*{Exercices}
+
+\exo[1]{Résoudre les équations suivantes:}
+
+\question{}
+$x^2 - 2x -15 = 0$
+
+\question{}
+$4x (x +1) = -1$
+
+\question{}
+$(2x -1)(x + 1) = -6$
+
+\question{}
+$2x^2 + x = 0$
+
+\question{}
+$(x +2)(x -1) = 0$
+
+\exo[2]{}
+La \vref{tranchee} représente une tranchée rectangulaire ABCD d'une
+profondeur maximale de 10 m.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.5\textwidth]{pics/tranchee.pdf}
+\end{center}
+\caption{Schéma de la tranchée}
+\label{tranchee}
+\end{figure}
+
+\question{}
+Déterminer l’aire du rectangle ABCD pour $x = 6 m$.
+
+\question{}
+Exprimer l’aire $S(x)$ du rectangle ABCD en fonction de $x$.
+
+On considère dans la suite de l’exercice la fonction $S$ définie sur l’intervalle $[0 ;10]$ par :
+$S(x) = -2x^2 + 20x$.
+
+\question{}
+Compléter le tableau de valeurs suivant:
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$x$    & 0 & 1  & 2  & 3  & 4  & 5  & 6  & 7  & 8  & 9  & 10 \\ \hline
+$S(x)$ & \hspace{0.6cm} & \hspace{0.6cm} & \hspace{0.6cm} & \hspace{0.6cm} & \hspace{0.6cm} & \hspace{0.6cm} & \hspace{0.6cm} & \hspace{0.6cm} & \hspace{0.6cm} & \hspace{0.6cm} & \hspace{0.6cm} \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\question{}
+Tracer la courbe $\mathcal{C}_S$, représentation graphique de la fonction $S$ dans le repère fourni.
+
+Échelle :
+
+\begin{itemize}
+\item axe des abscisses : 1 cm pour 1 m.
+\item axe des ordonnées : 2 cm pour 10 m² .
+\end{itemize}
+
+\question{}
+Variations de la fonction.
+
+\subquestion{}
+Établir le tableau de variation de la fonction $S$.
+
+\subquestion{}
+Déterminer la valeur de $x$ pour laquelle $S(x)$ est maximale. Quelle est cette valeur maximale ?
+
+\question{}
+Résolution d'équation
+
+\subquestion{}
+Déterminer graphiquement les valeurs de $x$ pour lesquelles l’aire du rectangle
+ABCD est égale à 37.5 m². Les traits de construction devront figurer sur le
+graphique.
+
+\subquestion{}
+Retrouver les résultats précédents en résolvant l’équation : $-2x^2 + 20x = 37.5$.
+
+%\exo{Résoudre les équations suivantes :}
+%
+%\question{$x^2 - 2x - 15 = 0$}
+%
+%
+%\question{$2x^2 + x + 5 = 0$}
+%
+%
+%\question{$4x^2 + 4x + 1 = 0$}
+%
+%\question{$8x^2 + 2x = 15 + 3x + 2x^2$}
+%
+%
+%\question{$(x + 2) (x - 1) = 0$}
+%
+%
+%\question{$x^2 + 2x = 0$}
+
+
+
+
+
+\end{document}

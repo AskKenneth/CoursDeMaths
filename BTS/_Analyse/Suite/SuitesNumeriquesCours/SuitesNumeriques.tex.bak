@@ -1,0 +1,530 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\title{Suites numériques}
+
+\date{}
+
+%\author{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Généralités}
+
+\subsection{Définition}
+
+Une suite est une famille de nombres (ses termes) indexés par un entier naturel.
+
+\subsection{Notation}
+
+On considère la suite $\left( u_n \right)_{0 \leqslant n \leqslant 4}$ des 5 nombres suivants : 3 ; 7 ; 5 ; -2 ; 4.
+
+Dans cette notation, $n$ est un entier naturel compris entre 0 et 4 inclus.
+
+\begin{itemize}
+\item le premier terme de la suite se note $u_0$ et vaut : ...
+\item le deuxième terme de la suite se note $u_1$ et vaut : ...
+\item le troisième terme de la suite se note $u_2$ et vaut : ...
+\item etc.
+\end{itemize}
+
+À noter que $u_n$ désigne \og le terme de rang $n$ \fg{} qui est un \textbf{nombre} et que $u_n$ avec les parenthèses désigne \og la suite $(u_n)$ \fg{}.
+
+\subsection{Définir une suite}
+
+\subsubsection{Définition d'une suite par son \emph{terme général}}
+
+Il s'agit d'exprimer chaque terme de la suite $\left( u_n \right)$ en fonction de $n$. 
+
+À noter que cette façon de définir une suite est similaire à la définition d'une fonction à partir de $x$ : $f(x) = 2x^{2}$.
+
+Soit la suite $\left( u_n \right)$ définie par $u_n = 2n^{2}$ pour $n \in \mathbb{N}$.
+
+Calculer $u_0$, $u_1$, $u_{10}$ et le quatorzième terme de la suite.
+
+\cadre{3}
+
+\subsubsection{Définition d'une suite par \emph{récurrence}}
+
+Définir une suite \emph{par récurrence}, c'est exprimer chaque terme de la suite en fonction d'un ou plusieurs termes précédents. Pour que la suite soit complètement définie, il faut également connaître le premier terme.
+
+Avec une telle définition, pour calculer le $n$\textsuperscript{ème} terme, il faut calculer tous les termes précédents.
+
+Exemple: soit la suite $\left( u_n \right)$ définie par : 
+$\begin{cases}
+u_0 = 2\\
+u_{n+1} = 4 u_n - 3
+\end{cases}$
+
+Calculer $u_1$, $u_3$ et $u_{10}$.
+
+\cadre{3}
+
+Exemple\footnote{Cette suite s'appelle la suite de \emph{Fibonacci}} soit la suite $\left( u_n \right)$ définie par : 
+$\begin{cases}
+u_0 = 1\\
+u_1 = 1\\
+u_{n+2} = u_{n+1} + u_{n}
+\end{cases}$
+
+Calculer $u_2$, $u_3$ et $u_{8}$.
+
+\cadre{3}
+
+\section{Des suites particulières}
+
+Nous allons voir dans cette partie deux types de suites qui sont souvent étudiés. Les suites \emph{arithmétiques} et les suites \emph{géométriques}.
+
+\subsection{Suites arithmétiques}
+
+\subsubsection{Définition}
+
+Une suite arithmétique de raison $r$  est une suite de réels tels que chacun d'eux soit égal à celui qui le précède augmenté de $r$ (où $r$ est un réel différent de 0). Cette suite est donc définie par la donnée du premier terme $u_0$ et de la relation de récurrence : $u_{n+1} = u_n + r$.
+
+\begin{itemize}
+\item La suite 5 ; 8 ; 11 ; 14 ; 17 est une suite arithmétique car pour passer d'un terme au suivant, on additionne 3. La raison $r$ est donc $r = 3$. Le premier terme est 5.
+\item La suite des nombre pairs est une suite arithmétique de premier terme $u_0 = ...$ et de raison $r = ...$.
+\end{itemize}
+
+
+
+Les nombres 15 ; 11 ; 7 ; 3 ; -1 sont-ils les 5 premiers termes d'une suite arithmétique ? Si oui, indiquer le premier terme et la raison.
+
+\cadre{2}
+
+Les nombres 3 ; 5 ; 7 ; 10 ; 12 sont-ils les 5 premiers termes d'une suite arithmétique ?
+
+\cadre{2}
+
+La suite $(u_n)$ définie pour $n \in \mathbb{N}$ par $u_n = 3n+4$ est-elle une suite arithmétique? Si oui, indiquer le 1er terme et la raison.	
+
+\cadre{3}
+
+\subsubsection{Expression du terme de rang $n$}
+
+Considérons la suite arithmétique de raison $r$ : $u_0$ ; $u_1$ ; $u_2$ ; ... ; $u_n$.
+
+Exprimer chaque terme en fonction de $u_0$ et $r$.
+
+\begin{itemize}
+\item $u_1 = u_0 + r$
+\item $u_2 = u_1 + r = ...$
+\item $u_3 = u_2 + r = ...$
+\item etc.
+\end{itemize}
+
+D'où la relation générale : $u_n = n \times r + u_0$.
+
+\exemple Soit la suite de premier terme $u_0 = 5$ et de raison $r = 3$.
+
+\begin{itemize}
+\item Calculer $u_9$
+\item Calculer le quinzième terme.
+\end{itemize}
+
+\cadre{3}
+
+\subsubsection{Calcul de la somme des $n+1$ premiers termes}
+
+Soit $S_n$ la somme des $n+1$ premiers termes d'une suite arithmétique de raison $r$ : $S_n = u_0 + u_1 + ... + u_{n-1} + u_n$.
+
+On peut\footnote{Ça veut dire qu'on le fera pas en cours et qu'on admet le résultat} montrer que:
+
+\Answer{$S_n = (n+1) \times \dfrac{u_0 + u_n}{2}$}
+
+$n+1$ est le nombre de termes additionné, $u_0$ est le premier terme et $u_n$ le dernier.
+
+De manière plus générale, il se peut que le premier terme additionné ne soit pas $u_0$: on peut en effet additionner du rang $p$ au rang $n$. Ainsi, la somme des termes se calcule comme suit:
+
+\Answer{$S = (n-p+1) \times \dfrac{u_p + u_n}{2}$}
+
+Que l'on peut également écrire: 
+
+$S = \mbox{nb. de termes additionnés} \times \dfrac{\mbox{premier terme} + \mbox{dernier terme}}{2}$
+
+\exemple Calculer la somme des 15 premiers termes d'une suite arithmétique de raison -2 et de premier terme 24:
+
+\cadre{3}
+
+\exemple $(u_n)$ étant une suite arithmétique, écrire la formule permettant de calculer $S = u_7 + u_8 + ... + u_{14} + u_{15}$.
+
+\cadre{3}
+
+
+\subsection{Suites géométriques}
+
+\subsubsection{Définition}
+
+Une suite géométrique de raison $q$ est une suite de réels tels que chacun d'eux soit égal à celui qui le précède multiplié par $q$ ($q$ est un réel différent de 0 et de 1). Cette suite est donc définie par la donnée du premier terme $u_0$ et de  la relation de récurrence : 
+
+\Answer{$u_{n+1}= q \times u_n$}
+
+\exemple La suite des puissances de deux : 1 ; 2 ; 4 ; 8 ; 16 ; 32 ; 64 ; 128 est une suite géométrique de premier terme $u_0 = ...$ et de raison  $q = ...$
+
+\exemple la suite de nombres -8 ; 16 ; -32 ; 64 ; -128 ; 256   est une suite géométrique de premier terme $u_0 = ...$ et de raison  $q = ...$
+
+\exemple 8 ; 4 ; 2 ; 1 ; 0.5 est une suite géométrique de premier terme $u_0 = ...$ et de raison  $q = ...$
+
+\vspace{1em}
+
+\textbf{Pour prouver qu'une suite est une suite géométrique il suffit de montrer que le quotient $\frac{u_{n+1}}{u_n}$  est constant quel que soit $n$. Ce quotient constant est la raison de la suite géométrique.}
+
+\exemple Les nombres 5 ; 1 ; 0,2 ; 0,04 sont-ils les 4 premiers termes consécutifs d'une suite géométrique ? Si oui, indiquer le 1er terme et la raison.
+
+\cadre{2}
+
+\exemple Les nombres 4 ; 5 ; 8 ; 10 sont-ils les termes consécutifs d'une suite géométrique ? Si oui, indiquer le 1er terme et la raison.
+
+\cadre{2}
+
+\exemple La suite $(u_n)$ définie pour $n \in \mathbb{N}$ par : $u_n = e^{2n}$ est-elle une suite géométrique ? Si oui, indiquer le premier terme $u_0$ et la raison.
+
+\cadre{2}
+
+\subsubsection{Expression  du terme de rang $n$}
+
+Considérons la suite géométrique de raison $q$ : $u_0$ ;$u_1$ ; $u_2$ ; ... ; $u_n$
+
+Exprimer chaque terme en  fonction de $u_0$ et $q$.
+\begin{itemize}
+\item $u_1 = u_0 × q$
+\item $u_2 = u_1 × q =... $
+\item $u_3 =...$
+\item etc.
+\end{itemize}
+
+D'où la relation générale : 
+
+\Answer{$u_n = u_0 \times q^n$}
+
+\exemple Calculer $u_4$ et le 8ème terme d'une suite géométrique de raison 2 et de premier terme -5.
+
+\cadre{3}
+
+Soit une suite géométrique de raison 1.04 et de premier terme $u_0 > 0$. À partir de quelle valeur de $n$, $u_n$ dépasse-t-il le double de $u_0$ ?
+
+\cadre{3}
+
+\subsubsection{Somme de termes consécutifs}
+
+Soit $S$, la somme des termes de la suite du rang $p$ au rang $n$ avec $p < n$. On peut montrer que:
+
+\Answer{$S = u_p \dfrac{1-q^{n-p+1}}{1-q}$}
+
+Où $n-p+1$ est le nombre de termes additionnés, $u_p$ le premier terme additionné et $u_n$ le dernier terme additionné.
+
+Que l'on peut également écrire: $S = \mbox{premier terme} \times \dfrac{1-q^{\mbox{nb. de termes additionnés}}}{1-q}$
+
+\exemple Calculer la somme des 10 premiers termes d'une suite géométrique de raison 2 et de premier terme 3.
+
+\cadre{3}
+
+\exemple $(u_n)$ étant une suite géométrique, écrire la formule qui permet de calculer $S = u_7 + u_8 + ... + u_{14} + u_{15}$.
+
+\cadre{3}
+
+\subsubsection{Limite d'une suite géométrique}
+
+Pour calculer la limite d'une suite géométrique de raison $q$ on utilise les résultats suivants : 
+
+\begin{itemize}
+\item $q > 1$. La limite est $+\infty$ si $u_0 > 0$, $-\infty$ si $u_0 < 0$;
+\item $-1 < q < 1$. La limite est 0;
+\item $q < -1$. La suite n'a pas de limite.
+\end{itemize}
+
+\exemple Soit $u_n$ la suite géométrique de raison $q = 3$ et de premier terme $u_0 = -2$. Donner la limite de $u_n$, $\lim u_n$. 
+
+\cadre{2}
+
+\exemple Soit $u_n$ la suite géométrique de raison $q = 1/2$ et de premier terme $u_0 = 1$. Donner la limite de $u_n$, $\lim u_n$. 
+
+\paragraph{Récapitulatif sur les limites de suites:}
+
+soit la suite géométrique $(u_n)$ de raison $q$ et de premier terme $u_0$. On peut alors déduire la limite de la suite (si cette limite existe) comme suit:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}\hline
+ & $u_0 > 0$ & $u_0 < 0$ \\ \hline 
+$q>1$ & $\lim u_n = +\infty$ & $\lim u_n = -\infty$ \\ \hline 
+$-1 < q < 1$ & $\lim u_n = 0$ & $\lim u_n = 0$ \\ \hline 
+$q < -1$ & pas de limite & pas de limite \\ \hline 
+\end{tabular}
+\end{center}
+
+\subsection*{Récapitulatif sur les suites géométriques et arithmétiques}
+
+%\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|l|}\hline
+ & \textbf{Arithmétique}  &    \textbf{Géométrique}     \\\hline
+\textbf{Terme général}  & $u_n = u_0 + r \times n$  & $u_n = u_0 \times q^n$ \\\hline
+\textbf{Définition par récurrence} & 
+
+$
+\left\lbrace
+\begin{array}{l }
+   u_0  \\
+   u_{n+1} = u_n + r \\
+\end{array}
+\right.
+$       
+            
+            &
+
+$
+\left\lbrace
+\begin{array}{l }
+   u_0  \\
+   u_{n+1} = u_n \times q \\
+\end{array}
+\right.
+$ 
+            
+                       \\\hline
+\textbf{\og{}Montrer que $u_n$ est... \fg{}} & $u_{n+1} - u_n = ...$  & $\dfrac{u_{n+1}}{u_n} = ...$ \\\hline
+\textbf{Somme de $n$ termes consécutifs} & $S = (n-p+1) \dfrac{u_p+u_n}{2}$ & $S = u_p \dfrac{1-q^{n-p+1}}{1-q}$\\ \hline
+
+\end{tabular}
+\end{center}
+%\end{table}
+
+\section{Étude d'une suite définie par une relation de récurrence du type :  $u_{n+1} = a {u_n + b}$.}
+
+Il s'agit là d'un exercice type qui revient en examen quasiment à coup sûr lorsqu'il y a un exercice sur les suites.
+
+On considère la suite $(u_n)$ définie par :  $u_0  = 2$ et pour tout entier naturel $n$, $u_{n+1} = 2 u_n + 3$.
+
+Calculer $u_1$, $u_2$. La suite $(u_n)$ est-elle géométrique ? Justifier.
+
+\cadre{4}
+
+Pour tout entier naturel $n$, on pose $v_n = u_n+3$.
+
+En exprimant $v_{n+1}$ en fonction de $u_{n+1}$ puis en fonction de $u_{n}$, déterminer l'expression de $v_{n+1}$ en fonction de $v_{n}$. En déduire la nature de la suite $(v_n)$.
+
+\cadre{6}
+
+Exprimer $v_n$ en fonction de $n$ puis $u_n$ en fonction de $n$.
+
+\cadre{6}
+
+Déterminer la limite de la suite quand $n$ tend vers $+\infty$. 
+
+\section*{Exercices}
+
+\exo{Suites arithmétiques}
+
+\question{}
+Calculer le 36ème terme de la suite arithmétique 5; 8; 11; 14; ...
+
+\question{}
+Quelle est la raison d'une suite arithmétique de 1er terme $k_0 =7$ , de 15ème terme $k_{14} = 77$. Calculer la somme de ses 15 premiers termes.
+
+\question{}
+Écrire la suite arithmétique de 8 termes connaissant le premier $p_0 = 35$ et le dernier $p_7 = 112$. 
+
+\question{}
+Calculer la somme de 20 termes consécutifs d'une suite arithmétique, le premier étant 5 et le dernier 57. Quelle est sa raison?
+
+\question{}
+Montrer que la suite $(u_n)$ définie par la relation $u_n = 3n+17$ est une suite arithmétique. En donner la raison et le premier terme.
+
+\exo{Suites géométriques}
+
+\question{}
+On considère une suite géométrique de premier terme $u_0 = 2$ et de raison 3. Calculer $u_7$, $u_{17}$.
+
+\question{}
+Calculer la somme des 10 premiers termes d'une suite géométrique, le premier étant 100 et la raison 2,5.
+
+\question{}
+La somme des $n+1$ premiers termes d'une suite géométrique de premier terme 10000 et de raison $q = 1.5$, est $S_n = 131 875$. Calculer $n$. 
+
+
+\probleme{}
+Une entreprise achète une machine au prix de 9 000 euros. Elle estime que cette machine se déprécie de 20\% par an. On note $V_0$ la valeur initiale de la machine. Les nombres $V_1$, $V_2$, $V_3$ et $V_4$ représentent les valeurs de la machine au bout d'un an, de deux ans, de trois ans, de quatre ans.
+
+\question{}
+Calculer $V_1$ et $V_2$.
+
+\question{}
+Montrer que les nombres $V_0$, $V_1$ et $V_2$ forment une suite géométrique dont on précisera la raison.
+
+\question{}
+On admet que $V_n = 9000 \times 0,8^n$. En utilisant cette formule, calculer $V_3$ et $V_4$.
+
+\question{}
+Au bout de combien d'années la valeur de la machine devient-elle inférieure à la moitié de sa valeur initiale ?
+
+
+\probleme{}
+La fraction de lumière transmise par un dioptre air-verre est de 96\%. Calculer la quantité de lumière transmise par un téléobjectif comportant 5 lentilles.
+
+
+\probleme{}
+
+On considère la suite $(u_n)$ définie par $u_0 = 900$ et pour tout entier naturel $n$, $u_{n+1} = 0.6 u_n + 	200$.
+
+\partie{}
+
+\question{}
+Calculer $u_1$ et $u_2$.
+
+\question{}
+On considère la suite $(v_n)$ définie  pour tout entier naturel $n$, par $v_n = u_n - 500$.
+
+\subquestion{}
+Montrer que la suite $(v_n)$ est une suite géométrique dont on donnera le premier terme et la raison.
+
+\subquestion{}     
+Exprimer $v_n$ en fonction de $n$.
+
+\subquestion{}
+En déduire que $u_n = 400 \times0.6^n + 500$.
+
+\subquestion{}
+Déterminer la limite de la suite $(u_n)$.
+
+\partie{}
+Deux sociétés A et B se partagent, dans un pays, le marché des télécommunications. Les clients souscrivent, le 1er janvier, soit auprès de A, soit de B, un contrat d'un an au terme duquel ils sont libres à nouveau de choisir entre A et  B. L'an 2006, la société A détient 90\% du marché et la société B, qui vient de se lancer, 10\%.
+On estime que, chaque année 20\% de la clientèle de A change pour B, et de même 20\% de la clientèle de B change pour A.
+On considère une population représentative de 1000 clients de l'année 2006. Ainsi 900 sont clients de la société A et 100 sont clients de la société B. 
+On veut étudier l'évolution de cette population les années suivantes.
+
+\question{La société A}
+
+\subquestion{}
+Vérifier que la société A compte 740 clients en 2007. Calculer le nombre de clients en 2008.
+
+\subquestion{}
+On note le nombre de clients de A l'année $2006 + n$.
+Établir que $a_{n+1} = 0.8 a_n + 0.2 (1000-a_n)$. En déduire que : $a_{n+1} = 0.6 a_n + 200$.
+
+\question{}
+En utilisant le résultat de la première partie, que peut-on prévoir pour l'évolution du marché des télécommunications dans ce pays ?
+
+\probleme{}
+Le 1er janvier 2006, une grande entreprise compte 1 500 employés. Une étude montre que lors de chaque année à venir, 10\% de l'effectif du 1er janvier partira à la retraite au cours de l'année. Pour ajuster ses effectifs à ses besoins l'entreprise embauche 100 jeunes dans l'année. 
+
+Pour tout entier naturel $n$, on appelle, le nombre d'employés de l'entreprise le 1er janvier de l'année $( 2006 + n)$.
+
+\question{La suite $(u_n)$.}
+
+\subquestion{}
+Calculer $u_0$, $u_1$ et $u_2$. La suite de terme général $u_n$ est-elle arithmétique, géométrique ? Justifier les réponses.
+
+\subquestion{}
+Expliquer pourquoi on a, pour tout entier naturel $n$, $u_{n+1} = 0.9 u_n + 100$. 
+
+\question{}
+Pour tout entier naturel $n$, on pose : $v_n = u_n - 1000$. 
+
+\subquestion{}
+En exprimant $v_{n+1}$ en fonction de $u_{n+1}$, puis en fonction de $u_{n}$, déterminer l'expression de $v_{n+1}$ en fonction de $v_{n}$.
+
+\subquestion{}
+Exprimer $v_{n}$ en fonction de $n$.
+
+En déduire que, pour tout entier naturel $n$, $u_n = 500 \times 0.9^n + 1000$.
+
+\subquestion{[Optique seulement]}
+
+Déterminer la limite de la suite $(u_n)$ quand $n$ tend vers plus l'infini.
+
+\question{}
+Au 1er janvier 2006, l'entreprise compte un sur effectif de 300 employés. À partir de quelle année, le contexte restant le même, l'entreprise ne sera-t-elle plus en sur effectif ?
+
+\probleme{Des petits trous}
+Une entreprise réalise un forage.
+
+\begin{itemize}
+\item le premier mètre de forage a pour coût 200 €.
+\item le second mètre de forage a pour coût 220 €.
+\item le troisième mètre de forage a pour coût 240 €
+\end{itemize}
+
+Et ainsi de suite : le coût de chaque mètre supplémentaire augmente de 20 € par rapport au coût du mètre précédent.
+
+\partie{Calculs de coûts}
+
+\question{}
+Donner le coût du 4ème mètre de forage.
+
+\question{}
+Calculer le coût total d'un forage de 4 mètres.
+
+\partie{Étude d'une suite}
+
+On note : 
+
+\begin{itemize}
+\item $u_0$ le nombre correspondant au coût du 1er mètre de forage ; $u_0 = 200$ ;
+\item $u_1$ le nombre correspondant au coût du 2e mètre de forage ; $u_1 = 220$ ;
+\item $u_2$ le nombre correspondant au coût du 3e mètre de forage ; $u_2 = 240$ ; et ainsi de suite...
+\item $u_n$ le nombre correspondant au coût du (n+1)\textsuperscript{ème} mètre de forage 
+\end{itemize}
+
+\question{}
+Indiquer si la suite $(u_n)$ est une suite arithmétique ou géométrique. Le cas échéant, en donner la raison.
+
+\question{}
+Exprimer $u_n$ en fonction de $n$.
+
+\question{}
+Calculer $u_{10}$.
+
+\partie{Exploitation}
+
+\question{}
+Calculer le coût total d'un forage dont la profondeur est de 11 mètres
+
+\question{}
+Montrer que le coût total d'un forage de $n$ mètres ($n \in \mathbb{N}$) est $c_n = 190n + 10n^2$
+
+\question{}
+Quelle profondeur peut-on atteindre si l'on dispose d'un budget de  6500 € ?
+
+\probleme{Nouvel atelier}
+
+
+Dans une entreprise, on installe un nouvel atelier. Pendant la période de mise en route la production de $n$ième jour ($n$ entier non nul) est donnée par $u_n = 80 - 27 e^{-0.1n}$ unités.
+
+\question{}
+Montrer que la production est croissante c'est-à-dire que $u_{n+1} \ge u_n$.
+
+\question{}
+Au bout de combien de  jours la production dépassera-t-elle les 72 unités?
+
+\question{}
+On pose $v_n = e^{-0.1n}$ où $n$ est un entier naturel non nul.
+
+\subquestion{}
+Montrer que la suite $(v_n)$ est une suite géométrique dont on donnera la raison.
+
+\subquestion{}
+Calculer la somme : $S = v_1 + v_2 + \ldots + v_{12}$. 
+
+\question{}
+À la suite d'une avarie, l'atelier est arrêté après 12 jours de fonctionnement. En utilisant le résultat obtenu à la question précédente, donner la production totale obtenue pendant la période de fonctionnement (valeur arrondie à l'unité)
+
+\end{document}

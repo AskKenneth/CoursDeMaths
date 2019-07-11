@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+\newcommand{\classe}{OL2}
+\newcommand{\typedevoir}{Devoir en classe} 
+\newcommand{\duree}{60 minutes}
+
+\renewcommand{\hascorrection}{0}
+
+
+% Title Page
+\title{\typedevoir{} -- \classe{}\writecorrword{}} 
+
+\author{Durée : \duree{}}
+
+\begin{document} 
+
+\maketitle 
+
+Note: les questions \textbf{ne} sont \textbf{pas} par ordre croissant de difficulté. 
+
+Calculatrice autorisée, smartphone ou tout objet connecté interdit. Sujet à rendre avec la copie, ne restez pas bloqué$\cdot$e sur une question trop longtemps au détriment du reste. 
+
+\input{stat_proba/stats_1var/simple1.tex}
+
+\input{suites/simple1.tex} 
+
+\input{suites/ArithmeticoGeo2.tex}
+ 
+\end{document}

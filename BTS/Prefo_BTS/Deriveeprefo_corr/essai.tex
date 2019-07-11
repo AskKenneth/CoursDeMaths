@@ -1,0 +1,14 @@
+\documentclass[11pt]{scrartcl}  
+\usepackage{tkz-fct}  
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.5]
+  \tkzInit[xmin=-5,xmax=5,xstep=2,ymin=-10,ymax=4,ystep=2]
+  \tkzGrid[sub]
+  \tkzAxeX[step=2]
+  \tkzAxeY[step=2]
+  \tkzFctPar[samples=400,domain=-pi:pi]{t**3-3*t}{3*t**2-9}
+\end{tikzpicture}
+
+\end{document} 

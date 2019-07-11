@@ -1,0 +1,163 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Cours \og notion de statistiques \fg{}, corrigé des exercices}
+
+\author{Mathématiques}
+
+\begin{document}
+
+\maketitle
+
+\exo{Relevé journalier}
+
+\question{Compléter le tableau}
+
+On rappelle que la fréquence d'une classe se calcule en divisant l'effectif de cette classe par l'effectif total qui vaut $80 + 320 + 60 + 40 = 500$:
+
+$$f_i = \dfrac{n_i}{N}$$
+
+\begin{center}
+\begin{tabular}{@{}|l|l|l|@{}}
+\toprule
+\textbf{Classe} & \textbf{Effectifs ni} & \textbf{Fréquence fi} \\ \midrule
+\textbf{{[}10;20{[}} & 80 & 0,16 \\ \midrule
+\textbf{{[}20;30{[}} & 320 & 0,64 \\ \midrule
+\textbf{{[}30;40{[}} & 60 & 0,12 \\ \midrule
+\textbf{{[}40;50{[}} & 40 & 0,08 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\question{Moyenne}
+
+On rappelle la formule de la moyenne:
+
+$$\overline{x} = \dfrac{1}{N} \cdot \sum_{i=1}^{p} n_i \cdot x_i $$.
+
+Ici, en l'absence d'information supplémentaire, on prend pour $x_i$ le milieu de chaque classe: 15, 25, 35 et 45. On a donc ici: 
+
+$$\overline{x} = \dfrac{15 \times 80 + 25 \times 320 + 35 \times 64 + 45 \times 40}{500} = 26.20 \mbox{€}$$ 
+
+\question{Variance, écart-type}
+
+\littlestar{Variance}
+
+On rappelle la formule de la variance de la variable $x$:
+
+$$V_x = \dfrac{1}{N} \sum_{i=1}^{p} n_i \cdot x_i^2 - \overline{x}^2$$
+
+On remarque que cette notation est équivalente à:
+
+$$V_x = \overline{x^2} - \overline{x}^2$$.
+
+Appliqué à cet exemple:
+
+$$V_x = \dfrac{15^2 \times 80 + 25^2 \times 320 + 35^2 \times 60 + 45^2 \times 40}{500} - 26.2^2 = 58.56$$.
+
+Attention, il faut être très vigilant aux erreur d'arrondi, il est très important d'utiliser exclusivement la mémoire de la calculatrice (touche \textsc{Ans}) qui elle, retient 8 à 10 décimales et évite donc les erreurs.
+
+\littlestar{Écart-type}
+
+$\sigma_x = \sqrt{V_x} = 7.65 \mbox{€}$.
+
+\question{Pourcentage de clients dont le montant du retrait est compris dans l'intervalle $[\overline{x}-\sigma_x ; \overline{x}+\sigma_x]$:}
+
+$\overline{x}-\sigma_x = 26.2 - 7.65 = 18.55$
+
+$\overline{x}+\sigma_x = 26.2 + 7.65 = 33.85$
+
+On cherche donc combien de personnes sont dans l'intervalle $[18.55;33.85]$. 
+
+La classe $[20;30[$ est totalement incluse dans cet intervalle. Il faut donc compter son effectif total, 320.
+
+Concernant la classe $[10;20[$, seules les retraits compris entre 18.55 et 20 sont inclus. On ne sait pas comment sont répartis les retraits au sein des classes. On considère donc qu'ils sont uniformément répartis. 
+
+L'intervalle $[18.55;20[$ a une largeur de $20 - 18.55 = 1.45$ et représente donc 14.5\% de l'intervalle. On considère donc qu'elle contiendra 14.5\% de l'effectif.
+
+$80 \times \dfrac{14.5}{100} = 11.6$ que l'on arrondit à 12. 
+
+De la même manière, l'intervalle $[30;33.85[$ représente 38.5\% de la classe $[30;40[$. 
+
+$60 \times \dfrac{38.5}{100} = 23.1$ que l'on arrondit à 23.
+
+L'intervalle $[\overline{x}-\sigma_x ; \overline{x}+\sigma_x]$ contient donc un effectif de $320 + 12 + 23 = 355$.
+
+On calcule le pourcentage de l'effectif total que cela représente: $\dfrac{355}{500} = 0.71 = 71\%$. 
+
+\exo{Temps d'attente}
+
+On commence par compléter le tableau:
+
+\begin{center}
+\begin{tabular}{@{}|l|l|l|@{}}
+\toprule
+\textbf{Classe} & \textbf{Effectifs $n_i$} & \textbf{Fréquence $f_i$} \\ \midrule
+\textbf{{[}0 ; 5{[}} & 3 & 0,025 \\ \midrule
+\textbf{{[}5 ; 10{[}} & 12 & 0,1 \\ \midrule
+\textbf{{[}10 ; 15{[}} & 54 & 0,45 \\ \midrule
+\textbf{{[}15 ; 20{[}} & 6 & 0,05 \\ \midrule
+\textbf{{[}20 ; 25{[}} & 45 & 0,375 \\ \midrule
+\textbf{Total} & \textbf{N =} & \textbf{120} \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\question{}
+La moyenne peut également se calculer à partir des fréquences: 
+
+$$\overline{x} = \sum_{i=1}^{p} f_i \cdot x_i$$
+
+De la même façon qu'à l'exercice précédent, on prend le milieu de chaque classe pour les valeurs de $x_i$.
+
+On a donc ici:
+
+$$\overline{x} = 2.5 \times 0.025 + 7.5 \times 0.1 + \ldots + 22.5 \times 0.375 = 15.75 \mbox{s}$$
+
+\question{Variance, écart-type}
+
+\littlestar{Variance}
+de la même manière qu'à l'exercice précédent:
+
+$$V_x = \sum_{i=1}^{p} f_i \cdot x_i^2 - \overline{x}^2$$
+
+Appliqué ici: 
+
+$$V_x = 2.5^2 \times 0.025 + \ldots + 22.5 \times 0.375 = 33.19$$
+
+\littlestar{Écart-type}
+
+$\sigma_x = \sqrt{V_x} = 5.76 \mbox{s}$.
+
+\question{}
+$\overline{x} = 15.75$ et $\sigma_x = 5.76$.
+
+On s'intéresse donc à l'intervalle $[10;21.5]$.
+
+On inclut donc entièrement les classes $[10;15[$ et $[15;20[$, ainsi que $1.5/5 = 30\%$ de l'intervalle $[20;25[$.
+
+$45 \times \dfrac{30}{100} = 13.5$, que l'on arrondit à 14. 
+
+L'intervalle $[10;21.5]$ contient donc $54+6+14 = 74$.
+
+$\dfrac{74}{120} = 0.617 \approx 62\%$.
+
+\trait
+
+\end{document}

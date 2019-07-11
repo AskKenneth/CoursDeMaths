@@ -1,0 +1,172 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+\renewcommand{\hasnotesprof}{0}
+
+% Title Page
+\title{Loi binomiale}
+
+\author{\textsc{Mathématiques -- Probabilités}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{Introduction}
+
+La loi binomiale sert à comptabiliser le nombre de succès sur un nombre fixé d'expériences aléatoires identiques et indépendantes entre elles.
+
+\section{Propriétés}
+
+\subsection{Épreuve binomiale}
+
+\begin{definition}{épreuve binomiale}
+Ou épreuve de \emph{Bernoulli}.
+
+ On appelle épreuve binomiale toute épreuve aléatoire ne pouvant conduire qu'à 2 issues, appelées \emph{succès} ou \emph{échec}.
+ 
+ Étant donné qu'il n'y a que 2 issues possibles, si $p$ et la probabilité de succès, alors $1-p$ est la probabilité d'échec.
+\end{definition}
+
+Exemples:
+
+\begin{enumerate}
+ \item Un lancer de pièce dont on lit le résultat \emph{pile} ou \emph{face} est une épreuve binomiale car il y a deux résultats possibles. On remarque que l'on peut attribuer l'issue \emph{succès} à pile et \emph{échec} à face ou l'inverse mais ceci est un choix arbitraire.
+ \item On choisit une personne majeure au hasard dans la population. On s'intéresse au caractère \og{}est au chômage \fg{}. 
+ 
+ Présenté de la sorte, l'issue \emph{succès} est d'obtenir une personne au chômage, l'issue \emph{échec} tomber sur une personne qui ne l'est pas (actifs, étudiants, arrêts maladie, etc.).
+\end{enumerate}
+
+\subsection{Loi binomiale}
+
+\subsubsection{Cadre d'utilisation}\label{par:cadre}
+
+La loi binomiale s'utilise dans un cadre bien précis: on répète $n$ fois une épreuve binomiale et on s'intéresse à la variable $X$ qui compte le nombre de succès.
+
+Exemple: on lance 20 fois une pièce et on considère que \emph{pile} est un succès. On obtient 7 fois \emph{pile}. On a alors dans ce cas:
+
+\begin{enumerate}
+ \item $n = 20$ puisque l'on répète l'expérience binomiale 20 fois;
+ \item $p = 0.5$ puisque la probabilité de succès dans ce cas est 0.5 (pile ou face);
+ \item $X = 7$ car on a obtenu 7 succès.
+\end{enumerate}
+
+$n$ et $p$ sont les \textbf{paramètres} de la loi binomiale. 
+
+On écrit alors $\mathcal{B}(n;p)$, ce qui se lit \og{}loi binomiale de paramètre $n$ et $p$\fg{}. Dans cet exemple, on écrit: $\mathcal{B}(20;0.5)$. Enfin, la probabilité de l'issue obtenue ici (7 succès) s'écrit $P(X=7)$. 
+
+Pour justifier qu'une variable aléatoire suit une loi binomiale, il suffit donc de vérifier trois points:
+
+\begin{itemize}
+ \item le nombre d'épreuve est fixé à l'avance (dans les exemples précédents, ce nombre d'épreuves s'appelle $n$);
+ \item $X$ mesure le nombre de succès d'une suite d'épreuves ne comportant chacune que deux issues;
+ \item les épreuves sont \textit{identiques} et \textit{indépendantes}.
+\end{itemize}
+
+\subsubsection{Valeurs caractéristiques}
+Pour une variable aléatoire $X$ suivant une loi binomiale de paramètres $n$ et $p$, on peut écrire $X = \mathcal{B}(n;p)$. On remarquera que $X$ ne peut prendre que des valeurs \emph{entières}.
+
+\paragraph{Formule générale}
+La probabilité que $X$ prenne la valeur $k$ avec $0 \leqslant k \leqslant n$, notée $P(X=k)$ est donnée\footnote{Autrement dit, la probabilité d'obtenir $k$ succès...} par:
+
+\begin{equation}
+ P(X=k) = C_n^k p^k (1-p)^{n-k}
+\end{equation}
+
+\paragraph{Espérance et écart-type}
+
+L'espérance et l'écart-type pour une variable $X$ suivant une loi binomiale $\mathcal{B}(n;p)$ se calculent ainsi:
+
+\begin{itemize}
+ \item $E(X) = np$
+ \item $\sigma_X = \sqrt{np(1-p)}$
+\end{itemize}
+
+
+
+
+Dans l'exemple cité dans le paragraphe \ref{par:cadre}, on a donc: 
+
+$$P(X=7) = C^7_{20} \times 0.5^7 \times 0.5^{20-7} = 0.0739$$ 
+
+Une probabilité pouvant s'exprimer en termes de pourcentages, on peut écrire $P(X=7) = 7.39$ \% autrement dit lors de cette expérience, on a environ $7.39$ \% de chances d'obtenir sept fois pile sur les 20 lancers.
+
+L'espérance de la variable $X$ est $E(X) = 20 \times 0.5 = 10$. Ceci signifie que sur 20 lancers et si je répète l'expérience consistant à lancer une pièce 20 fois, $X$ aura une valeur moyenne de 10.
+
+Son écart-type est $\sigma_X = \sqrt{20 \times 0.5 \times 0.5} = \sqrt{5} \approx 2.24$. L'écart-type se comprend comme en statistiques. C'est un paramètre de dispersion de la variable $X$: plus $\sigma_X$ est grand plus $X$ variera d'une expérience\footnote{Les 20 lancers} à l'autre.
+
+\subsubsection{Un exemple; un contrexemple}
+
+On considère une urne dans laquelle se trouve 10 balles rouge et 30 balles vertes.
+
+On prélève suivant deux procédures 5 balles dans cette urne et on compte le nombre $X$ de balles rouges obtenues.
+
+\paragraph{Tirage sans remise:} les 5 balles sont prélevées l'une après l'autre sans remise;
+
+\paragraph{Tirage avec remise:} on tire une balle, on note sa couleur, on la remet dans l'urne puis on recommence jusqu'à la cinquième balle. 
+
+Dans lequel de ces deux cas la variable $X$ suit-elle une loi binomiale?
+
+\cadre{3}
+
+\section{Applications}
+
+\section*{Exercices}
+
+\exo[1]{Encore une petite pièce}
+
+On jette 5 fois une pièce de monnaie. On note $X$ la variable aléatoire donnant le nombre de pile obtenu.
+
+\question{}Quelles valeurs peut prendre $X$?
+
+\question{}Justifier que X suit une loi de probabilité binomiale dont on déterminera les paramètres. 
+
+\question{}Calculer la probabilité d'obtenir 4 piles. 
+
+\question{}Calculer la probabilité d'obtenir au plus 2 piles.
+
+
+\exo[1]{Mazout}
+Après une marée noire en Bretagne, l'orgasme de protection des oiseaux de mer a évalué à 20 000 la population de sternes au large du Finistère. 500 d'entre eux ont été bagués. Un an après, on capture 100 sternes dans cette zone.
+
+\question{}Calculer la probabilité de ne pas avoir d'oiseau bagué ?
+
+\question{}D'avoir au moins 2 oiseaux bagués ?
+
+
+\exo[3]{Assurance}
+Une grande mutuelle d'assurance envisage d'éventuels changements de tarifs. Pour cela, elle a étudié le risque d'accident automobile des ses assurés en fonction de leur ancienneté de leur permis. Parmi ses assurés, il y a 20 \% de jeunes ayant leur permis depuis moins de 5 ans et le risque d'accident au cours de l'année de ces jeunes est de 0.4.
+
+Le risque d'accident des assurés ayant leur permis depuis plus de 5 ans est de 0.125.
+
+\question{}Si on choisit au hasard 10 jeunes conducteurs, quelle est la probabilité d'en voir au moins un ayant un accident dans l'année?
+
+\question{}Même question avec 10 assurés ayant leur permis depuis plus de 5 ans.
+
+\question{}Dans cette question, on s'intéresse à l'ensemble des assurés: les jeunes ($J$) et les autres ($\overline{J}$). 
+
+La probabilité $p$ qu'un assuré pris au hasard ait un accident ($A$) est: 
+
+$$p = P(A) = P(A \cap J) + P\left(A \cap \overline{J}\right)$$
+
+\subquestion{}En utilisant les probabilités conditionnelles, calculer $p$.
+
+\subquestion{}En prenant 10 assurés au hasard, quelle est la probabilité d'en voir au moins un ayant un accident dans l'année.
+ 
+
+
+
+
+\end{document}
+

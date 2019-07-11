@@ -1,0 +1,39 @@
+\exo{Calculer les dérivées des fonctions suivantes. Les simplifier lorsque cela est possible:}
+
+\question{}
+$f_1(x) = 5x^2 + 2$
+
+\question{}
+$f_2(x) = e^{5x^2 + 2}$
+
+\question{}
+$f_3(x) = \ln\left( \dfrac{1}{x^2 + 1} \right)$
+
+\question{}
+$f_4(x) = x \sqrt{x}$
+
+\question{}
+$f_5(x) = e^{x} \ln x$
+
+\question{}
+$f_6(x) = \sqrt{x^{3} + 1}$
+
+\question{}
+$f_7(x) = \dfrac{3x + 1}{x^{2} + x + 1}$
+
+\exo{Résoudre les équations suivantes:}
+
+\question{}
+$x^{2} + 1 = 0$
+
+\question{}
+$x^{2} - 1 = 0$
+
+\question{}
+$e^{4x} = 2$
+
+\question{}
+$e^{\frac{x}{3}} = 4$
+
+\question{}
+$\left( \dfrac{1}{4} \right)^{x} = 8$

@@ -1,0 +1,581 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage{/home/patrick/LaTeX/mesmacros/exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Dérivation}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\selectlanguage{french}
+
+\maketitle
+
+\tableofcontents
+
+\section*{Introduction}
+
+La dérivée d'une fonction est une notion fondamentale en mathématiques et présente une multitude d'applications. 
+
+Elle indique les variations de la grandeur étudiée.
+
+Par exemple si la variable $t$ est le temps et que $f$ est la fonction indiquant la position d'un objet à tout instant $t$, $f(t)$ est la position de l'objet à cet instant $t$. Alors $f'(t)$, la dérivée de la fonction $f$ représente la vitesse de l'objet à l'instant $t$. 
+
+Mais ce n'est pas tout, la dérivée de la dérivée ($f''(t)$) représente l'accélération de l'objet.
+
+De façon plus générale, la dérivée exprime la variation d'une grandeur (ici représentée par une fonction).
+
+De façon plus précise, soit une fonction $f:x \longmapsto f(x)$. La dérivée compare la variation de $x$ à la variation de $f(x)$ correspondante. D'où la notation $\dfrac{\ud{} f(x)}{\ud{} x}$ où $\ud{}$ sert à exprimer une variation infinitésimale de l'élément qui le suit.
+
+\part{Le nombre dérivé} 
+
+\section{Rappel: équation d'une droite} 
+
+L'équation d'une droite $(D)$ non parallèle à l'axe des ordonnées est de la forme: $y = ax+b$ où $a$ et $b$ sont des nombres réels.
+
+\begin{enumerate}
+ \item $a$ est appelé le \emph{coefficient directeur}; 
+ \item $b$ est appelé l'\emph{ordonnée à l'origine}. C'est l'ordonnée du point d'intersection de la droite $(D)$ avec l'axe des ordonnées $(Oy)$.
+\end{enumerate}
+
+Pour deux points $M_1(x_1;y_1)$ et $M_2(x_2;y_2)$ appartenant à cette droite nous avons:
+
+\begin{equation*}
+ a = \frac{\Delta y}{\Delta x} = \frac{y_1 - y_2}{x_1 - x_2}
+\end{equation*}
+
+\begin{center}
+\input{pics/droite.txt}
+\end{center}
+
+\exemple{Déterminer le coefficient directeur $a$ et l'ordonnée à l'origine $b$ de la droite $(D)$ tracée dans le repère ci-dessous.}
+
+\begin{center}
+  \simpleplot{-1}{3}{\x}{4-2*\x}{$(D)$}{1}
+\end{center}
+
+\cadre{4}
+
+
+\section{Tangente à la courbe représentative d'une fonction et nombre dérivé.}  
+
+\subsection{La tangente}
+
+Soit une fonction $f$ dont la représentation graphique est une courbe $\mathcal{C}_f$ d'équation $y  = f(x)$.
+On considère sur $\mathcal{C}_f$ un point fixe $M_0$ d'abscisse $x_0$ et d'ordonnée $y_0 = f(x_0)$:  $M_0(x_0 ; f(x_0))$ et un point M non fixe appartenant à $\mathcal{C}_f$.
+
+Si on fait tendre $M$ vers le point $M_0$ ($M$ se rapproche de plus en plus près de $M_0$) la droite $(M_0M)$ tend vers une droite limite qui est la tangente $\mathcal{T}$ à la courbe $\mathcal{C}$ au point $M_0$.
+
+\begin{center}
+\input{pics/TangenteLim.tex} 
+\end{center}
+
+\begin{definition}{tangente à la courbe en $x_0$}
+La tangente $\mathcal{T}$ à la courbe $\mathcal{C}$ au point $M_0$ est la position limite de la droite $(M_0M)$ lorsque la distance entre $M$ et $M_0$ tend vers 0.
+\end{definition}
+
+\subsection{Le nombre dérivé}
+
+\subsubsection{Définition}
+
+\begin{definition}{nombre dérivé}
+On appelle \emph{nombre dérivé} d'une fonction $f$ en $x_0$ le coefficient directeur de la tangente à la courbe représentant $f$ au point d'abscisse $x_0$. On le note $f'(x_0)$. 
+\end{definition}
+
+Si on considère les points $M_0(x_0;f(x_0))$ et $M(x ; f(x))$ de la représentation graphique de la fonction $f$,  le  coefficient directeur de la droite $(M_0M)$ s’écrit: 
+
+\begin{equation*}
+a = \frac{\Delta y}{\Delta x} = \dfrac{f(x) - f(x_0)}{x - x_0}
+\end{equation*}
+
+Cette grandeur s'appelle le \emph{taux d'accroissement}.
+
+Le nombre dérivé étant le coefficient directeur de la droite limite obtenue en faisant tendre le point $M$ vers le point $M_0$, nous pouvons  donc définir le nombre dérivée $f’(x_0)$ par: 
+
+\begin{equation*}
+f'(x_0) = \lim_{x \rightarrow x_0} \dfrac{f(x) - f(x_0)}{x - x_0}
+\end{equation*}
+
+En physique, deux autres notations du nombre dérivée peuvent être utilisées:
+
+\begin{equation*}
+f'(x_0) = \dfrac{\mathrm{d} f}{\mathrm{d} x}(x_0)
+\end{equation*}
+
+ou encore, pour une dérivée par rapport au temps:
+
+\begin{equation*}
+ \dot{f}(t)
+\end{equation*}
+
+
+
+\subsection{Exemples}
+
+\subsubsection{Avec la fonction carré}
+
+Soit $f$ la \og{}fonction carré\fg{} définie par:
+
+\begin{equation*}
+ f:x \longmapsto x^2
+\end{equation*}
+
+On écrit son taux d'accroissement en $x_0$:
+
+\begin{equation*}
+ \dfrac{f(x) - f(x_0)}{x - x_0} = \dfrac{x^2 - x_0^2}{x - x_0} = \dfrac{{\cancel{(x - x_0)}}(x + x_0)}{\cancel{x - x_0}}
+\end{equation*}
+
+
+Pour $x \neq x_0$, on obtient \underline{$x+x_0$}.
+
+Lorsque $x$ tend vers $x_0$, cette valeur tend vers $2x_0$. Cela peut aussi écrire:
+
+\begin{equation*}
+ f'(x_0) = \lim_{x \rightarrow x_0} x + x_0 = 2x_0
+\end{equation*}
+
+Soit finalement:
+
+\begin{equation*}
+ f'(x_0) = 2x_0
+\end{equation*}
+
+On a l'habitude de dire que la fonction dérivée de la fonction carrée est la fonction $x \longmapsto 2x$. 
+
+On peut aussi écrire $\left(x^2\right)' = 2x$ ou encore, sachant que la fonction que l'on dérive s'appelle $f$, $f'(x) = 2x$.
+
+La démonstration ci-dessus peut être faite pour toute fonction dérivable. Elle peut être plus ou moins difficile à mener selon la fonction étudiée et n'est pas à connaître pour nous. Les résultats peuvent être compilés dans un tableau de dérivées (\cref{tab:usuelles} page \pageref{tab:usuelles}). 
+
+
+\subsubsection{Exemple, lecture graphique}
+
+% \begin{center}
+%  \simpleplot{-1.2}{1.2}{\x}{(\x+1)*(\x-1)}{$\mathcal{C}_f$}{2}
+% \end{center}
+
+\begin{center}
+\begin{tikzpicture}[
+                declare function={
+                    X(\x) = \x;
+                    Y(\x) = ((\x)^2) - 1;
+                    T(\x) = -2*(\x) - 2;
+                    TT(\x) = 2*(\x) - 2;
+            },]
+            \def\xmi{-1.2}%xmi et xma : intervalle de définition
+            \def\xma{1.2}
+
+            \pgfplotsset{grid style={thin,gray!20!white}}
+            \pgfplotsset{minor grid style={dotted,red}}
+                           
+            \begin{axis}[
+                    axis lines = center,
+                    xlabel = {$x$},
+                    ylabel = {$y$},            
+                    enlargelimits=(\xma-\xmi)*0.01,
+                    grid=both,  
+                    scale = 2,
+                    ymin = -1.1
+                ]
+%First curve
+                \addplot [
+                    domain=\xmi:\xma, 
+                    samples=400, 
+                    color=black!60!red,
+                    very thick,
+                ]
+                ({X(\x)},{Y(\x)});
+                \addlegendentry{$\mathcal{C}_f$}
+%First tangent
+                \addplot [
+                    domain=\xmi:\xma, 
+                    samples=400, 
+                    color=black!60!green,
+                    very thick,
+                ]
+                ({X(\x)},{T(\x)});
+                \addlegendentry{$\mathcal{T}_1$}
+%Second tangent
+                \addplot [
+                    domain=\xmi:\xma, 
+                    samples=400, 
+                    color=black!60!blue,
+                    very thick,
+                ]
+                ({X(\x)},{TT(\x)});
+                \addlegendentry{$\mathcal{T}_2$}
+            \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+Déterminer les valeurs suivantes:
+
+\begin{multicols}{2} 
+ $f(-1) = \ldots$ 
+ 
+ $f(0) = \ldots$ 
+ 
+ $f(1) = \ldots$ 
+ 
+ $f'(-1) = \ldots$ 
+ 
+ $f'(0) = \ldots$ 
+ 
+ $f'(1) = \ldots$  
+\end{multicols}
+
+
+
+\part{Fonction dérivée}
+
+\section{Du nombre dérivé à la fonction dérivée}
+
+On a vu que lorsqu'une fonction $f$ est dérivable sur un intervalle $I$ on peut associer, pour chaque $x \in I$, le nombre dérivé $f'(x)$. 
+
+\begin{definition}{fonction dérivée}
+Si $f$ est une fonction dérivable sur un intervalle $I$, sa dérivée est la fonction telle que pour tout $x \in I, f': x \longmapsto f'(x)$. 
+\end{definition}
+
+Cette fonction est souvent nommée $f'(x)$ en mathématiques, $\dfrac{\mathrm{d} f}{\mathrm{d} x}$ en physique.
+
+\section{Détermination de la fonction dérivée d'une fonction}
+
+Nous allons voir dans cette partie les propriétés nécessaires au calcul de la fonction dérivée d'une fonction donnée.
+
+\subsection{Propriétés de la dérivation de fonctions}
+
+\subsubsection{Dérivées de fonctions usuelles}
+
+Voici les dérivées des fonctions les plus courantes:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{fonction $f$} & \textbf{dérivée $f'$} \\ \hline
+$k, k \in \mathbb{R}$ & $0$ \\  \hline\hline 
+ $x^\alpha$, $\alpha \in \mathbb{R}$ & $\alpha \cdot x^{\alpha-1}$ \\ \hline
+ $x$ & $1$ \\ \hline
+ $\dfrac{1}{x}$ & $-\dfrac{1}{x^2}$ \\ \hline
+ $\sqrt{x}$ & $\dfrac{1}{2\sqrt{x}}$ \\ \hline
+ $\dfrac{1}{x^n}$ & $-\dfrac{n}{x^{n+1}}$ \\ \hline\hline
+  $e^x$ & $e^x$ \\ \hline
+  $\ln x$ & $\dfrac{1}{x} $ \\ \hline\hline
+ $\sin x$ & $\cos x$ \\ \hline
+ $\cos x$ & $-\sin x$ \\ \hline
+ $\tan x$ & $1+\tan\left(x\right)^{2}$ \\ \hline
+\end{tabular}
+ \caption{Dérivées des fonctions usuelles}
+ \label{tab:usuelles}
+\end{table}
+
+\subsubsection{Propriétés opératoires}
+
+\paragraph{Opérations de base}
+
+Soient deux fonctions $f$ et $g$, et leurs dérivées respectives $f'$ et $g'$ ainsi que $k \in \mathbb{R}$. 
+
+On a alors:
+
+\begin{enumerate}
+ \item $(f+g)' = f'+g'$; \label{regle:somme}
+ \item $(kf)' = kf'$;
+ \item $(uv)' = u'v + uv'$;\label{derivProd}
+ \item $\dfrac{u}{v} = \dfrac{u'v - uv'}{v^2}$;\label{derivFrac}
+ \item $\dfrac{1}{u} = -\dfrac{u'}{u^2}$ (n'est qu'un cas particulier du point \ref{derivFrac});
+\end{enumerate}
+
+\begin{multicols}{2}
+\exemple{$f(x) = (2x+1)(x-2)$}
+
+$f$ est de la forme $uv$ avec:
+
+$u(x) = 2x+1$, donc $u'(x) = 2$
+
+$v(x) = x-2$, donc $v'(x) = 1$
+
+On applique donc la formule \ref{derivProd}:
+
+$f'(x) = 2(x-2) + (2x+1) = 4x-3$
+
+\exemple{$f(x) = \dfrac{x+1}{x-1}$ pour $x \in \mathbb{R} - \{1\}$}
+
+$f$ est de la forme $\dfrac{u}{v}$ avec:
+
+$u(x) = x+1$, donc $u'(x) = 1$
+
+$v(x) = x-1$, donc $v'(x) = 1$
+
+Il reste donc à appliquer la formule \ref{derivFrac}:
+
+$f'(x) = \dfrac{(x-1)-(x+1)}{(x-1)^2} = \dfrac{-2}{(x-1)^2}$ 
+\end{multicols}
+
+Quelle est la dérivée $f'$ de la fonction $f:x \longmapsto x^3 + 2x - 3$?
+
+\cadre{5}
+
+Calculer la dérivée de la fonction $g$ telle que $g(x) = \dfrac{1}{x^3+1}$
+
+\cadre{4}
+
+\paragraph{Dérivée d'une fonction composée, cas général}
+
+Soient deux fonctions $f$ et $u$, et leurs dérivées respectives $f'$ et $u'$.
+
+On a alors:
+
+\begin{equation}
+ (f \circ u)' = u' f'\circ u
+ \label{eq:compo}
+\end{equation}
+
+Ce qui peut également s'écrire:
+
+\begin{equation}
+ (f(u(x)))' = u'(x) \times f'(u(x))
+ \label{eq:compox}
+\end{equation}
+
+\exemple{La dérivée de la fonction définie sur $\mathbb{R}^+_*$ par $g:x \longmapsto \ln^3 x$}
+
+On reconnaît la fonction $g$ comme étant la composée de 2 fonctions $f$ et $u$ ($g = f \circ u$) où:
+
+\begin{itemize}
+ \item $f(x) = \ln x$ donc $f'(x) = \frac{1}{x}$;
+ \item $u(x) = x^3$ donc $u'(x) = 3x^2$.
+\end{itemize}
+
+En appliquant la formule (\ref{eq:compo}) ou (\ref{eq:compox}), on obtient
+$g'(x) = \frac{1}{x} \times 3 \times \ln^2 x$ soit:
+
+\begin{equation*}
+ g'(x) = (f \circ u)'(x) = \frac{3}{x} \times \ln^2 x
+\end{equation*}
+
+\exemple{La dérivée de la fonction définie sur $\mathbb{R}^+_*$ par $h:x \longmapsto \ln (x^3)$}
+
+On reconnaît la fonction $h$ comme étant la composée de 2 fonctions $u$ et $f$ ($h = u \circ f$) où $f$ et $u$ sont les fonctions de l'exemple précédent.
+
+En appliquant la formule (\ref{eq:compo}) ou (\ref{eq:compox}), on obtient
+$h'(x) = \frac{3x^2}{x^3} $ soit (sachant que $x \neq 0$):
+
+\begin{equation*}
+ h'(x) = (u \circ f)'(x) = \frac{3}{x}
+\end{equation*}
+
+On peut ainsi récapituler le cas général et quelques cas particuliers qui en découlent (table \ref{tab:composees}).
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+ \textbf{Fontion composée} & \textbf{Dérivée} \\ \hline\hline
+$u \circ v$  & $v' \times u' \circ v$ \\ \hline\hline
+$e^{u}$ & $u' \times e^{u}$ \\ \hline
+ $\ln u$ avec $u(x) > 0$ & $\frac{u'}{u} $ \\ \hline
+ $\frac{1}{u}$ & $-\frac{u'}{u^2}$ \\ \hline
+ $u^n$ & $n u' u^{n-1}$ \\ \hline
+ $\sqrt{u}$ & $\frac{u'}{2\sqrt{u}}$ \\ \hline
+\end{tabular}
+ \caption{Dérivées de composées de fonctions}
+ \label{tab:composees}
+\end{table}
+
+\textbf{Exemples :}
+
+\begin{enumerate}
+ \item Calculer la dérivée de la fonction $x \longmapsto e^{x^2 + 2x + 1}$
+
+\cadre{4}
+
+ \item Soit la fonction $f$ telle que $f(x) = \sqrt{x^2 + x + 1}$. Donner l'expression de $f'$.
+ 
+ \cadre{4}
+
+ \item Déterminer la dérivée de la fonction $\ln (3x+4)$.
+ 
+ \cadre{4}
+
+ \item Déterminer la dérivée de la fonction $x \longmapsto (\ln x + x)^3$.
+ 
+ \cadre{3}
+\end{enumerate}
+
+% \section{Applications de la dérivée}
+
+\section{Application: le sens de variation d'une fonction}
+
+\subsection{Introduction}
+
+Soit $f$ une fonction et $f'$ sa dérivée. Connaître le signe de $f'$ nous permet de retrouver les variations de la fonction $f$. 
+
+Plus précisément:
+
+\begin{itemize}
+ \item lorsque $f'$ est positive, $f$ est croissante
+ \item lorsque $f'$ est négative, $f$ est décroissante
+\end{itemize}
+
+Ou encore, avec des inégalités strictes:
+
+\begin{itemize}
+ \item lorsque $f'$ est strictement positive, $f$ est strictement croissante
+ \item lorsque $f'$ est strictement négative, $f$ est strictement décroissante
+\end{itemize}
+
+Ce lien entre la monotonie\footnote{C'est-à-dire le fait qu'elle soit croissante ou décroissante.} de la fonction et le signe de la dérivée est illustré \cref{fig:IllustrationVariation}. 
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[
+                declare function={
+                    X(\x) = \x;
+                    Y(\x) = ((\x)^3)/3 - ((\x)^2)/2 + 1;
+                    Z(\x) = ((\x)^2) - (\x);
+            },]
+            \def\xmi{-1}%xmi et xma : intervalle de définition
+            \def\xma{2}
+
+            \pgfplotsset{grid style={thin,gray!20!white}}
+            \pgfplotsset{minor grid style={dotted,red}}
+                           
+            \begin{axis}[
+                    axis lines = center,
+                    xlabel = {$x$},
+                    ylabel = {$y$},            
+                    enlargelimits=(\xma-\xmi)*0.01,
+                    grid=both,  
+                    scale = 1
+                ]
+%First curve
+                \addplot [
+                    domain=\xmi:\xma, 
+                    samples=400, 
+                    color=black!60!red,
+                    very thick,
+                ]
+                ({X(\x)},{Y(\x)});
+                \addlegendentry{$\mathcal{C}_f$}
+%Second curve
+                \addplot [
+                    domain=\xmi:\xma, 
+                    samples=400, 
+                    color=black!60!green,
+                    very thick,
+                ]
+                ({X(\x)},{Z(\x)});
+                \addlegendentry{$\mathcal{C}_{f'}$}
+                
+                \fill [gray,    opacity=0.2] (\xmi,-0.3) rectangle (0,2);
+                \fill [orange, opacity=0.2] (0,-0.3) rectangle (1,2);
+                \fill [gray,    opacity=0.2] (1,-0.3) rectangle (\xma,2);
+            \end{axis}
+    \end{tikzpicture}
+\end{center}
+    \caption{
+     En gris (intervalles $[-1;0]$ et $[1;2]$): $f'(x) > 0$ donc $f(x)$ croissante; en orange (intervalle $[0;1]$): $f'(x) < 0$ donc $f(x)$ décroissante.}
+    \label{fig:IllustrationVariation}
+\end{figure}
+
+Cette propriété est centrale dans l'étude de fonctions.
+
+\subsection{Étude des variations d'une fonction}
+
+Étudier les variations d'une fonction $f$ revient à indiquer: 
+
+\begin{itemize}
+ \item les intervalles sur lesquels la fonction $f$ est \textbf{croissante} d'une part;
+ \item les intervalles sur lesquels celle-ci $f$ est \textbf{décroissante} d'autre part. 
+\end{itemize}
+
+Ceci est équivalent à trouver: 
+
+\begin{itemize}
+ \item les intervalles sur lesquels la fonction $f'$ est \textbf{positive} d'une part;
+ \item les intervalles sur lesquels celle-ci $f'$ est \textbf{négative} d'autre part. 
+\end{itemize}
+
+Le résultat d'une telle étude est souvent donné dans un \emph{tableau de variations}. 
+
+\exemple{}
+Soit la fonction $f : x \longmapsto x^2 + 4x + 1$.
+
+On calcule sa dérivée $f'$:
+
+\begin{itemize}
+ \item $(x^2)' = 2x$
+ \item $(4x)' = 4$
+ \item 1 est une constante, sa dérivée est donc 0.
+\end{itemize}
+
+Finalement, comme la dérivée d'une somme est la somme des dérivées (règle \ref{regle:somme} page \pageref{regle:somme}), $f'(x) = 2x + 4$. 
+
+On étudie maintenant le signe de $f'(x)$. On peut par exemple résoudre l'équation:
+
+\begin{equation*}
+ f'(x) \geqslant 0
+\end{equation*}
+
+$$\Leftrightarrow 2x + 4 \geqslant 0$$
+
+$$\Leftrightarrow x \geqslant -2$$
+
+On a donc: 
+
+\begin{itemize}
+ \item $f'(x) \geqslant 0 \Leftrightarrow x  \geqslant -2$;
+ \item $f'(x) < 0 \Leftrightarrow x  < -2$.
+\end{itemize}
+
+soit:
+
+\begin{itemize}
+ \item $f(x)$ croissante sur $[-2 ; +\infty[$;
+ \item $f(x)$ décroissante sur $]-\infty ; -2]$;
+\end{itemize}
+
+Ce résultat peut être synthétisé dans le tableau de signe de $f'$, dont on déduira le tableau de variation de $f$. 
+
+Dans la pratique, on superpose souvent les deux dans un seul tableau (table \ref{tab:VarExemple}).
+
+\begin{table}[h]
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $f'(x)$ / 1 , $f(x)$ / 2}{$-\infty$, $-2$, $+\infty$}
+   \tkzTabLine{, -, z, +, }
+   \tkzTabVar{+/ $+\infty$, -/ $-3$, +/ $+\infty$}
+\end{tikzpicture} 
+\end{center}
+\caption{Tableau de variation de la fonction $f$}
+\label{tab:VarExemple}
+\end{table}
+
+\exemple{}
+Étudier les variations de la fonction $g$ telle que $g(x) = \dfrac{1}{2}x^{2} + 3x + 1$.
+
+\cadre{8}
+
+\exemple{}
+Étudier les variations de la fonction $h : x \longmapsto \dfrac{1}{3}x^{3}+\dfrac{1}{2}x^{2}-2 x$.
+
+\cadre{10}
+
+\section*{Exercices}
+
+\exo{}
+
+
+\end{document}
+

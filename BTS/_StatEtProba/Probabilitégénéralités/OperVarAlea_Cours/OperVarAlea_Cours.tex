@@ -1,0 +1,148 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Opérations sur les variables aléatoires}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Opérations sur les variables aléatoires}
+
+\subsection{Règles}
+
+Soient $X$ et $Y$ des variables aléatoires \textbf{indépendantes} qui peuvent être discrètes ou continues.
+
+À partir de ces variables, nous pouvons définir d'autres variables aléatoires:
+
+\begin{enumerate}
+ \item La transformation affine: $Z = aX + b$, $a$ et $b$ étant des réels quelconques;
+ \item La somme: $S = X + Y$;
+ \item La différence: $D = X - Y$.
+\end{enumerate}
+
+On obtient les résultats suivants:
+
+% \begin{table}[]
+\begin{center}
+\begin{tabular}{l|l|l|l|}
+\cline{2-4}
+ & $aX+B$ & $X+Y$ & $X-Y$ \\ \hline
+\multicolumn{1}{|l|}{\textbf{Espérance}} & $aE(X)+ b$ & $E(X)+ E(Y)$ & $E(X)- E(Y)$ \\ \hline
+\multicolumn{1}{|l|}{\textbf{Variance}} & $a^2V(X)$ & $V(X) + V(Y)$ & $V(X) + V(Y)$ \\ \hline
+\multicolumn{1}{|l|}{\textbf{Écart-type}} & $= |a| \sigma(X)$ & $\sqrt{\sigma(X)+\sigma(Y)}$ & $\sqrt{\sigma(X)+\sigma(Y)}$ \\ \hline
+\end{tabular}
+\end{center}
+% \caption{Opérations sur les variables.} 
+% \end{table}
+
+\subsection{Examples}
+
+\subsubsection{Notes à l'épreuve de maths}
+
+L'épreuve de mathématiques au BTS comporte une partie analyse et une partie probabilité chacune notée sur 10 points. Les notes que je vais obtenir dans chacune de ces parties sont des variables aléatoires supposées indépendantes notées $X$ et $Y$. La note de l'épreuve est une variable aléatoire $S = X+ Y$. 
+
+Grâce au travail que j'ai effectué, j'estime l'espérance et l'écart-type dans chacune de ces parties: 
+
+\begin{itemize}
+ \item partie analyse: $E(X) = 7$ et $\sigma(X) = 1.5$;
+ \item partie probabilité: $E(Y) = 8$ et $\sigma(Y) = 2$.
+\end{itemize}
+
+Déterminer l'espérance et l' écart type de $S$:
+
+\cadre{4}
+
+\subsubsection{Autre exemple}
+
+$X$ et $Y$ sont deux variables aléatoires indépendantes telles que: 
+
+\begin{itemize}
+ \item $E(X) = 3$ et $\sigma(X) = 2$;
+ \item $E(Y) = 5$ et $\sigma(Y) = 1.5$.
+\end{itemize}
+
+On définit les variables aléatoires suivantes:
+
+\begin{enumerate}
+ \item $Z_1 = -4X + 2$;
+ \item $Z_2 = Y – 5$;
+ \item $Z_3 = X-Y$.
+\end{enumerate}
+
+Déterminer les espérances et les écarts types de $Z_1$, $Z_2$ et $Z_3$. 
+
+\cadre{4}
+
+\section[Variables indépendantes et loi normale]{Cas de variables aléatoires indépendantes suivant une loi normale}
+
+\subsection{Règles}
+
+Soit $X$ et $Y$ deux variables aléatoires indépendantes qui suivent des lois normales. $X$ suit la loi normale $N(m_1;\sigma_1)$ et $Y$ suit la loi normale $N(m_2;\sigma_2)$.
+
+Les variables aléatoires suivantes suivent des lois normales telles que:
+
+\begin{enumerate}
+ \item $aX + b$ suit la loi normale $N(a \cdot m_1 +b;|a|\sigma_1)$;
+ \item $X + Y$ suit la loi normale $N(m_1+ m_2;\sqrt{\sigma_1^2 + \sigma_2^2})$;
+ \item $X - Y$ suit la loi normale $N(m_1- m_2;\sqrt{\sigma_1^2 + \sigma_2^2})$.
+\end{enumerate}
+
+\subsection{Examples}
+
+\subsubsection{À l'épreuve de maths}
+
+À l'épreuve de mathématiques au BTS, les durées nécessaires pour traiter correctement les deux parties (analyse et probabilité) sont des variables aléatoires indépendantes $X$ et $Y$. $S = X + Y$ est donc la durée nécessaire pour traiter le sujet correctement. 
+
+On estime que, avec les durées exprimées en minutes:
+
+\begin{itemize}
+ \item pour la partie analyse: $X$ suit la loi normale $N(85;9)$;
+ \item pour la partie probabilités: $Y$ suit la loi normale $N(45;12)$. 
+\end{itemize}
+
+Quelle est la loi suivie par la variable aléatoire S?
+
+\cadre{2}
+
+Calculer la probabilité que je puisse traiter correctement l’ensemble du sujet le jour de l’épreuve :
+
+\cadre{3}
+
+J’estime que la durée nécessaire pour traiter les trois quart du sujet est $S' = 0.75\times S$. Quelle est la loi suivie par $S'$. Calculer la probabilité de pouvoir traiter au moins les trois quart du sujet le jour de l’épreuve. 
+
+\cadre{4}
+
+\subsubsection{Opérations sur des variables aléatoires normales}
+
+Soit $X$ et $Y$ deux variables aléatoires normales indépendantes telles que: $X = N(10;2)$ et $Y = N(-7;1)$. 
+
+Quelle est la loi suivie par $Z = 3X + 2$? 
+
+\cadre{3}
+
+Quelle est la loi suivie par $S = X + Y$? 
+
+\cadre{3}
+
+Quelle est la loi suivie par $D = X - Y$? 
+
+\cadre{3}
+
+\end{document}
+

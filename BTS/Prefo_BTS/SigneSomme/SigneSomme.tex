@@ -1,0 +1,154 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Le symbole $\sum$}% et $\prod$}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+\section{Utilité}
+
+Ce symbole sert à écrire une répétition de sommes de façon concise et synthétique. 
+
+\section{Utilisation}
+
+On a une suite de termes indexés par un nombre entier. Il y a 20 termes: $u_1$, $u_2$, $u_3$, etc. jusqu'à $u_{20}$.
+
+Méthode: 
+
+\begin{itemize}
+\item on choisit une variable\footnote{Cette variable s'appelle \emph{variable incrémentielle}.} qui va parcourir les entiers dont on a besoin (ici de 1 à 20). Elle est souvent appelée $i$, $j$, $k$... Ici, on l'appellera $i$;
+\item sous le symbole $\sum$, on initialise la variable incrémentielle au premier nombre: 
+
+\begin{equation*}
+\sum_{i=1}
+\end{equation*}
+
+\item au-dessus du symbole, on écrit la dernière valeur que prendra la variable: 
+
+\begin{equation*}
+\sum_{i=1}^{20}
+\end{equation*}
+
+\item enfin, on écrit après le symbole les éléments que l'on somme: les $u_i$:
+
+\begin{equation*}
+\sum_{i=1}^{20} u_i
+\end{equation*}
+\end{itemize}
+
+Cela se lit: \og somme de 1 à 20 des $u_i$ \fg{}.
+
+Remarque: la somme ne s'arrête pas forcément et peut aller jusqu'à l'infini. Dans ce cas, on écrit:
+
+\begin{equation*}
+\sum_{i=0}^{\infty} \ldots
+\end{equation*}
+
+La variable incrémentielle peut aussi aller de $-\infty$ à $+\infty$:
+
+\begin{equation*}
+\sum_{i=-\infty}^{\infty} \ldots = \sum_{i \in \mathbb{Z}} \ldots
+\end{equation*}
+
+\exemple{}
+Écrire à l'aide du signe $\sum$ la somme suivante: $1 + 2 + 3 + \ldots + 99 + 100$.
+
+\cadre{3}
+
+\section*{Exercices}
+
+\exo{}
+Écrire les sommes suivantes à l'aide du signe $\sum$:
+
+\question{}
+$S = 1 + \frac{1}{2} + \frac{1}{3} + \ldots + \frac{1}{50}$. Indice: $1 = \frac{1}{1}$.
+
+\question{}
+$S = 2 + 4 + 6 + 8 + 10 + 12 + \ldots + 1000$
+
+\question{}
+$S = 1 + 4 + 9 + 16 + 25 + \ldots + 100$
+
+\question{}
+$S = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \ldots + \frac{1}{1024}$
+
+\question{}
+$S = 8 + 12 + 16 + 20 + \ldots + 400$
+
+\question{}
+$S = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{25} + \ldots$ (jusqu'à l'infini).
+
+\exo{}
+Pareil mais avec du fun.
+
+Rappel: on écrit $n! = 1 \times 2 \times 3 \times 4 \times \ldots \times n$. Cela se lit \og factorielle $n$ \fg{}\footnote{Si vous voulez en savoir un peu plus sur les factorielles, vous pouvez vous renseigner sur la \href{https://fr.wikipedia.org/wiki/Fonction_gamma}{fonction $\Gamma$} (Gamma).}. 
+
+Cette suite de nombres, appelée \emph{la suite des factorielles}, a pour premiers termes:
+
+\begin{itemize}
+\item $0! = 1$ (par convention)
+\item $1! = 1$
+\item $2! = 1 \times 2 = 2$
+\item $3! = 1 \times 2 \times 3 = 6$
+\item $4! = 1 \times 2 \times 3 \times 4 = 24$
+\item $5! = 1 \times 2 \times 3 \times 4 \times 5 = 120$
+\item et ainsi de suite.
+\end{itemize}
+
+\question{}
+On montre que $e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \frac{x^5}{120} + \ldots$
+
+Exprimer $e^x$ à l'aide du signe $\sum$.
+
+\question{}
+On montre que $\ln(1+x) = -x + \frac{x^2}{2} - \frac{x^3}{3} + \frac{x^4}{4} - \frac{x^5}{5} + \frac{x^6}{6} - \frac{x^7}{7} + \ldots$
+
+Exprimer $\ln(1+x)$ à l'aide du signe $\sum$.
+
+
+%Faire un exo qui exprime la moyenne, l'écart-type etc.
+\exo{}
+Soit la série statistique suivante qui représente les tailles en cm des personnes d'un groupe:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+$x_i$ & 150 & 165 & 174 & 185 & 206 \\ 
+\hline 
+Effectifs $n_i$ & 4 & 2 & 6 & 5 & 2 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+\question{}
+On appelle $N$ l'effectif total. L'exprimer à l'aide du signe $\sum$.
+
+\question{}
+Exprimer la moyenne $\overline{x}$ à l'aide du signe $\sum$.
+
+
+
+\end{document}
+

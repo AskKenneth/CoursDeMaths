@@ -1,0 +1,82 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Permutations et combinaisons}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+%\tableofcontents
+
+\section{Permutation}
+
+\begin{definition}{permutation}
+ Une permutation d'un ensemble $E$ est une liste contenant tous les éléments de $E$ écrits dans un certain ordre. 
+\end{definition}
+
+Exemple: si $E = \{a; b; c\}$, quelles sont les permutations possibles de cet ensemble? Combien en existe-t-il?
+
+\cadre{3}
+
+Dans un ensemble contenant $n$ éléments, le nombre de permutations s'écrit $n!$, se lit \og{}factorielle $n$\fg{} et vaut: $n! = 1 \times 2 \times 3 \times \ldots \times (n-2) \times (n-1) \times n$.
+
+Par convention, $0! = 1$.
+
+Application: calculer le nombre d'anagrammes possibles du mot \og{}comptable\fg{}.
+
+\cadre{3}
+
+\section{Combinaisons}
+
+\begin{definition}{combinaison}
+ Soit un ensemble $E$ contenant $n$ éléments. 
+ Une combinaison de $p$ éléments parmi $n$ est le choix de $p$ éléments de $E$.
+\end{definition}
+
+Exemple: si $E = \{a;b;c;d\}$, quelles sont les combinaisons de $p = 2$ éléments parmi les $n = 4$ éléments de $E$?
+
+\cadre{3}
+
+Le nombre de combinaisons de $p$ éléments parmi $n$ se note $C_n^p$ ou encore $\binom{n}{p}$ et vaut:
+
+\begin{equation*}
+ C_n^p = \binom{n}{p} = \dfrac{n!}{(n-p)! p!}
+\end{equation*}
+
+
+Cas particuliers: 
+
+\begin{enumerate}
+ \item $C_n^0 = 1$;
+ \item $C_n^n = 1$.
+\end{enumerate}
+
+Calculer $C_{4}^2$, $C_{10}^4$ et $C_{10}^0$.
+
+\cadre{2}
+
+Example: le Loto.
+
+Au loto, on tire 6 numéros parmi 49.
+
+Combien existe-t-il de combinaisons? 
+
+\cadre{2}
+
+
+\end{document}
+

@@ -1,0 +1,96 @@
+%Un exercice avec son corrigé à inclure dans un fichier principal.
+\exo{}
+
+On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par:
+
+$$\left\lbrace
+\begin{array}{ll}
+   u_0 = 13 \\
+   u_{n+1} = 3 u_n - 14 \\
+\end{array}
+\right.$$
+
+% $u_0 = 13$ et pour tout entier naturel $n$, $u_{n+1} = 3 u_n - 14$.
+
+\question{}
+Calculer $u_1$, $u_2$ et $u_3$.
+
+\correction{
+\begin{itemize}
+ \item $u_0 = 13$
+ \item $u_1 = 3u_0 - 14 = 25$
+ \item $u_2 = 3u_1 - 14 = 61$
+ \item $u_3 = 3u_2 - 14 = 169$
+\end{itemize}
+}
+
+\question{}
+On considère la suite $(v_n)$ définie pour tout entier naturel $n$, par $v_n = u_n - 7$.
+
+
+\subquestion{}
+Montrer que la suite $(v_n)$ est une suite géométrique dont on donnera le premier terme et la raison.
+
+\correction{
+Calculons $\frac{v_{n+1}}{v_n}$.
+
+$\forall n \in \mathbb{N}, v_n + u_n - 7$, d'où $v_{n+1} = u_{n+1} - 7$
+
+Donc $\frac{v_{n+1}}{v_n} = \frac{u_{n+1} - 7}{v_n}$
+
+Or d'après l'énoncé, $u_{n+1} = 3 u_n - 14$
+
+D'où $\frac{v_{n+1}}{v_n} = \frac{3 u_n - 14 - 7}{v_n} = \frac{3 u_n - 21}{v_n}$
+
+On déduit de l'énoncé que $u_n = v_n + 7$. 
+
+Donc $\frac{v_{n+1}}{v_n} = \frac{3 (v_n + 7) - 21}{v_n}$
+
+Finalement:
+
+\Answer{$\dfrac{v_{n+1}}{v_n} = 3$}
+
+$(v_n)$ est donc géométrique de raison 3 et de premier terme $v_0 = u_0 - 7 = 6$.
+}
+
+\subquestion{}
+En déduire l'expression de $v_n$ en fonction de $n$.
+
+\correction{
+On en déduit son terme général: $v_n = 6 \times 3^n$
+}
+
+\subquestion{}
+En déduire que $u_n = 6 \times 3^n + 7$.
+
+\correction{
+$u_n = v_n + 7 = 6 \times 3^n + 7$
+}
+
+\subquestion{}
+Déterminer $\lim u_n$ et $\lim v_n$.
+
+\correction{
+$(v_n)$ est géométrique de raison $q = 3 > 1$ et de premier terme $v_0 = 6 > 0$. 
+
+\begin{equation*}
+\lim_{n \to +\infty} v_n = + \infty 
+\end{equation*}
+
+De plus, $v_n > u_n$ quel que soit $n \in \mathbb{N}$, d'où: 
+
+\begin{equation*}
+ \lim_{n \to +\infty} u_n = + \infty 
+\end{equation*}
+}
+
+\question{}
+Soient les suites $U_n = \frac{1}{u_n}$ et $V_n = \frac{1}{v_n}$. Déterminer $\lim U_n$ et $\lim V_n$.
+
+\correction{
+ D'après les résultats précédents, $\lim U_n$ est de la forme $\frac{1}{+\infty}$ d'où $\lim U_n = 0^+$.
+
+ D'après les résultats précédents, $\lim V_n$ est de la forme $\frac{1}{+\infty}$ d'où $\lim V_n = 0^+$.
+}
+
+

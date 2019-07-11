@@ -1,0 +1,84 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Devoir maison, équations du second degré, CG-1}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+\exo{Dans chaque cas, résoudre l'équation $P(x) = 0$ et factoriser $P(x)$ lorsque c'est possible.}
+
+\question{}
+$P(x) = -3x^2	+2x 	+5$
+
+\question{}
+$P(x) = 3x^2	-1x	-2$
+
+\question{}
+$P(x) = 5x^2	-8x	+6$
+
+\question{}
+$P(x) = 2x^2	-4x	+2$
+
+\exo{Lecture graphique (graphe page \pageref{fonction})}
+
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+\tkzInit[xmin=-2.3,xmax=4.3,ymin=-3,ymax=9]
+\tkzGrid[sub,color=gray, subxstep=.5,subystep=.5]
+\tkzAxeXY[very thick]
+\tkzGrid
+
+\draw [domain=-2.3:4.3, very thick,] plot(\x,{(\x)^2 - 2*\x - 1});
+\end{tikzpicture}
+\end{center}
+\caption{Courbe $\mathcal{C}_f$, représentative de la fonction $f:x\longmapsto x^2-2x-1$}
+\label{fonction}
+\end{figure}
+
+
+
+\question{Résoudre graphiquement (on pourra rendre l'énoncé avec les traits de construction):}
+
+\subquestion{}
+$f(x) = 7$
+
+\subquestion{}
+$f(x) = -2$
+
+\subquestion{}
+$f(x) = -\frac{5}{2}$
+
+\question{Retrouver les résultats de la question précédente par le calcul}
+
+
+\exo{Mise en équations}
+
+Le produit de l'âge de Robert dans 10 ans par celui qu'il avait il y a 10 ans est égal à 44.
+
+Quel est l'âge de Robert ?
+
+\end{document}

@@ -1,0 +1,116 @@
+%Un exercice avec son corrigé à inclure dans un fichier principal.
+\exo{}
+
+On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par:
+
+$$\left\lbrace
+\begin{array}{ll}
+   u_0 = 5 \\
+   u_{n+1} = 2 u_n + 1 \\
+\end{array}
+\right.$$
+
+% $u_0 = 13$ et pour tout entier naturel $n$, $u_{n+1} = 3 u_n - 14$.
+
+\question{}
+Calculer $u_1$, $u_2$ et $u_3$.
+
+\correction{
+\begin{itemize}
+ \item $u_0 = 5$
+ \item $u_1 = 2u_0 + 1 = 11$
+ \item $u_2 = 2u_1 + 1 = 23$
+ \item $u_3 = 2u_2 + 1 = 47$
+\end{itemize}
+}
+
+\question{}
+On considère la suite $(v_n)$ définie pour tout entier naturel $n$, par $v_n = u_n + 1$.
+
+
+\subquestion{}
+Après avoir exprimé $v_{n+1}$ en fonction de $v_n$, montrer que la suite $(v_n)$ est une suite géométrique dont on donnera le premier terme et la raison.
+
+\correction{%Corrigé à faire
+Calculons $\frac{v_{n+1}}{v_n}$.
+
+$\forall n \in \mathbb{N}, v_n = u_n + 1$, d'où $v_{n+1} = u_{n+1} + 1$
+
+Donc $\frac{v_{n+1}}{v_n} = \frac{u_{n+1} + 1}{v_n}$
+
+Or d'après l'énoncé, $u_{n+1} = 2 u_n + 1$
+
+D'où $\frac{v_{n+1}}{v_n} = \frac{2 u_n 1+1+}{v_n} = \frac{2 u_n + 2}{v_n}$
+
+On déduit de l'énoncé que $u_n = v_n -1$. 
+
+Donc $\frac{v_{n+1}}{v_n} = \frac{2 (v_n - 1) +2}{v_n}$
+
+Finalement:
+
+\Answer{$\dfrac{v_{n+1}}{v_n} = 2$}
+
+$(v_n)$ est donc géométrique de raison 2 et de premier terme $v_0 = u_0 +1 = 6$.
+}
+
+\subquestion{}
+En déduire l'expression de $v_n$ en fonction de $n$.
+
+\correction{
+On en déduit son terme général: $v_n = 6 \times 2^n$
+}
+
+\subquestion{}
+En déduire que $u_n = 6 \times 2^n - 1$.
+
+\correction{
+$u_n = v_n -1 = 6 \times 2^n - 1$
+}
+
+\subquestion{}
+À partir de quelle valeur de $n$ a-t-on $u_n > 200$?
+
+\correction{
+$u_n > 200 \Leftrightarrow 6 \times 2^{n}-1 >200$
+
+soit: $\Leftrightarrow 2^{n} > 33.5$
+
+$\Leftrightarrow \ln(2^{n}) > \ln 33.5$
+
+$\Leftrightarrow n \ln 2 > \ln 33.5$
+
+Or, $\ln 2$ est strictement positif, donc l'inéquation équivaut à:
+
+$n > \dfrac{\ln 33.5}{\ln 2} \approx 5.07$
+
+On a donc $u_n > 200$ pour $n \geqslant 6$ 
+}
+
+% \subquestion{}
+% Déterminer $\lim u_n$ et $\lim v_n$.
+
+% \correction{
+% $(v_n)$ est géométrique de raison $q = 3 > 1$ et de premier terme $v_0 = 6 > 0$. 
+% }
+
+% \begin{equation*}
+% \lim_{n \to +\infty} v_n = + \infty 
+% \end{equation*}
+
+% De plus, $v_n > u_n$ quel que soit $n \in \mathbb{N}$, d'où: 
+
+% \begin{equation*}
+ % \lim_{n \to +\infty} u_n = + \infty 
+% \end{equation*}
+% }
+
+% \question{}
+% Soient les suites $U_n = \frac{1}{u_n}$ et $V_n = \frac{1}{v_n}$. Déterminer $\lim U_n$ et $\lim V_n$.
+
+% \correction{
+ % D'après les résultats précédents, $\lim U_n$ est de la forme $\frac{1}{+\infty}$ d'où $\lim U_n = 0^+$.
+
+ % D'après les résultats précédents, $\lim V_n$ est de la forme $\frac{1}{+\infty}$ d'où $\lim V_n = 0^+$.
+% }
+
+

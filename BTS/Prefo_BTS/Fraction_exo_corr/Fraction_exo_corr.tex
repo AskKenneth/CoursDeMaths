@@ -1,0 +1,346 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Fractions, corrigé des exercices}
+
+\author{Mathématiques}
+
+\begin{document}
+
+\maketitle
+
+\exo{Sommes/différences de deux fractions}
+
+\question{}
+
+$a = \dfrac{5}{7} + \dfrac{3}{11} = \dfrac{55}{77} + \dfrac{21}{77} = \dfrac{21+55}{77} = \dfrac{76}{77}$
+
+\question{}
+$b = \dfrac{2}{3} + \dfrac{3}{5} = \dfrac{10 + 9}{15} = \dfrac{19}{15}$
+
+\question{}
+$c = \dfrac{4}{9} + \dfrac{3}{7} = \dfrac{28 + 27}{63} = \dfrac{55}{63}$
+
+\question{}
+$d = 3 + \dfrac{2}{7} = \dfrac{3}{1} + \dfrac{2}{7} = \dfrac{21 + 2}{7} = \dfrac{23}{7}$
+
+\question{}
+$e = \dfrac{30}{35} - \dfrac{4}{5}$. On remarque que si on multiplie en haut et en bas la 2ème fraction par 7, son dénominateur vaut 35. Les deux fractions seront donc au même dénominateur:
+
+$e = \dfrac{30}{35} - \dfrac{28}{35} = \dfrac{30-28}{35} = \dfrac{2}{35}$
+
+\question{}
+$f = \dfrac{3}{11} - \dfrac{17}{21}$. On multiplie en haut et en bas par 21 la 1re fraction et par 11 la 2ème.
+
+$f = \dfrac{63}{231} - \dfrac{187}{231} = \dfrac{63-187}{231} = \dfrac{-124}{231}$. Aucun diviseur en commun, la fraction ne se simplifie donc pas.
+
+\exo{Sommes/différences de plus de deux fractions}
+
+\question{}
+$a = \dfrac{5}{3} + \dfrac{3}{2} + \dfrac{4}{7}$. Lorsqu'on a plus de 2 fractions à additionner/soustraire, il faut multiplier en haut et en bas par les dénominateurs de \emph{toutes} les autres fractions. Par exemple $\frac{5}{3}$ sera multipliée par 2 puis par 7 (donc par 14), $\frac{3}{2}$ sera multipliée par 3 puis par 7 (donc par 21), etc. Donc:
+
+$a = \dfrac{70}{42} + \dfrac{63}{42} + \dfrac{24}{42} = \dfrac{70+63+24}{42} = \dfrac{157}{42}$
+
+157 et 42 n'ont pas de diviseur commun autre que 1, la fraction ne se simplifie donc pas.
+
+\question{}
+$b = \dfrac{10}{7} + \dfrac{2}{15} - \dfrac{3}{2}$. De la même façon que ci-dessus:
+
+$$\dfrac{10 \times 15 \times 2}{7 \times 15 \times 2} + \dfrac{2 \times 7 \times 2}{15 \times 7 \times 2} - \dfrac{3 \times 7 \times 15}{2 \times 7 \times 15} = \dfrac{300+28-315}{210} = \dfrac{13}{210}$$
+
+\question{}
+De la même manière:
+
+$c = \dfrac{6}{7} + \dfrac{3}{2} + \dfrac{6}{5} - \dfrac{15}{9}$. Comme d'habitude, on multiplie le dénominateur de chaque fraction par les dénominateurs de chacune des autres fractions:
+
+$\dfrac{540}{630} + \dfrac{945}{630} + \dfrac{756}{630} - \dfrac{1050}{630} = \dfrac{540+945+756-1050}{630} = \dfrac{1191}{630}$.
+
+1191 et 630 sont tous 2 divisibles par 3. On peut donc simplifier la fraction par 3: 
+
+$$c = \dfrac{397}{210}$$
+
+\exo{Produits de fractions}
+
+Pour multiplier des fractions entre elles, c'est plus simple que pour les additionner ou les soustraire, il suffit de multiplier les numérateurs entre eux, \emph{idem} pour les dénominateurs. 
+
+\question{}
+$a = \dfrac{3}{2} \times \dfrac{5}{2} \times \dfrac{3}{7}$. Ainsi:
+
+$a = \dfrac{3 \times 5 \times 3}{2 \times 2 \times 7} = \dfrac{45}{28}$
+
+\question{}
+$b = \dfrac{5}{3} \times \dfrac{15}{4} \times \dfrac{12}{5} = \dfrac{5 \times 15 \times 12}{3 \times 4 \times 5} = \dfrac{900}{60} = 15$.
+
+On aurait également pu constater les simplifications avant de réaliser tout calcul: 
+
+$b = \dfrac{\bcancel{5}}{\cancel{3}} \times \dfrac{15}{\cancel{4}} \times \dfrac{\cancel{12}}{\bcancel{5}}$, il ne reste plus que 15. D'ailleurs, cette méthode est plus simple et évite moult calculs et les risques d'erreur qui vont avec.
+
+\question{}
+$c = 120 \times \dfrac{19}{20} \times \dfrac{8}{25}$. Comme on en a parlé ci-dessus, on va commencer par chercher les simplifications. $120 = 6 \times 20$. On a donc:
+
+$c = 6 \times \cancel{20} \times \dfrac{19}{\cancel{20}} \times \dfrac{8}{25} = \dfrac{6 \times 19 \times 8}{25} = \dfrac{912}{25}$
+
+\exo{Un peu de tout}
+
+\question{}
+$a = \dfrac{-7}{8} \times \left( \dfrac{16}{22} - \dfrac{12}{11} \right)$. Évidemment, on calcule \emph{en premier} l'intérieur de la parenthèse. On remarque que 22 est multiple de 11. Donc si l'on simplifie la fraction $\frac{16}{22}$ par 2, elles sont au même dénominateur (11). 
+
+$$\dfrac{16}{22} - \dfrac{12}{11} = \dfrac{8}{11} - \dfrac{12}{11} = \dfrac{8-12}{11} = \dfrac{-4}{11}$$
+
+$a = \dfrac{-7}{8} \times \dfrac{-4}{11}$. On constate qu'il y a deux \og $-$ \fg{} dans le produit. Ils s'annulent donc: \og moins par moins ça fait plus \fg{} (attention, l'adage n'est valable que dans un produit). 
+
+$a = \dfrac{7}{8} \times \dfrac{4}{11}$. On remarque qu'une simplification est possible ($8 = 2 \times 4$):
+
+$a = \dfrac{7}{2 \times \cancel{4}} \times \dfrac{\cancel{4}}{11} = \dfrac{7}{2 \times 11} = \dfrac{7}{22}$
+
+\question{}
+$b = \dfrac{3}{2} \times \left( \dfrac{1}{15} + \dfrac{2}{18} \right)$
+
+D'abord la parenthèse:
+
+$\dfrac{1}{15} + \dfrac{2}{18} = \dfrac{18}{270} + \dfrac{30}{270} = \dfrac{18+30}{270} = \dfrac{48}{270} = \dfrac{8 \times \cancel{6}}{45 \times \cancel{6}} = \dfrac{8}{45}$
+
+Donc: 
+
+$b =  \dfrac{3}{2} \times \dfrac{8}{45} = \dfrac{3 \times 8}{2 \times 45} = \dfrac{24}{90} = \dfrac{8}{30} = \dfrac{4}{15}$
+
+\question{}
+$c = \dfrac{5}{7} \left( \dfrac{81}{54} + \dfrac{2}{9} \right) - \dfrac{8}{7}$
+
+D'abord la parenthèse:
+
+On remarque que 54 est multiple de 9 ($6 \times 9 = 54$).
+
+Ainsi, $\dfrac{81}{54} + \dfrac{2}{9} = \dfrac{81}{54} + \dfrac{12}{54} = \dfrac{93}{54}$
+
+Donc $c = \dfrac{5}{7} \times \dfrac{23}{18} - \dfrac{8}{7}$
+
+Ensuite, on calcule le produit (ordre des priorités).
+
+$\dfrac{5}{7} \times \dfrac{23}{18} = \dfrac{115}{126}$, pas de simplification ici.
+
+Donc:
+$c = \frac{115}{126} - \frac{8}{7}$. On sait que $126 = 7 \times 18$. On peut donc multiplier en haut et en bas la fraction $\frac{8}{7}$ par 18, on obtient: $\frac{144}{126}$.
+
+Ainsi:
+
+$c = \dfrac{115}{126} - \dfrac{144}{126} = \dfrac{-29}{126}$
+
+Ce dernier exemple est plus long à décomposer car il y a plusieurs étapes, mais il n'y a pas de difficulté supplémentaire par rapport aux exemples précédents. 
+
+\exo{Quelques quotients de fractions...}
+
+On rappelle que diviser par un nombre revient à multiplier par son inverse. 
+
+\littlestar{Pour un nombre}
+l'inverse d'un nombre, appelons-le $a$, s'écrit $\frac{1}{a}$. 
+
+\littlestar{Pour un nombre sous forme de fraction}
+l'inverse d'une fraction est la même fraction \og renversée \fg{}, c'est-à-dire où on a permuté le numérateur et le dénominateur: l'inverse de $\frac{a}{b}$ est $\frac{b}{a}$.
+
+Avec ces informations, on peut résoudre l'exercice:
+
+\question{}
+$a = \dfrac{3}{2} : \dfrac{2}{5} = \dfrac{3}{2} \times \dfrac{5}{2} = \dfrac{15}{4}$
+
+\question{}
+$b = \dfrac{\frac{4}{5}}{2} = \dfrac{\cancelto{2}{4}}{5} \times \dfrac{1}{\cancel{2}} = \dfrac{2}{5}$
+
+\question{}
+
+$c = \dfrac{\frac{5}{2}}{4} = \dfrac{5}{2} \times \dfrac{1}{4} = \dfrac{5}{8}$
+
+\question{}
+$d = \dfrac{\frac{3}{2} \times \frac{4}{3}}{\frac{1}{2} - \frac{3}{4}}$
+
+On peut simplifier cette fraction en 2 temps, en simplifiant dans un premier temps le numérateur, puis le dénominateur:
+
+\littlestar{Le numérateur}
+
+$\dfrac{3}{2} \times \dfrac{4}{3} = \dfrac{\cancel{3}}{2} \times \dfrac{4}{\cancel{3}} = \dfrac{4}{2} = 2$
+
+\littlestar{Le dénominateur $\dfrac{1}{2} - \dfrac{3}{4}$ }
+
+
+
+On va mettre ces 2 fractions au même dénominateur. On remarque que si l'on multiplie en haut et en bas par 2 la première fraction, elle aura pour dénominateur 4, le même que la 2ème fraction: 
+
+$\dfrac{1}{2} - \dfrac{3}{4} = \dfrac{2}{4} - \dfrac{3}{4} = \dfrac{2-3}{4} = -\dfrac{1}{4}$
+
+On peut donc écrire $d = \dfrac{2}{-\frac{1}{4}} = 2 \times (-4) = -8$
+
+
+\question{}
+$e = \dfrac{\dfrac{2}{3} - 7}{\dfrac{3}{4} + 5}$
+
+\littlestar{Le numérateur}
+
+$\dfrac{2}{3} - 7 = \dfrac{2}{3} - \dfrac{21}{3} = \dfrac{2-21}{3} = -\dfrac{19}{3}$
+
+\littlestar{Le dénominateur}
+
+$\dfrac{3}{4} + 5 = \dfrac{3}{4} + \dfrac{20}{4} = \dfrac{3+20}{4} = \dfrac{23}{4}$
+
+On en déduit : $e = \dfrac{\frac{-19}{3}}{\frac{23}{4}} = \dfrac{-19}{3} \times \dfrac{4}{23} = \dfrac{-19 \times 23}{3 \times 4} = -\dfrac{437}{12}$
+
+\exo{Encore des quotients de fractions...}
+
+\question{}
+On calcule d'abord la multiplication car prioritaire sur la somme.
+
+$A = \dfrac{7}{2} + \dfrac{3}{2} \times \dfrac{3}{5} = \dfrac{7}{2} + \dfrac{9}{10}$
+
+On a une somme, donc on met au dénominateur commun. En multipliant en haut et en bas la première fraction par 5, les 2 seront sur 10, donc au même dénominateur.
+
+$\dfrac{7 \times 5}{2 \times 5} + \dfrac{9}{10} = \dfrac{35 + 9}{10} = \dfrac{44}{10} = \dfrac{22}{5}$
+
+\question{}
+$B = \left( \dfrac{7}{2} + \dfrac{3}{2} \right) \times \dfrac{3}{5}$
+
+Ici, les parenthèses changent les priorités, on calcule toujours l'intérieur en premier. Ici, la somme à l'intérieur des parenthèses est déjà au même dénominateur.
+
+$B = \left( \dfrac{7+3}{2} \right) \times \dfrac{3}{5} = \cancel{5} \times \dfrac{3}{\cancel{5}} = 3$
+
+\question{}
+$C = \dfrac{\frac{4}{3} - \frac{1}{6}}{\frac{1}{2} \times 2}$
+
+$\dfrac{1}{\cancel{2}} \times \cancel{2} = 1$, donc $C = \dfrac{\frac{4}{3} - \frac{1}{6}}{1} = \dfrac{4}{3} - \dfrac{1}{6}$
+
+Le dénominateur commun est 6 (en multipliant la 1re fraction en haut et en bas par 2):
+
+$C = \dfrac{4 \times 2}{3 \times 2} - \dfrac{1}{6} = \dfrac{8-1}{6} = \dfrac{7}{6}$
+
+\exo{Pareil, mais avec des écritures littérales}
+
+\question{}
+$A = \dfrac{12xy}{3y} = \dfrac{\cancelto{4}{12}x\cancel{y}}{\cancel{3y}} = 4x$
+
+\question{}
+Le numérateur est développé, donc on le factorise. On remarque que 4 est facteur commun (car $12 = 4 \times 3$):
+
+$$B = \dfrac{4x+12}{16} = \dfrac{4(x+3)}{16}$$
+
+16 est multiple de 4, donc:
+
+$$B = \dfrac{\cancel{4}(x+3)}{\cancelto{4}{16}} = \dfrac{x+3}{4}$$
+
+\question{}
+$C = \dfrac{3x+9xy}{18xy}$
+
+Comme précédemment, on factorise le numérateur. Comme d'habitude, on cherche le facteur commun:
+
+$\underline{3}\underline{x}+ 3 \times \underline{3}\underline{x}y$. On factorise donc par $3x$. 
+
+$3x+9xy = 3x(1+3y)$
+
+On a donc $C = \dfrac{\cancel{3x}(1+3y)}{\cancelto{6}{18}\cancel{x}y}$
+
+D'où $$C = \dfrac{1+3y}{6y}$$
+
+\exo{Mettre au même dénominateur puis effectuer (réduire)}
+
+\question{}
+$A = \dfrac{5}{x} + \dfrac{3}{2x} = \dfrac{10}{2x} + \dfrac{3}{2x} = \dfrac{13}{2x}$
+
+\question{}
+$B = \dfrac{7}{x} + \dfrac{4}{3x} + 3 = \dfrac{21}{3x} + \dfrac{4}{3x} + \dfrac{9x}{3x} = \dfrac{9x + 25}{3x}$
+
+\question{}
+$C = \dfrac{1}{x} - \dfrac{1}{y} = \dfrac{y}{xy} - \dfrac{x}{xy} = \dfrac{y-x}{xy}$
+
+\exo{Effectuer}
+
+\question{}
+$A = 1 - \dfrac{x-5}{x+5} = \dfrac{x+5}{x+5} - \dfrac{x-5}{x+5} = \dfrac{(x+5)-(x-5)}{x+5} = \dfrac{10}{x+5}$
+
+\question{}
+$B = \dfrac{x+2}{x-3} - 6 = \dfrac{x+2}{x-3} - \dfrac{6(x+3)}{x+3)} = \dfrac{x+2-6x-18}{x+3} = \dfrac{-5x-16}{x+3}$
+
+\question{}
+$C = \dfrac{2x}{3x+7} - \dfrac{1}{x} = \dfrac{2x^{2}}{x(3x+7)} - \dfrac{(3x+7)}{x(3x+7)} = \dfrac{2x^{2} - 3x - 7}{x(3x+7)}$
+
+\question{}
+$D = \dfrac{2x+3}{4x-1} + \dfrac{x-1}{x+3} = \dfrac{(2x+3)(x+3) + (4x-1)(x-1)}{(4x-1)(x+3)}$ 
+
+$= \dfrac{2x^2 + 6x + 3x + 9 + 4x^2 - 4x - x + 1}{(4x-1)(x+3)} = \dfrac{6x^2 + 4x + 10}{(4x-1)(x+3)}$
+
+Ok, celui-là il est un peu long, mais ce sont toujours les mêmes règles qui s'appliquent...
+
+\question{}
+$D_2 = x+11+\dfrac{2x-1}{x+1} = \dfrac{x(x+1)}{x+1} + \dfrac{11(x+1)}{x+1} + \dfrac{2x-1}{x+1} = \dfrac{x^2+x+11x+11+2x-1}{x+1}$
+
+$D_2 = \dfrac{x^2 + 14x + 10}{x+1}$
+
+\question{}
+$E = \dfrac{1+7x}{1-7x} - \dfrac{1-7x}{1+7x} = \dfrac{(1+7x)^2 - (1-7x)^2}{(1+7x)(1-7x)}$ 
+
+$= \dfrac{(1+14x+49x^2)-(1-14x+49x^2)}{(1+7x)(1-7x)} = \dfrac{28x}{(1+7x)(1-7x)}$
+
+\question{}
+$F = \dfrac{2x-1}{(x+1)(x+2)} - \dfrac{x+3}{x+1} = \dfrac{2x-1}{(x+1)(x+2)} - \dfrac{(x+3)(x+2)}{(x+1)(x+2)}$ 
+
+$F = \dfrac{(2x-1)-(x^2 + 2x + 3x + 6)}{(x+1)(x+2)} = \dfrac{-x^2-3x-7}{(x+1)(x+2)}$
+
+\exo{}
+
+\question{}
+$f(x) = \dfrac{2x+1}{x} = \dfrac{2x}{x} + \dfrac{1}{x} = 2 + \dfrac{1}{x} = a+\dfrac{b}{x}$ avec $a = 2$ et $b = 1$
+
+\question{}
+$f(x) = \dfrac{2x+3}{x+1} = \dfrac{2x + 2 + 1}{x+1} = \dfrac{2x+2}{x+1} + \dfrac{1}{x+1} = 2 + \dfrac{1}{x+1}$ 
+
+$= a+\dfrac{b}{x+1}$ avec $a = 2$ et $b = 1$
+
+\question{}
+$f(x) = \dfrac{3x-7}{x-5} = \dfrac{3(x-5) + 8}{x-5} = \dfrac{3(x-5)}{x-5} + \dfrac{8}{x-5} = 3 + \dfrac{8}{x-5} = a + \dfrac{b}{x-5}$ avec $a = 3$ et $b = 8$
+
+\question{}
+$f(x) = \dfrac{-2x+5}{x-1} = \dfrac{-2(x-1)+7}{x-1} = -2 + \dfrac{7}{x-1} = a+\dfrac{7}{x-1}$ avec $a = -2$ et $b = 7$
+
+\question{}
+$f(x) = \dfrac{-x+3}{2x+1} = \dfrac{-\frac{1}{2}(2x+1) + \frac{7}{2}}{2x+1} = -\dfrac{1}{2} + \dfrac{\frac{7}{2}}{2x+1} = a+\dfrac{b}{2x+1}$ avec $a = -\dfrac{1}{2}$ et $b = \dfrac{7}{2}$
+
+\exo{}
+
+\question{}
+$\dfrac{1}{x} - \dfrac{1}{x+1} = \dfrac{x+1}{x(x+1)} - \dfrac{x}{x(x+1)} = \dfrac{\cancel{x}+1-\cancel{x}}{x(x+1)} = \dfrac{1}{x(x+1)}$
+
+\question{}
+D'après ce que l'on a montré dessus, on peut écrire:
+
+$S = \left( \dfrac{1}{1} - \dfrac{1}{2} \right) + \left( \dfrac{1}{2} - \dfrac{1}{3} \right) + \left( \dfrac{1}{3} - \dfrac{1}{4} \right) + \ldots + \left( \dfrac{1}{998} - \dfrac{1}{999} \right) + \left( \dfrac{1}{999} - \dfrac{1}{1000} \right)$
+
+Chaque paire de parenthèses est précédée d'un signe \og $+$ \fg{}, on peut donc les supprimer \emph{sans} changer les signes à l'intérieur:
+
+$S = \dfrac{1}{1} - \dfrac{1}{2} + \dfrac{1}{2} - \dfrac{1}{3} + \dfrac{1}{3} - \dfrac{1}{4} + \ldots + \dfrac{1}{998} - \dfrac{1}{999} + \dfrac{1}{999} - \dfrac{1}{1000}$
+
+Or ici, chaque élément précédé d'un \og - \fg{} se simplifie avec l'élément qui le suit. Il ne reste donc que le premier et le dernier élément:
+
+$S = \dfrac{1}{1} - \cancel{\dfrac{1}{2}} + \cancel{\dfrac{1}{2}} - \cancel{\dfrac{1}{3}} + \cancel{\dfrac{1}{3}} - \cancel{\dfrac{1}{4}} + \ldots + \cancel{\dfrac{1}{998}} - \cancel{\dfrac{1}{999}} + \cancel{\dfrac{1}{999}} - \dfrac{1}{1000}$
+
+$S = 1-\dfrac{1}{1000} = \dfrac{999}{1000}$
+
+\trait
+
+%\begin{center}
+%\end{center}
+
+\end{document}

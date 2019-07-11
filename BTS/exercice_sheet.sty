@@ -1,0 +1,167 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+%Pour pouvoir parler de moneY
+\usepackage{eurosym}
+%\usepackage{varioref}
+\ProvidesPackage{exercice_sheet}[2017/09/01 Custom Package]
+%Packages pour créer des tableaux de signe
+\usepackage{graphicx}
+%\usepackage[xcas]{tablor} %options modifiables
+
+%utiliser du code sagemaths direct dans le fichier avec \begin{sageblock} \end{sageblock}. Penser à installer sagetex
+\usepackage{sagetex}
+
+%Définitions etc.
+\usepackage{amsthm}
+
+%Pour les boucles for
+\usepackage{forloop}
+
+\usepackage[toc,page]{appendix}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+%\usepackage{tikz,tikz-3dplot} %Pour faire des dessins
+\usetikzlibrary{shapes.multipart,shapes.geometric,calc,angles,positioning,intersections,quotes,decorations,babel,patterns,fit}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{varioref}
+
+%Jolies bordures et cadres
+\usepackage{fancybox}
+\usepackage{framed}
+
+\selectlanguage{french}
+%Pour pouvoir rayer des trucs (et mettre en évidence les simplifications (https://tex.stackexchange.com/questions/75525/how-to-write-crossed-out-math-in-latex)
+\usepackage[makeroom]{cancel}
+
+\date{}
+
+%tableaux
+\usepackage{booktabs}
+
+%exos
+\newcounter{exos}
+\stepcounter{exos} 
+\newcommand{\exo}[1]{\vspace{2.5ex} \textbf{\large{Exercice \arabic{exos}} -- #1} \stepcounter{exos} \setcounter{questions}{0}
+\setcounter{parties}{0}
+%Sert à éviter le titre du paragraphe seul en haut
+\hfill\null\par\nobreak
+} 
+
+%exos corrigés
+\newcounter{exosCorr}
+\stepcounter{exosCorr} 
+\newcommand{\exoCorr}[1]{\vspace{2.5ex} \textbf{Exercice \arabic{exosCorr}, corrigé -- #1} \stepcounter{exosCorr} \setcounter{questions}{0}
+%Sert à éviter le titre du paragraphe seul en haut
+\hfill\null\par\nobreak
+} 
+
+%questions
+\newcounter{questions}[section]
+\stepcounter{questions} 
+\newcommand{\question}[1]{\vspace{1ex} \stepcounter{questions}\textbf{\arabic{questions})} #1}
+
+%subquestions
+\newcounter{subquestions}[questions]
+\stepcounter{subquestions} 
+\newcommand{\subquestion}[1]{\vspace{1ex}\hspace{0mm} \stepcounter{subquestions}\textbf{\alph{subquestions})} #1}
+
+%petit trait entre les questions non numérotées
+\newcommand{\trait}{
+\begin{center}
+------
+\end{center}
+}
+
+%littlestar
+\newcommand{\littlestar}[1]{\vspace{1ex} \textbf{$\ast$ #1~: \vspace{0.5ex}}}
+
+%problème
+\newcounter{problemes}
+\newcommand{\probleme}[1]{\stepcounter{problemes}
+    \vspace{1ex}  
+    \begin{center}
+    \huge{\textbf{Problème \arabic{problemes} -- #1}}
+    \end{center}
+    \vspace{0.5ex}\setcounter{questions}{0}
+%Sert à éviter le titre du paragraphe seul en haut
+\hfill\null\par\nobreak
+}
+
+%problème corrigé
+\newcounter{problemesCorr}
+\newcommand{\problemeCorr}[1]{\stepcounter{problemesCorr}
+    \vspace{1ex}  
+    \begin{center}
+    \huge{\textbf{Problème \arabic{problemesCorr}, corrigé -- #1}}
+    \end{center}
+    \vspace{0.5ex}\setcounter{questions}{0}
+%Sert à éviter le titre du paragraphe seul en haut
+\hfill\null\par\nobreak
+}
+
+%parties (d'un problème)
+\newcounter{parties}[problemes]
+\stepcounter{parties} 
+\newcommand{\partie}[1]{\vspace{1ex} \stepcounter{parties}\textbf{Partie \arabic{parties} -- #1}\setcounter{questions}{0}%\setcounter{exos}{1}
+}
+
+%fiches
+\newcounter{fiches}
+\setcounter{fiches}{-1}
+\stepcounter{fiches} 
+\newcommand{\fiche}[1]{\begin{center}\vspace{2ex} \stepcounter{fiches}\textbf{\huge{Fiche \arabic{fiches} #1}}\setcounter{exos}{1}
+\vspace{1ex}\end{center}}
+
+%Réponse encadrée 
+\newcommand{\answer}[1]{
+\fbox{#1}
+}
+
+%Réponse encadrée et centrée et seule sur sa ligne
+\newcommand{\Answer}[1]{
+\begin{center}
+\fbox{#1}
+\end{center}
+}
+
+\definecolor{couldef}{rgb}{0.9,0.9,0.9}%
+
+%\newcommand{\definition}[1]{\vspace{1ex} \textbf{Définition -- #1} 
+%Sert à éviter le titre du paragraphe seul en haut
+%\hfill\null\par\nobreak
+%} 
+
+\newenvironment{definition}
+{\begin{center} --- \textbf{Définition} --- \end{center} 
+
+}
+{ \begin{center} --- \end{center}}
+
+\newcounter{count}
+
+%Mettre des lignes pour les exos
+\newcommand{\lignes}[1]{
+
+    \begin{center}
+    \forloop{count}{0}{\value{count} < #1}{
+        \vspace{4mm}
+        %\rule{\linewidth}{0.2mm}\\
+            \dotfill\\
+    }
+    \end{center}
+}
+
+%Mettre des cadres vides pour les cours
+\newcommand{\cadre}[1]{
+    \begin{center}
+    \framebox[\linewidth]{
+        \begin{minipage}{\textwidth}
+        \forloop{count}{0}{\value{count} < #1}{
+            \vspace{12mm}
+        }
+        \end{minipage}
+    }
+    \end{center}
+}
+

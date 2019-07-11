@@ -1,0 +1,273 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{BTS blanc, opticien lunetier}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+\exo{Probabilités}
+\textbf{Les deux parties de cet exercice peuvent être traitées de façon indépendantes.}
+
+Une entreprise fabrique des verres ophtalmiques à partir de verres semi-finis.
+
+\partie{Probabilités conditionnelles}
+
+Ce fabriquant possède un stock de verres semi-finis provenant de deux fournisseurs différents, désignés par \emph{fournisseur 1} et \emph{fournisseur 2}.
+
+On admet que 60 \% des verres semi-finis proviennent du fournisseur 1, le reste venant du fournisseur 2.
+
+On admet également que 2 \% des verres semi-finis du fournisseur 1 sont défectueux et que 1 \% des verres semi-finis du fournisseur 2 sont défectueux.
+
+On prélève au hasard un verre semi-fini dans ce stock.
+
+On considère les événements suivants:
+
+\begin{itemize}
+\item A: \og le verre semi-fini prélevé provient du fournisseur 1 \fg{};
+\item B: \og le verre semi-fini prélevé provient du fournisseur 2 \fg{};
+\item D: \og le verre semi-fini prélevé est défectueux \fg{}.
+\end{itemize}
+
+Pour répondre, on pourra réaliser un arbre pondéré sur la copie. 
+
+\question{}
+Calculer la probabilité $P(B \cap D)$.
+
+\question{}
+Montrer que la probabilité que le verre semi-fini prélevé soit défectueux est égale à 0.016.
+
+\question{}
+Calculer la probabilité conditionnelle $P_D(B)$.
+
+On rappelle que $P_D(B)$ est la probabilité de l'événement $B$ sachant que l'événement $D$ est réalisé.
+
+\partie{Loi binomiale, loi de Poisson et loi normale}
+
+Sauf indication contraire, les résultats seront arrondis à $10^{-3}$. 
+
+On prélève au hasard $n$ verres semi-finis dans un stock pour vérification. La probabilité qu'un verre semi-fini prélevé au hasard dans ce stock soit défectueux est égale à 0.016. Le stock est assez important pour assimiler un prélèvement de $n$ verres à un tirage avec remise.
+
+On considère la variable aléatoire $X$ qui, à tout prélèvement de $n$ verres semi-finis dans ce stock associe le nombre de verres semi-finis défectueux.
+
+\question{}
+Justifier que la variable aléatoire $X$ suit une loi binomiale dont on donnera les paramètres. 
+
+\question{}
+Dans cette question, $n=250$.
+
+\subquestion{}
+Calculer l'espérance mathématique $E(X)$. Interpréter le résultat.
+
+\subquestion{}
+Calculer la probabilité qu'aucun verre ne soit défectueux.
+
+\subquestion{}
+En déduire la probabilité qu'au moins 1 verre soit défectueux.
+
+\subquestion{}
+On admet que la loi de la variable aléatoire $X$ peut être approchée par une loi de Poisson. Donner le paramètre $\lambda$ de cette loi de Poisson.
+
+\subquestion{}
+On désigne par $Y$ une variable aléatoire suivant la loi de Poisson de paramètre obtenu à la question précédente. Calculer $P(Y \geqslant 1)$. 
+
+\question{}
+Dans cette question, $n = 1000$.
+
+On admet que la loi de la variable aléatoire $X$ peut être approchée par la loi normale de moyenne 16 et d'écart-type 3.97: $\mathcal{N}(16;3.97)$.
+
+Justifier ces paramètres par le calcul, on s'aidera de la loi binomiale $\mathcal{B}(1000;0.016)$.
+
+\exo{Suites et études de fonction}
+
+La chaîne de magasin Optitan commercialise des lunettes solaires. La direction se propose de déterminer le prix de vente unitaire d'un de ses modèles pour réaliser la meilleure recette possible.
+
+La direction raisonne à partir des deux hypothèses suivantes:
+
+\begin{itemize}
+\item pour un prix de base de 50€, il y a 10 000 acheteurs en une année;
+\item toute augmentation de 20€ entraîne une diminution de 20\% du nombre de clients.
+\end{itemize}
+
+\partie{Modèle discret}
+
+\question{}
+La suite $(p_n)$, avec $n$ entier naturel compris entre 0 et 4, des différents prix testés, en euros, par l'entreprise est une suite arithmétique de premier terme $p_0 = 50$ et de raison $r = 20$.
+
+Déterminer $p_1$, $p_2$, $p_3$ et $p_4$.
+
+\question{}
+Pour $n$ entier naturel compris entre 0 et 4, on désigne par $c_n$ le nombre de clients acheteurs potentiels, lorsque le prix unitaire est égal à $p_n$.
+
+\subquestion{}
+Montrer que $(c_n)$ est une suite géométrique dont on précisera la raison et le premier terme.
+
+\subquestion{}
+Exprimer, pour tout entier naturel $n$ compris entre 0 et 4, $c_n$ en fonction de $n$.
+
+\question{}
+Pour tout entier naturel $n$ compris entre 0 et 4, on désigne par $r_n$ la recette correspondant au prix unitaire $p_n$.
+
+\subquestion{}
+Reproduire et compléter le tableau suivant:
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+$n$   & 0       & 1  & 2 & 3 & 4   \\ \hline
+$p_n$ & 50      & 70 &   &   & 130 \\ \hline
+$c_n$ & 10 000  &    &   &   &     \\ \hline
+$r_n$ & 500 000 &    &   &   &     \\ \hline
+\end{tabular}
+\end{center}
+
+\subquestion{}
+D'après le tableau précédent, quel prix $p_n$ permet à Optitan de réaliser la meilleure recette?
+
+\partie{Modèle continu}
+
+On considère la fonction $R$ de la variable réelle $x$ défniie sur l'intervalle $\left[0 ; 4\right]$ par:
+
+$$R(x) = (5+2x)e^{-0.2x}$$
+
+\question{}
+Étude de la fonction $R$.
+
+\subquestion{}
+Calculer $R'(x)$, pour tout réel $x$ de l'intervalle $[0;4]$. 
+
+\subquestion{}
+Étudier le signe de $R'(x)$ sur l'intervalle $[0;4]$. 
+
+En déduire le tableau de variation de $R$, dans lequel figureront les valeurs exactes de $R(0)$, $R(4)$ et $R(x_0)$, où $x_0$ est la valeur de $x$ pour laquelle la fonction $R$ admet un maximum. 
+
+\subquestion{}
+Donner les valeurs approchées arrondies à $10^{-2}$ près de $R(2.5)$ et de $R(4)$.
+
+\question{}
+On admet que, lorsque le prix de vente unitaire du modèle de lunettes solaires considéré au début de l'exercice est $(50+20x)$ €, avec $0 \leqslant x \leqslant 4$, la recette correspondante est $R(x)$, en centaines de milliers d'euros.
+
+En utilisant les résultats de la question 1:
+
+\subquestion{}
+Déterminer le prix unitaire en euros pour lequel la recette est maximale. %La réponse sera arrondie à l'euro le plus proche.
+
+\subquestion{}
+Deux prix permettent une recette de 600 000 €. Expliquer pourquoi l'un est favorable à l'acheteur et et l'autre au vendeur.
+
+
+\exo{Statistiques à deux variables}
+La société INFOLOG a mis au point un nouveau logiciel de gestion destiné aux PME. Cette société a mené une enquête dans une région auprès de 300 entreprises équipées d'ordinateurs aptes à recevoir ce logiciel, ceci afin de déterminer à quel prix chacune de ces entreprises accepterait d'acquérir un exemplaire de ce nouveau logiciel. Elle a obtenu les résultats suivants:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+$x$: prix proposé (\emph{centaines} d'euros) & 30 & 25 & 20 & 15 & 10 \\
+\hline 
+$y$: nb. d'entreprises disposées à acheter & 90 & 120 & 170 & 200 & 260\\
+\hline 
+\end{tabular} 
+\end{center}
+
+\question{}
+Représenter graphiquement sur votre copie le nuage de points de la série $(x_i ; y_i$) dans un repère orthogonal (unités graphiques : 1 cm pour 200 euros en abscisses et 5 cm pour 100 entreprises en ordonnées). Placer le point moyen $G$ après avoir déterminé ses coordonnées. %créer graphe
+
+\question{}
+Ajustement affine.
+
+\emph{Aucun détail de calculs n'est demandé dans la question 2.}
+
+\subquestion{}
+Donner, à $10^{-3}$ près, le coefficient de corrélation linéaire $r$ de $y$ en $x$.
+
+\subquestion{}
+Déterminer, par la méthode des moindres carrés, l'équation de la droite $\mathcal{D}$ d'ajustement affine de $y$ en $x$ sous la forme $y = ax + b$.
+
+
+Tracer $\mathcal{D}$ sur le graphique.
+
+\question{}
+En utilisant l'ajustement précédent, préciser pour quel prix de vente la société INFOLOG peut espérer que les 300 entreprises acceptent d'acquérir le logiciel.
+
+\appendix
+
+\section*{Formulaire}
+
+\subsection*{Probabilités}
+
+$P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+
+$P_B(A) = \dfrac{P(A \cap B)}{P(B)}$
+
+\littlestar{Loi de Poisson de paramètre $\lambda$} $P(X=k) = \dfrac{\lambda^{k} \times e^{-\lambda}}{k!}$
+
+$E(X) = \lambda$
+
+$\sigma(X) = \sqrt{\lambda}$
+
+\littlestar{Loi binomiale de paramètres $n$ et $p$} $P(X=k) = C_{n}^{k} \cdot p^{k} \cdot (1-p)^{n-k}$ avec $C_{n}^{k} = \binom{n}{k} = \dfrac{n!}{k!(n-k)!}$ et $n! = 1 \times 2 \times 3 \times 4 \times \ldots \times n$.
+
+$E(X) = np$ 
+
+$\sigma(X) = \sqrt{np(1-p)}$
+
+\subsection*{Dérivation}
+
+\begin{multicols}{2}
+\subsubsection*{Dérivées usuelles}
+
+$\left(e^x\right)' = e^x$
+
+$\left(\ln x\right)' = \dfrac{1}{x}$
+
+$\left(\dfrac{1}{x}\right)' = -\dfrac{1}{x^2}$
+
+$\left( x^\alpha \right)' = \alpha x^{\alpha - 1}$
+
+\subsubsection*{Opérations sur les dérivées}
+
+$\left(u+v\right)' = u'+v'$
+
+$\left(ku\right)' = ku'$
+
+$\left(uv\right)' = u'v + uv'$
+
+$\left(\dfrac{u}{v}\right)' = \dfrac{u'v-uv'}{v^{2}}$
+
+$\left(u^{\alpha}\right)' = \alpha u' u^{\alpha-1}$
+
+$(\ln u)' = \dfrac{u'}{u}$
+
+$\left(e^{u}\right)' = u' e^{u}$
+\end{multicols}
+
+\trait
+
+\begin{center}
+Fin.
+\end{center}
+
+\end{document}

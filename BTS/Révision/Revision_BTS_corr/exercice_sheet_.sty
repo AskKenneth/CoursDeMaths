@@ -1,0 +1,23 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{exercice_sheet}[2013/01/13 Custom Package]
+
+%counters
+\newcounter{exos}
+\stepcounter{exos} 
+\newcommand{\exo}[1]{\textbf{Exercice \arabic{exos} -- #1} \stepcounter{exos}} 
+
+\newcounter{questions}[exos]
+\stepcounter{questions} 
+\newcommand{\question}[1]{\stepcounter{questions}\textbf{\arabic{questions})} #1}
+
+\newcounter{subquestions}[questions]
+\stepcounter{subquestions} 
+\newcommand{\subquestion}[1]{\stepcounter{subquestions}\textbf{\alph{subquestions})} #1}
+
+%petit trait entre les questions non numérotées
+\newcommand{\trait}{
+\begin{center}
+------
+\end{center}
+}
+

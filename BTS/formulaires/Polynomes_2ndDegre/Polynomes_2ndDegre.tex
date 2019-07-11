@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Formulaire, polynômes du second degré à une inconnue}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+On considère une fonction polynomiale du second degré $P$ telle que $P(x) = ax^2 + bx + c$ où $a$, $b$ et $c$ sont des nombres réels. 
+
+\section*{Calcul du discriminant}
+
+$\Delta = b^2 - 4ac$
+
+\section*{Solutions de l'équation $P(x) = 0$}
+
+\begin{itemize}
+\item $\Delta > 0$
+
+L'équation a 2 solutions : 
+
+$\mathcal{S} = \left\lbrace \dfrac{-b-\sqrt{\Delta}}{2a} ; \dfrac{-b+\sqrt{\Delta}}{2a} \right\rbrace$
+
+\item $\Delta = 0$
+
+L'équation a une unique solution :
+
+$\mathcal{S} = \left\lbrace \dfrac{-b}{2a}\right\rbrace$
+
+\item $\Delta < 0$
+
+L'équation n'a pas de solution :
+
+$\mathcal{S} = \emptyset$
+
+\end{itemize}
+
+\section*{Factorisation de $P(x)$}
+
+\begin{itemize}
+\item $\Delta > 0$
+
+L'équation $P(x) = 0$ a 2 solutions que l'on appelle $x_1$ et $x_2$: 
+
+On peut donc écrire la forme factorisée de $P(x)$: $P(x) = a(x - x_1)(x - x_2)$
+
+\item $\Delta = 0$
+
+L'équation $P(x) = 0$ a une unique solution que l'on appelle $x_1$:
+
+On peut donc écrire la forme factorisée de $P(x)$: $P(x) = a(x - x_1)^2$
+
+\item $\Delta < 0$
+
+L'équation $P(x) = 0$ n'a pas de solution, on ne peut donc pas factoriser $P(x)$.
+
+\end{itemize}
+
+
+\trait
+
+\begin{center}
+Fin.
+\end{center}
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+\newcommand{\classe}{CG1}
+\newcommand{\typedevoir}{Devoir en classe} 
+\newcommand{\duree}{60 minutes}
+  
+\renewcommand{\hascorrection}{1} 
+
+
+% Title Page
+\title{\typedevoir{} -- \classe{}\writecorrword{}} 
+
+\author{Durée : \duree{}}
+
+\begin{document}
+
+\maketitle 
+
+Note: les questions \textbf{ne} sont \textbf{pas} par ordre croissant de difficulté. 
+
+Calculatrice inutile mais autorisée, smartphone interdit. Sujet à rendre avec la copie, ne restez pas bloqué$\cdot$e sur une question trop longtemps au détriment du reste.
+
+\input{2nd_degre/exercice_Equa.tex}
+
+\input{fonctions_1var/EnsembleDefinition.tex}
+
+\input{MiseEnEqua/1erDegre_1.tex}
+
+\input{fonctions_1var/ComposeesFonctions.tex}
+
+\input{fonctions_1var/ResolEq_Graphique.tex}
+
+\end{document}

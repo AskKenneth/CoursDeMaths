@@ -1,0 +1,20 @@
+\exo{Dés}
+
+Lors d'un jet de deux dés cubiques et équilibrés, on s'intéresse aux événements suivants:
+
+\begin{itemize}
+\item A : « La somme obtenue est au moins égale à 5 »;
+\item B : « La somme obtenue est au plus égale à 5 »;
+\item C : « La somme obtenue est strictement inférieure à 3 ».
+\end{itemize}
+
+\question{Donner les valeurs des probabilités $P(A)$, $P(B)$ et de $P(C)$.}
+
+\question{$A$ et $B$ sont-ils contraires?}
+
+\question{$\overline{B}$ et $C$ sont-ils incompatibles? Justifier.}
+
+\question{Traduire l'événement $\overline{C}$ par une phrase.}
+
+\question{$A$ et $\overline{C}$ sont-ils incompatibles?}
+

@@ -1,0 +1,119 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+
+% Title Page
+\title{Le vocabulaire des statistiques}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Notions générales en statistiques}
+
+
+\littlestar{Population}
+
+Ensemble d'individus (ou unités statistiques) dont on observe plusieurs caractères. Le nombre d'individus est l'effectif $N$ de la population.
+
+\littlestar{Échantillon}
+
+Partie d'une population.
+
+\littlestar{modalités}
+
+Valeurs prises par le caractère pour un individu de la population ou de l'échantillon.
+
+\littlestar{Caractère qualitatif}
+
+Caractère dans les modalités sont seulement repérables et non mesurable (couleur, forme, marque, etc.).
+
+\littlestar{Caractère quantitatif}
+
+Caractère dans les modalités sont mesurables, les mesures étant les valeurs d'une variable statistique (poids, âge, taille, longueur, diamètre, etc.).
+
+\littlestar{Variable discrète ou discontinue}
+
+Variable qui ne peut prendre qu'un nombre limité de valeurs (entières par exemple). À chaque valeur correspond un effectif $n_i$, la série est dite pondérée.
+
+\littlestar{Variable continue}
+
+Variable qui peut prendre n'importe quelle valeur d'un intervalle.
+
+\littlestar{Classe}
+
+Lorsque la variable est continue, ses valeurs sont regroupées dans des intervalles de la forme $[a;b[$ que l'on appelle classes. Le nombre de valeurs dans une classe est l'effectif $n_i$ de cette classe.
+
+\begin{itemize}
+\item on appelle amplitude de la classe la différence $b-a$ (la largeur de l'intervalle)
+\item on appelle centre de la classe le nombre $\frac{a+b}{2}$ (moyenne arithmétique des bornes de l'intervalle autrement dit, le milieu de l'intervalle)
+\end{itemize}
+
+\littlestar{Fréquence $f_i$ d'une valeur ou d'une classe}
+
+C'est le quotient de l'effectif $n_i$ de cette valeur (ou classe) par l'effectif total $N$: 
+
+$$f_i = \dfrac{n_i}{N}$$
+
+C'est un nombre toujours compris entre 0 et 1. Autrement dit: $f_i \in [0;1]$.
+
+\section*{Indicateurs de tendance centrale}
+
+\littlestar{Moyenne, notée $\overline{x}$}
+
+La moyenne représente la somme des valeurs de la série divisée par le nombre de valeurs (l'effectif total).
+
+$$\overline{x} = \dfrac{\mbox{Somme des valeurs}}{\mbox{Nombre de valeurs}} = \dfrac{\mbox{Somme des valeurs}}{\mbox{Effectif total}}$$
+
+\littlestar{Médiane, notée $m$}
+
+C'est la valeur telle que 50\% des valeurs soient inférieures ou égales. 
+
+On l'appelle aussi $Q_2$ (pour comprendre pourquoi on l'appelle ainsi, voir point sur les quartiles).
+
+\littlestar{Le mode}
+
+C'est la valeur d'une série statistique qui a la valeur la plus élevée.
+
+\section*{Indicateurs de dispersion}
+
+\littlestar{Les quartiles}
+
+\begin{itemize}
+\item $Q_1$: c'est la valeur de la donnée de la série qui sépare les 25\% inférieurs des données;
+\item $Q_3$: c'est la valeur de la donnée de la série qui sépare les 75\% inférieurs des données;
+\end{itemize}
+
+\littlestar{Écart interquartile}
+
+C'est la différence $Q_3 - Q_1$ et contient donc 50\% des valeurs.
+
+\littlestar{Étendue}
+
+C'est la différence entre le maximum et le minimum de la série: $x_{max} - x_{min}$.
+
+\littlestar{Écart-type $\sigma$}
+
+Il mesure la dispersion des valeurs autour de la moyenne.
+
+Si $\sigma$ est grand, les valeurs de la série sont dispersées loin de la moyenne.
+
+Si $\sigma$ est petit, les valeurs de la série sont regroupées autour de la moyenne.
+
+\end{document}

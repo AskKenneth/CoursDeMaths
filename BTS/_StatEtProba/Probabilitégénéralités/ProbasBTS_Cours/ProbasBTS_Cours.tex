@@ -1,0 +1,522 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose: kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+\renewcommand{\hasnotesprof}{0}
+
+
+% Title Page
+\title{Probabilités, généralités}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{Introduction}
+
+La \emph{théorie des probabilités} étudie les phénomènes aléatoires, c'est-à-dire les phénomènes régis par le hasard. Autrement dit, des expériences dont le résultat ne peut être prédit.
+
+Le but des probabilités est alors d'arriver à dégager des tendances sur les issues d'une expérience aléatoire. Par exemple on sait de façon intuitive que lorsqu'on lance un pièce, on a \og{}environ une chance sur deux\fg{} d'obtenir \emph{pile} et autant d'obtenir \emph{face}. Et ce sans pour autant pouvoir prédire quel va être le résultat du lancer.
+
+\section{Notion de probabilité}
+
+\subsection{Vocabulaire}
+
+\begin{enumerate}
+ \item On appelle \textbf{expérience aléatoire} toute expérience dont on ne peut prédire l'issue mais reproductible (au moins en théorie). Dans la suite de ce paragraphe de vocabulaire, nous utiliserons l'expérience aléatoire d'un lancer de dé simple en guise d'exemple.
+ 
+ \item On appelle \textbf{événement élémentaire} tout événement qui ne peut être scindé en plusieurs sous événements. 
+ 
+ Exemple: les événement \og{}obtenir 1\fg{} ou \og{}obtenir 4\fg{} sont des événements élémentaires. En revanche, l'événement $A$: \og{}obtenir un nombre pair\fg{} n'est pas un événement élémentaire, vu qu'il est constitué des événements 2, 4 et 6: $A = \{2;4;6\}$.
+ 
+ \item \textbf{L'univers des possibles} ou \emph{espace fondamental}, souvent noté $\Omega$ est l'ensemble des événements élémentaires. Pour notre lancer de dé, $\Omega = \{1;2;3;4;5;6\}$.
+ 
+ \item La \textbf{probabilité} d'un événement est un nombre réel faisant état de son degré de certitude. C'est un nombre réel compris entre 0 et 1. Soit $E$ un événement d'une expérience aléatoire. Sa probabilité est notée $P(E)$, parfois $\mathbb{P}(E)$. Quelle que soit l'expérience, $0 \leqslant P(E) \leqslant 1$.
+\end{enumerate}
+
+
+\subsection{Exemple pratique}
+
+Effectuons trois études statistiques sur un lancer de pièces lancée un plus ou moins grand nombre de fois. $\Omega = \{P;F\}$ où $P$ est l'événement \emph{Pile} et $F$ est l'événement \emph{Face}.
+
+\begin{multicols}{2}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Avec 10 lancers}}                  \\ \hline
+              & \textbf{Effectif} & \textbf{Fréquence} \\ \hline
+\textbf{Pile} & 7                 & 0,7                \\ \hline
+\textbf{Face} & 3                 & 0,3                \\ \hline
+\end{tabular}
+
+\vspace{2mm}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Avec 1000 lancers}}                  \\ \hline
+              & \textbf{Effectif} & \textbf{Fréquence} \\ \hline
+\textbf{Pile} & 481               & 0,481              \\ \hline
+\textbf{Face} & 519               & 0,519              \\ \hline
+\end{tabular}
+
+\vspace{2mm}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Avec 100000 lancers}}                  \\ \hline
+              & \textbf{Effectif} & \textbf{Fréquence} \\ \hline
+\textbf{Pile} & 4965               & 0,4985              \\ \hline
+\textbf{Face} & 5015               & 0,5015              \\ \hline
+\end{tabular}
+
+\end{multicols}
+
+On remarque alors que la fréquence (au sens statistique du terme) se rapproche de $0.5$, lorsque le nombre de lancers augmente. En fait les fréquences de l'événement \emph{Pile} et de l'événement \emph{Face} s'approchent respectivement de $P(P)$ et de $P(F)$.
+
+Dans cet exemple, $P(F) = P(P) = \frac{1}{2}$.
+
+\subsection{En résumé}
+
+\begin{itemize}
+ \item À chaque événement $A$ on associe sa probabilité $P(A)$;
+ \item Pour tout\footnote{En effet, une probabilité négative ou supérieure à 1 n'aurait aucun sens.} événement $A$, $0 \leqslant P(A) \leqslant 1$;
+ \item La probabilité d'un événement certain est 1;
+ \item La probabilité d'un événement impossible est 0;
+ \item La probabilité d'un événement est la somme des probabilités des événements élémentaires réalisant cet événement;
+ \item L'ensemble des événements élémentaires est l'univers des possibles $\Omega$.
+\end{itemize}
+
+%\input{pics/possibles.tex}
+\begin{figure}[h!!]
+\begin{center}
+  \includegraphics[width=0.6\linewidth]{pics/possibles.pdf}
+ 
+\end{center}
+ \caption{Espace des possibles, événements élémentaires et événement $A$}
+ \label{fig:possibles}
+\end{figure}
+
+On remarquera (voir Fig. \ref{fig:possibles}) que $P(\Omega) = 1$. En effet, il est par définition \emph{certain} que l'issue soit dans $\Omega$.
+
+\section{Opérations sur les événements}
+
+\subsection{Opérations de base}
+
+Soient $A$ et $B$ deux événements et $\omega$ un événement élémentaire. Tous trois appartiennent à l'espace fondamental $\Omega$.
+
+\begin{enumerate}
+ \item L'intersection $A \cap B$: $\omega \in A \cap B \Leftrightarrow \omega \in A$ \textbf{et} $\omega \in B$ (fig. \ref{fig:Venn1});
+ \item La réunion $A \cup B$: $\omega \in A \cup B \Leftrightarrow \omega \in A$ \textbf{ou} $\omega \in B$. 
+ 
+ $P(A \cup B) = P(A) + P(B) - P(A \cap B)$;
+ \item Le complémentaire $\overline{A}$: $\omega \in \overline{A} \Leftrightarrow \omega \nin A$.
+\end{enumerate}
+
+\begin{figure}[h!]
+\begin{center}
+% \begin{tikzpicture}
+% \coordinate (A) at ( 90:1.2);
+% \coordinate (B) at (250:1.2);
+%   \begin{scope}[blend group = soft light]
+%     \fill[red!30!white]   (A) circle (2);
+%     \fill[green!30!white] (B) circle (2);
+%   \end{scope}
+%   \node [font=\Large] at (A)   {$A$};
+%   \node [font=\Large] at (B)   {$B$};
+%   \node [font=\Large, rotate=-10] at (0,0) {$A \cap B$};
+% \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{scope}[blend group = soft light, rotate=0]
+            \draw[] (0,0) ellipse (3 and 2); % E
+            \fill[green!30!white] (0,0) ++ (-0.8,0) circle (1); % A
+            \fill[red!30!white] (0,0) ++ (0.8,0) circle (1); % B
+        \end{scope}
+        \node[] (gnieh) at(-2.5,2.0){\Large{$\Omega$}};
+        \node[] (A) at(-2.5,-2.5){\Large{$A$}};
+        \node[] (B) at(2.5,-2.5){\Large{$B$}};
+        \node[] (AinterB) at(0,-2.5){\Large{$A \cap B$}};
+        \draw[]  (B) -- (1.8,0);
+        \draw[]  (A) -- (-1.8,0);
+        \draw[]  (AinterB) -- (0,0);
+    \end{tikzpicture}
+\end{center}
+\caption{Illustration de l'intersection $A \cap B$; $A \cup B$ est la réunion des deux disques.}
+\label{fig:Venn1}
+\end{figure}
+
+\begin{definition}{événements incompatibles} 
+    Deux événements sont \emph{incompatibles} ou \emph{disjoints} lorsqu'ils ne peuvent se réaliser en même temps (fig. \ref{fig:VennIncompat}).    
+    On a alors $A \cap B = \emptyset$ soit $P(A \cap B) = 0$.
+\end{definition}
+
+Par exemple sur un lancer de dés, \og{}obtenir un nombre plus grand que 4\fg{} et \og{}obtenir un nombre plus petit que 3\fg{} sont des événements incompatibles car ils ne peuvent se réaliser en même temps. 
+
+On a donc: $A \cap B = \emptyset$ et $P(A \cap B) = 0$.
+
+\begin{figure}[h!]
+\begin{center}
+  \begin{tikzpicture}
+  \begin{scope}[blend group = soft light, rotate=0]
+      \draw[] (0,0) ellipse (3 and 2); % E
+      \fill[green!30!white] (0,0) ++ (-1.2,0) circle (1.0); % A
+      \fill[red!30!white] (0,0) ++ (1.2,0) circle (1.0); % B
+  \end{scope}
+  \node[] (Omega) at(-2.5,2){\Large{$\Omega$}};
+  \node[] (A) at(-2.5,-2){\Large{$A$}};
+  \node[] (B) at(2.5,-2){\Large{$B$}};
+  \draw[]  (B) -- (1.8,0);
+  \draw[]  (A) -- (-1.8,0);
+\end{tikzpicture}
+\end{center}
+\caption{Événements disjoints: $A \cap B = \emptyset$}
+\label{fig:VennIncompat}
+\end{figure}
+
+\subsection{Probabilités conditionnelles}
+
+Soient 2 événements $A$ et $B$ de $\Omega$. 
+
+\begin{definition}{\og{}$A$ sachant $B$\fg{}}
+    Soient 2 événements $A$ et $B$ de $\Omega$. 
+ On appelle $A$ sachant $B$ (et probabilité de $A$ sachant $B$) la probabilité que l'événement $A$ se produise \emph{sachant que} $B$ est réalisé. 
+ Sa probabilité se note $P_B(A)$ et se calcule ainsi: 
+
+ \begin{equation*}
+  P_B(A) = \dfrac{P(A\cap B)}{P(B)}
+ \end{equation*}
+\end{definition}
+
+
+\subsection{Arbre de probabilité}
+
+Certaines expériences aléatoires peuvent être résumées dans un arbre de probabilités. Pour illustrer cela, nous allons considérer l'expérience suivante:
+
+Une urne contient 5 boules vertes et 3 boules rouges. On en tire deux au hasard sans remise. L'univers des possibles est $\Omega = \{ VV;VR;RV;RR \}$.
+
+Au premier tirage: il y a 5 boules vertes et 3 boules rouges dans l'urne. Pour le premier tirage, on a donc $P(V) = \frac{5}{8} = 0.625$ et $P(R) = \frac{3}{8} = 0.375$.
+
+On remarque que pour le second tirage, les probabilités sont impactées par le résultat du premier tirage:
+
+\begin{itemize}
+ \item si on a tiré une boule verte: la probabilité de tirer à nouveau une boule verte est $\frac{4}{7} \approx 0.571$;
+ \item si on a tiré une boule rouge: la probabilité de tirer une boule verte est $\frac{5}{7} \approx 0.714$.
+\end{itemize}
+
+La situation se résume donc comme on peut le voir figure \ref{fig:arbre}: 
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=4.5cm, sibling distance=4cm]
+\tikzstyle{level 2}=[level distance=4.5cm, sibling distance=3cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+% The sloped option gives rotated edge labels. Personally
+% I find sloped labels a bit difficult to read. Remove the sloped options
+% to get horizontal labels. 
+
+\begin{figure}
+    \centering
+\begin{tikzpicture}[grow=right, sloped]
+    \node[bag] {$\Omega$}
+    child {
+        node[bag] {$R$}        
+        child {
+            node[end, label=right:
+            {$RR$}] {}
+            edge from parent
+            node[above] {$P_R(RR)$}
+            node[below]  {$\frac{2}{7}$}
+        }
+        child {
+            node[end, label=right:
+            {$RV$}] {}
+            edge from parent
+            node[above] {$P_R(RV)$}
+            node[below]  {$\frac{5}{7}$}
+        }
+        edge from parent 
+        node[above] {$P(R)$}
+        node[below]  {$\frac{3}{8}$}
+    }
+    child {
+        node[bag] {$V$}        
+        child {
+            node[end, label=right:
+            {$VR$}] {}
+            edge from parent
+            node[above] {$P_V(VR)$}
+            node[below]  {$\frac{3}{7}$}
+        }
+        child {
+            node[end, label=right:
+            {$VV$}] {}
+            edge from parent
+            node[above] {$P_V(VV)$}
+            node[below]  {$\frac{4}{7}$}
+        }
+        edge from parent         
+        node[above] {$P(V)$}
+        node[below]  {$\frac{5}{8}$}
+    };
+\end{tikzpicture}
+\caption{Arbre de probabilités}
+\label{fig:arbre}
+\end{figure}
+
+L'arbre fig. \ref{fig:arbre} permet de répondre aisément aux questions suivantes:
+
+\begin{enumerate}
+ \item Calculer $P(RV)$. 
+ 
+ Pour ce faire, il faut multiplier les probabilités rencontrées dans l'arbre sur le chemin allant de $\Omega$ à $RV$. Ici: $P(RV) = \frac{3}{8} \times \frac{5}{7} = \frac{15}{56} \approx 0.268$;
+ \item Calculer la probabilité d'obtenir $V$ au second tirage, indépendamment du résultat du premier tirage.
+ 
+ 2 chemins mènent à l'événement \og{}obtenir $V$ au second tirage\fg{}. Il s'agit donc de la somme des probabilités de ces deux chemins: $\frac{5}{8} \times \frac{4}{7} + \frac{3}{8} \times \frac{5}{7} = \frac{35}{56} \approx 0.625$.
+\end{enumerate}
+
+\section{Mesure de probabilité, propriétés}
+
+Soient $A$ et $B$ deux événements de l'espace fondamental $\Omega$.
+
+\paragraph{Espace fondamental et ensemble vide}
+$P(\Omega) = 1$ et $P(\emptyset) = 0$
+
+\paragraph{Réunion de deux événement quelconques}
+$P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+
+\paragraph{Réunion de deux événement disjoints}
+Dans ce cas, $P(A \cap B) = 0$. On a donc:
+
+$P(A \cup B) = P(A) + P(B)$
+
+\paragraph{Complémentaire d'un événement}
+$P(\overline{A}) = 1 - P(A)$
+
+Exemples:
+
+On donne deux événements $A$ et $B$ incompatibles tel que:  $P(A) =  0.43$ et $P(B) = 0.55$. 
+
+Calculer $P(A \cap B)$, $P(\overline{A})$, $P(\overline{B})$, $P(A \cup B)$ et $P(\overline{A \cup B})$
+
+\cadre{2}
+
+On donne deux événements $A$ et $B$ tels que:  $P(A) =  0.33$, $P(B) = 0.45$ et $P(A \cap B) = 0.21$
+
+Calculer $P(\overline{A})$, $P(\overline{B})$, $P(A \cup B)$, $P(\overline{A \cup B})$ et $P(\overline{A \cap B})$
+
+\cadre{4}
+
+
+\section{Opérations sur les variables aléatoires}
+
+\subsection{Règles}
+
+Dans ce paragraphe, nous considérerons deux variables aléatoires $X$ et $Y$. et deux nombres $a, b \in \mathbb{R}$. $X$ et $Y$ peuvent être discrètes ou continues, mais pour que les règles opératoires énoncées ici soient valables\footnote{Dans les opérations où $X$ et $Y$ sont mises en jeu, comme $X+Y$, $X-Y$, etc.}, elles doivent être \textbf{indépendantes}. 
+
+Lorsque des variables aléatoires quantitatives sont additionnées/soustraites entre elles ou multipliées par un nombre, cela donne une nouvelle variable aléatoire. On peut par exemple considérer les variables suivantes:
+
+\begin{itemize}
+ \item $Z = aX + b$
+ \item $S = X + Y$
+ \item $D = X - Y$
+\end{itemize}
+
+Les espérance, écart-type et variance de $Z$, $S$ et $D$ se calculent comme suit:
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+                    & $A = aX+b$            & $S=X+Y$                                    & $D=X-Y$                                                                               \\ \hline
+\textbf{Espérance}  & $E(A) = aE(X)+b$      & $E(S) = E(X)+E(Y)$                         & $E(D) = E(X)-E(Y)$                                                                    \\ \hline
+\textbf{Variance}   & $V(A) = a^2V(X)$      & $V(S)=V(X)+V(Y)$                           & $V(D)=V(X)+V(Y)$                                                                      \\ \hline
+\textbf{Écart-type} & $\sigma(A) = |a|V(X)$ & $\sigma(S)=\sqrt{\sigma^2(X)+\sigma^2(Y)}$ & $\sigma(D)=\sqrt{\sigma^2(X)+\sigma^2(Y)}$ \\ \hline
+\end{tabular}
+
+
+\section*{Exercices}
+
+\exo[1]{Entreprise}
+
+Dans une entreprise de 300 salariés, on compte 40\% de femmes et 60\% d'hommes.
+
+De plus 65\% des hommes et 45\% des femmes sont syndiqués.
+
+On choisit au hasard un salarié de l'entreprise; chaque personne a la même probabilité d'être choisie.
+
+On considère les événements:
+
+\begin{itemize}
+    \item $H$: \og{}La personne est un homme\fg{};
+    \item $F$: \og{}La personne est une femme\fg{};
+    \item $S$: \og{}La personne est syndiquée\fg{}
+\end{itemize}
+
+\question{}
+Représenter l'expérience à l'aide d'un arbre de probabilité
+
+\question{}
+Les événements $H$ et $F$ sont-ils incompatibles? Les événements $H$ et $S$ sont-ils incompatibles?
+
+\question{}
+Compléter le tableau ci-dessous.
+
+\begin{center}
+ \begin{tabular}{|c|c|c|c|}
+    \hline
+    & $H$ & $F$ & Total \\ \hline
+    $S$            &  \hspace{2cm}   &  \hspace{2cm}   &   \hspace{2cm}    \\ \hline
+    $\overline{S}$ &     &     &       \\ \hline
+    Total          &     &     & 300   \\ \hline
+\end{tabular}
+\end{center}
+
+\question{}
+Déterminer $P(H)$ et $P(F)$.
+
+\question{}
+Calculer les probabilités $P(H \cap S)$, $P(F \cap S)$ et $P(S)$.
+
+\question{}
+Calculer les probabilités $P(H \cup S)$, $P(F \cup S)$.
+
+\exo[0]{}
+Un appareil peut tomber plusieurs fois en panne sur une période déterminée. On note $a_n$ l'événement \og{}l'appareil a eu exactement $n$ pannes\fg{}. Une enquête statistique permet d'admettre les probabilités suivantes:
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    $a_n$    & $a_0$ & $a_1$ & $a_2$ & $a_3$ & $a_4$ \\ \hline
+    $P(a_n)$ & 0.78  & 0.11  & 0.06  & 0.03  &       \\ \hline
+\end{tabular}
+\end{center}
+
+\question{}
+Sachant qu'il ne peut y avoir plus de 4 pannes, déterminer $P(a_4)$.
+
+\question{}
+Quelle est la probabilité qu'un appareil tombe en panne 1 fois? pas plus de 2 fois?
+
+\exo[1]{}
+On donne les événements $A$ et $B$ tels que $P(A) = 0.61$ et $P(B) = 0.27$
+
+Calculer $P(A \cup B)$ dans les cas suivants: 
+
+\begin{itemize}
+    \item A et B sont incompatibles;
+    \item $P(A \cap B) = 0.13$.
+\end{itemize}
+
+
+\exo[3]{}
+Un club de vacances propose deux activités nautiques à ses clients: voile ou planche à voile.
+
+Au mois de juillet, le club compte 250 vacanciers.
+\begin{itemize}
+    \item 30\% font de la planche à voile (P);
+    \item 48\% font de la voile (V);
+    \item 16\% font les deux activités.
+\end{itemize}
+
+$P$ représente l'ensemble des vacanciers qui pratiquent la planche à voile.
+
+$V$ représente l'ensemble des vacanciers qui pratiquent la voile.
+
+On considère les événements suivants: 
+
+\begin{itemize}
+    \item A: \og{}Le vacancier choisi pratique au moins une des deux activités\fg{};
+    \item B:\og{}Le vacancier choisi ne pratique aucune activité\fg{};
+    \item C: \og{}Le vacancier choisi ne pratique qu'une seule activité\fg{}.
+\end{itemize}
+
+\question{}
+Recopier et compléter le tableau ci-après en indiquant le nombre d'éléments de chaque ensemble.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        & $P$ & $\overline{P}$ & Total \\ \hline
+        $V$            &  \hspace{2cm}   &  \hspace{2cm}   &   \hspace{2cm}    \\ \hline
+        $\overline{V}$ &     &     &       \\ \hline
+        Total          &     &     &    \\ \hline
+    \end{tabular}
+\end{center}
+
+
+
+\question{}
+Traduire les événements $A$, $B$ et $C$ en termes d'ensembles ($X \cap Y$, $H \cup Z$...).
+
+\question{}
+Calculer $P(A)$, $P(B)$ et $P(C)$.
+
+\exo[3]{Dés}
+On jette deux dés équilibrés. Quelle est la probabilité d'obtenir:
+
+\begin{itemize}
+ \item un total égal à 7?
+ \item un total strictement supérieur à 9?
+ \item un total au moins égal à 3?
+\end{itemize}
+
+
+\exo[1]{Cave}
+Une personne possède une cave de 2400 bouteilles de vin, rouge et blanc, de trois régions: Bordeaux, Bourgogne et Loire.
+
+La moitié de ses vins sont des Bordeaux, et il y a deux fois plus de bouteilles venant de Bourgogne que de bouteilles venant de Loire.
+
+75\% des vins sont rouges et parmi eux, 54\% viennent du Bordelais. Dans les vins de Loire, il y a autant de blancs que de rouges.
+
+\question{}
+Compléter le tableau suivant.
+
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        & Bordeaux & Bourgogne & Loire & Total \\ \hline
+        Blanc &     \hspace{2cm}     &      \hspace{2cm}     &   \hspace{2cm}    &   \hspace{2cm}    \\ \hline
+        Rouge &          &           &       &       \\ \hline
+        Total &          &           &       &       \\ \hline
+    \end{tabular}
+\end{center}
+
+
+\question{}
+On prend au hasard, une bouteille dans cette cave. Calculer la probabilité des événements suivants:
+
+\begin{itemize}
+    \item A: \og{}le vin est blanc\fg{};
+    \item B: \og{}le vin vient de Bordeaux\fg{}.
+\end{itemize}
+
+\question{}
+À l'aide d'une phrase, expliciter les événements $A \cap B$ et $A \cup B$ puis calculer leurs probabilités respectives.
+
+\question{}
+On choisit une bouteille de vin blanc. Calculer la probabilité que ce soit un Bordeaux
+
+\question{}
+On choisit une bouteille de Bourgogne. Calculer la probabilité que ce soit un vin blanc.
+%Utiliser le fichier d'à côté pour les exemples (typiquement un grand II ou un grand III)
+
+\end{document}
+

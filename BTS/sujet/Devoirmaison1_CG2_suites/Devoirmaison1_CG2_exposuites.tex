@@ -1,0 +1,173 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Devoir maison 1, CG-2}
+
+\author{Mathématiques}
+
+%mettre la correction ou pas
+\renewcommand{\hascorrection}{1}
+
+\begin{document}
+
+\maketitle
+
+\exo{}
+
+\question{}
+24 ; 18 ; 12 ; 6 sont-ils les premiers termes d'une suite arithmétique? Si oui, en donner le premier terme et la raison.
+
+\correction{
+On calcule, pour les termes dont on dispose, $u_{n+1} - u_n$.
+
+$18 - 24 = -6$
+
+$12 - 18 -6$
+
+$6 - 12 -6$
+
+Ainsi, les termes sont bien les premiers termes d'une suite arithmétique de raison -6 et de premier terme 24.
+}
+
+
+\question{}
+$2$ ; $-3$ ; $\frac{9}{2}$ ; $-\frac{27}{4}$ sont-ils les premiers termes d'une suite géométrique? Si oui, en donner le premier terme et la raison.
+
+
+\correction{
+On calcule, pour les termes dont on dispose, $\frac{u_{n+1}}{u_n}$.
+
+
+$-\dfrac{3}{2} = \dfrac{\frac{9}{2}}{-3} = \dfrac{-\frac{27}{4}}{\frac{9}{2}}$
+
+Il s'agit donc bien des premiers termes d'une suite géométrique de premier terme 2 et de raison $\frac{-3}{2}$.
+}
+
+\question{}
+Soit la suite géométrique $(u_n)$ de premier terme $u_0 = 7$ et de raison $q = -2$. 
+
+\correction{
+Le terme général d'une suite $(u_n)$ géométrique de premier terme $(u_0)$ et de raison $q$ est $u_n = u_0 \times q^n$.
+
+Ici, $u_n = 7 \times (-2)^n$.
+}
+
+\subquestion{}
+Calculer $u_1$, $u_4$ et $u_7$.
+
+\correction{
+\begin{itemize}
+ \item $u_1 = 7 \times (-2) = -14$
+ \item $u_4 = 7 \times (-2)^4 = 112$
+ \item $u_7 = 7 \times (-2)^7 = -896$
+\end{itemize}
+}
+
+\subquestion{}
+Calculer $S_{4,12} = u_4 + u_5 + \ldots + u_{12}$.
+
+\correction{
+On rappelle que pour calculer la somme de termes consécutifs d'une suite géométrique du rang $p$ au rang $n$, la formule est:
+
+\begin{equation}
+ S_{p,n} = u_p \frac{1 - q^{n-p+1}}{1-q}
+\end{equation}
+
+Ici, $p = 4$, $n = 12$ d'où $n-p+1 = 9$, $q = -2$ et $u_4 = 112$.
+
+On a donc:
+
+\begin{equation}
+ S_{4,12} = 112 \times \frac{1 - (-2)^{9}}{1-(-2)} = 19152
+\end{equation}
+}
+
+
+
+\exo{}
+
+On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par:
+
+$$\left\lbrace
+\begin{array}{ll}
+   u_0 = 13 \\
+   u_{n+1} = 3 u_n - 14 \\
+\end{array}
+\right.$$
+
+% $u_0 = 13$ et pour tout entier naturel $n$, $u_{n+1} = 3 u_n - 14$.
+
+\question{}
+Calculer $u_1$, $u_2$ et $u_3$.
+
+\correction{
+\begin{itemize}
+ \item $u_0 = 13$
+ \item $u_1 = 3u_0 - 14 = 25$
+ \item $u_2 = 3u_1 - 14 = 61$
+ \item $u_3 = 3u_2 - 14 = 169$
+\end{itemize}
+}
+
+\question{}
+On considère la suite $(v_n)$ définie pour tout entier naturel $n$, par $v_n = u_n - 7$.
+
+
+\subquestion{}
+Montrer que la suite $(v_n)$ est une suite géométrique dont on donnera le premier terme et la raison.
+
+\correction{
+Calculons $\frac{v_{n+1}}{v_n}$.
+
+$\forall n \in \mathbb{N}, v_n + u_n - 7$, d'où $v_{n+1} = u_{n+1} - 7$
+
+Donc $\frac{v_{n+1}}{v_n} = \frac{u_{n+1} - 7}{v_n}$
+
+Or d'après l'énoncé, $u_{n+1} = 3 u_n - 14$
+
+D'où $\frac{v_{n+1}}{v_n} = \frac{3 u_n - 14 - 7}{v_n} = \frac{3 u_n - 21}{v_n}$
+
+On déduit de l'énoncé que $u_n = v_n + 7$. 
+
+Donc $\frac{v_{n+1}}{v_n} = \frac{3 (v_n + 7) - 21}{v_n}$
+
+Finalement:
+
+\Answer{$\dfrac{v_{n+1}}{v_n} = 3$}
+
+$(v_n)$ est donc géométrique de raison 3 et de premier terme $v_0 = u_0 - 7 = 6$.
+}
+
+\subquestion{}
+En déduire l'expression de $v_n$ en fonction de $n$.
+
+\correction{
+On en déduit son terme général: $v_n = 6 \times 3^n$
+}
+
+\subquestion{}
+En déduire que $u_n = 6 \times 3^n + 7$.
+
+\correction{
+$u_n = v_n + 7 = 6 \times 3^n + 7$
+}
+
+\end{document}

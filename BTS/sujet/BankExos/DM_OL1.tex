@@ -1,0 +1,53 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+
+
+\date{}
+
+\newcommand{\classe}{OL1}
+\newcommand{\typedevoir}{Devoir maison} 
+\newcommand{\duree}{}
+
+\renewcommand{\hascorrection}{1}
+
+
+% Title Page
+\title{\typedevoir{} -- \classe{}\writecorrword{}} 
+
+\author{Durée : \duree{}}
+
+
+\begin{document}
+
+\maketitle
+
+%\tableofcontents
+
+\input{2nd_degre/exercice1.tex} 
+
+\input{2nd_degre/exercice3.tex}
+
+\input{2nd_degre/LectureGraphique1.tex} 
+
+\input{2nd_degre/MiseEnEq.tex}
+
+\input{trigo/exercice1.tex} 
+
+\end{document}
+
+

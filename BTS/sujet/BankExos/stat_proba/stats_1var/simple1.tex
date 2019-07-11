@@ -1,0 +1,45 @@
+%Un exercice avec son corrigé à inclure dans un fichier principal.
+\exo{Statistiques à une variable}
+
+Une entreprise fabrique des conserves alimentaires dont l'étiquette annonce une masse de 250 grammes.
+Les masses obtenues pour un échantillon de 500 conserves prises au hasard sont données dans le tableau suivant: 
+
+\begin{table}[h]
+\centering
+\caption{Masses des 500 conserves.}
+\label{table_conserves}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Masse (en g) $x_{i}$}        & {[}235 ; 240{[} & {[}240 ; 245{[} & {[}245 ; 250{[} & {[}250 ; 255{[} & {[}255 ; 260{[} \\ \hline
+\textbf{Nb. de conserves} & 33              & 67              & 217             & 132             & 51              \\ \hline
+\end{tabular}
+\end{table}
+
+\question{}
+À l'aide de la calculatrice, calculer, en utilisant les milieux des classes, la masse moyenne $\overline{x}$ ainsi que l'écart type $\sigma_x$ des conserves de cet échantillon.
+
+On fournira les valeurs en grammes arrondies au dixième.
+
+\correction{
+    $\overline{x} = \dfrac{237.5 \times 33 + \ldots + 257.5 \times 51}{500} = 248.5$g.
+
+    $\sigma_x = 5.1$g.
+}
+
+\question{}
+Donner les quartiles $Q_1$ et $Q_3$ et calculer l'équart interquartile.
+
+\correction{
+    $Q_1 = 247.5$g.
+
+    $Q_3 = 252.5$g.
+
+    L'écart interquartile vaut $Q_3 - Q_1 = 5$g.
+}
+
+\question{}
+Calculer le pourcentage des conserves alimentaires ayant une masse comprise entre 240g et 255 grammes. 
+
+\correction{
+    Il y a 416 conserves qui dont la masse est comprise entre 240g et 255g. Cela représente $\dfrac{416}{500} = 0.832 = 83.2\%$. 
+}

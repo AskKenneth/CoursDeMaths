@@ -1,0 +1,30 @@
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-1,
+xmax=5,
+ymin=-1,
+ymax=5,
+xtick={-4,-3,...,7},
+ytick={-1,0,...,8},]
+\clip(-4.858432824743624,-1.7484964573366208) rectangle (7.312700295653997,8.734590815090652);
+\draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-4.858432824743624:7.312700295653997] plot(\x,{0.5*(\x)+2});
+\draw [line width=2pt] (0,2) -- (0,0);
+\draw [line width=2pt] (2,3)-- (4,3);
+\draw [line width=2pt] (4,3)-- (4,4);
+\begin{scriptsize}
+%\draw[color=qqwuqq] (-4.761665865305834,-0.442142504926453) node {$f$};
+\draw[color=black]  (0.2,1.1276326148421436) node {\large{$b$}};
+\draw[color=black] (3,2.5) node {\large{$\Delta x$}};
+\draw[color=black] (4.6,3.5) node {\large{$\Delta y$}};
+\draw[color=black] (3,1) node {\large{$a = \dfrac{\Delta y}{\Delta x}$}};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}

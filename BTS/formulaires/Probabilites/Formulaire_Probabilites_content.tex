@@ -1,0 +1,50 @@
+\section*{Probabilités générales}
+
+\begin{equation*}
+ P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\end{equation*}
+
+\begin{equation*}
+ P_B(A) = \frac{P(A \cap B)}{P(B)}
+\end{equation*}
+
+
+\section*{Lois de probabilités}
+
+\subsection*{Loi normale}
+Soit une loi normale de moyenne $\mu$ et d'écart-type $\sigma$: $\mathcal{N}(\mu;\sigma)$.
+
+Sa densité de probabilité s'écrit:
+
+\begin{equation*}
+f(x) = \dfrac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{1}{2} \left( \frac{x-\mu}{\sigma} \right)}
+\end{equation*}
+
+\subsection*{Loi binomiale}
+Soit une loi binomiale de paramètres $n$ et $p$: $\mathcal{B}(n;p)$.
+
+\begin{equation*}
+ P(X=k) = C_n^k \cdot p^k \cdot (1-p)^{n-k}
+\end{equation*}
+
+Avec $C_n^k = \frac{n!}{k!(n-k)!}$ et $k$ entier entre $0$ et $n$.
+
+Propriétés:
+\begin{itemize}
+ \item Espérance: $E(X) = np$;
+ \item Écart-type: $\sigma(X) = \sqrt{np(1-p)}$.
+\end{itemize}
+
+
+% \subsection*{Loi de Poisson}
+% Soit une loi de Poisson de paramètre $\lambda$: $\mathcal{P}(\lambda)$.
+% 
+% \begin{equation*}
+%  P(X=k) = \frac{e^{-\lambda} \times \lambda^k}{k!}
+% \end{equation*}
+% 
+% Propriétés:
+% \begin{itemize}
+%  \item Espérance: $E(X) = \lambda$;
+%  \item Écart-type: $\sigma(X) = \sqrt{\lambda}$.
+% \end{itemize}

@@ -1,0 +1,65 @@
+\section*{Dérivation}
+
+\subsection*{Dérivées de fonctions usuelles}
+
+\begin{center}
+
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{fonction $f$} & \textbf{fonction dérivée $f'$} \\ 
+\hline 
+$k$, $k \in \mathbb{R}$ & $0$ \\ 
+\hline 
+$x$ & $1$ \\ 
+\hline 
+$x^2$ & $2x$ \\ 
+\hline 
+$x^{\alpha}$, $\alpha \in \mathbb{Z}$ & $\alpha x^{\alpha - 1}$ \\ 
+\hline 
+$e^x$ & $e^x$ \\ 
+\hline 
+$\ln x$ & $\dfrac{1}{x}$ \\ 
+\hline 
+$\sqrt{x}$ & $\dfrac{1}{2\sqrt{x}}$ \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+\subsection*{Dérivées de produits, quotients, etc.}
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{fonction $f$} & \textbf{fonction dérivée $f'$} \\ 
+\hline 
+$u+v$ & $u'+v'$ \\ 
+\hline 
+$ku$ & $ku'$ \\ 
+\hline 
+$u \times v$ & $u'v+uv'$ \\ 
+\hline 
+$\dfrac{u}{v}$ & $\dfrac{u'v-uv'}{v^2}$ \\ 
+\hline 
+$\dfrac{1}{u}$ & $-\dfrac{u'}{u^2}$ \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+\subsection*{Dérivées de fonctions composées}
+
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{fonction $f$} & \textbf{fonction dérivée $f'$} \\ 
+\hline 
+$v \circ u$ ou $v(u(x))$ & $u' \times v' \circ u $ ou $u'(x) \times v'(u(x))$ \\ 
+\hline 
+$e^u$ & $u'e^u$ \\ 
+\hline 
+$\ln u$ & $\dfrac{u'}{u}$ \\ 
+\hline 
+$u^\alpha$ & $\alpha u' u^{\alpha - 1}$ \\ 
+\hline 
+\end{tabular}
+\end{center}

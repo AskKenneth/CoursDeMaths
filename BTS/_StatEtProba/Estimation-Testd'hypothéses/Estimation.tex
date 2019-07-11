@@ -1,0 +1,107 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\title{Estimation, tests d'hypothèses}
+
+\date{}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Généralités}
+
+Position du problème : on cherche à estimer certains paramètres (fréquence, moyenne ou écart type) d'un caractère (âge, pourcentage de vote, masse...) relatif à une population composée d'un grand nombre d'individus. Cette estimation s'effectue pour des raisons de coûts à partir d'un échantillon restreint de cette population totale ou parente. L'estimation obtenue ne peut être qu'une valeur vraisemblable du paramètre de la population totale que l'on cherche à évaluer. Elle ne peut pas être considérée comme la vraie valeur (qui ne pourrait être obtenue que si le sondage s'effectuait sur l'ensemble de la population). Il est ainsi préférable de donner plutôt un intervalle de confiance qu'une seule estimation.
+
+\section{Estimation ponctuelle}
+
+Les paramètres à estimer dans la population ainsi que  leur estimateur dans l'échantillon sont donnés dans le tableau suivant :
+
+\begin{table}[h]
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Population totale. Paramètres à estimer} & \textbf{Échantillon, Estimateur.}                                                                                                                        \\ \hline
+Moyenne théorique : $\mu$ ou $m$                 & Moyenne observée sur l'échantillon : $\overline{x_e}$ ou $m_e$                                                                                                      \\ \hline
+Fréquence, pourcentage : $f$ ou $p$              & Fréquence observée sur l'échantillon : $f_e$ ou $p_e$                                                                                                    \\ \hline
+Écart-type : $\sigma$                            & \begin{minipage}{0.5\linewidth}Écart-type modifié : $s = \sqrt{\dfrac{n}{n-1}} \sigma_e$ où $n$ est l'effectif de l'échantillon et $\sigma_e$ est l'écart-type observé sur l'échantillon.
+\end{minipage}    \\ \hline
+\end{tabular}
+\end{table}
+
+Pour rappel, $\overline{x_e} = \dfrac{1}{n} \times \sum\limits_{i=1}^{n} x_i = \dfrac{x_1 + x_2 + ... + x_n}{n}$ et $\sigma_e = \sqrt{\dfrac{1}{n} \times \sum\limits_{i=1}^{n} x_i^2 - \overline{x_e}^2}$
+
+\begin{figure}[h]
+\def\svgwidth{0.8\columnwidth}
+\input{pics/dessin.pdf_tex}
+\end{figure}
+
+\exemple À un examen auquel se présentent 160 000 candidats, 100 copies ont été corrigées. Dans ce paquet de 100 copies, 45 ont plus de 10 et on a obtenu une moyenne de 8,5 avec un écart type de 3,23. 
+
+Donner une estimation ponctuelle du pourcentage de notes supérieures à 10,  de la moyenne $m$ et de l'écart type $\sigma$ des notes pour l'ensemble des  160 000 candidats.
+
+\cadre{8}
+
+\section{Estimation par intervalle de confiance}
+
+\subsection{Estimation d'une moyenne par un intervalle de confiance symétrique}
+
+\subsubsection{Méthode}
+
+$\overline{x_e}$ n’est qu’une estimation de la moyenne théorique $m$. Pour préciser les limites de cette estimation on fait appel à des intervalles de confiance. 
+
+Pour cela, on procède de manière suivante:
+
+\begin{itemize}
+\item On dispose ou on calcule la moyenne de l’échantillon
+\item On dispose de l’écart type évalué par rapport à la population totale $\sigma$ ou à défaut de son estimation $s$ évalué par rapport à l’échantillon.
+\item On dispose de la taille de l’échantillon : $n$
+\item On se fixe un seuil de risque $\alpha$ ou un coefficient de confiance $1- \alpha$.  Par exemple : si $\alpha = 0,05$ alors $1 - \alpha = 0,95$
+\item On calcule $t$ tel que $2 \cdot \Pi (t) - 1 = 1- \alpha$ (coefficient de confiance) avec les tables de la loi normale centré réduite. 
+\item On détermine l’intervalle $\left[\overline{x_e}-t\dfrac{\sigma}{\sqrt{n}} ;  \overline{x_e}+t\dfrac{\sigma}{\sqrt{n}}\right]$
+\end{itemize}
+
+À noter :
+
+\begin{itemize}
+\item Pour chaque échantillon pris au hasard, les bornes de l’intervalle de confiance varient mais l’amplitude de cet intervalle reste égale à $2t\dfrac{\sigma}{\sqrt{n}}$.
+\item Un niveau de confiance $1-\alpha = 0,95$ signifie que cette méthode, appliquée à des échantillons de taille $n$ pris au hasard, donne dans 95\% des cas un intervalle qui contient la moyenne $m$. 
+\item Plus le coefficient de confiance est élevé (ou le seuil de risque est faible) plus l’intervalle de confiance est grand
+\item La méthode détaillée est rigoureusement exacte si la variable aléatoire correspondant à la moyenne empirique $\overline{x}$ suit une loi normale $\mathcal{N}\left(m ; \dfrac{\sigma}{\sqrt{n}}\right)$ avec l’écart type $\sigma$ connu. Dans les autres cas, le théorème de la limite centrée permet d’obtenir une très bonne approximation.
+
+\subsubsection{Exemple}
+
+Reprenons l’exemple de l’examen auquel se présentent 160 000 candidats. Avec les 100 copies corrigées, nous avons obtenu une estimation de la moyenne et de l’écart type : 
+
+$\overline{x_e} = 8.5$ et $s = 3.25$
+
+Donner un intervalle de confiance de la moyenne $m$ de l’ensemble des candidats au seuil de confiance 95\%.
+
+\cadre{8}
+
+Remarque : avec un seuil de confiance de 0,99, l’intervalle de confiance pour la moyenne avec le même échantillon est de $[7,66 ; 9,34]$.
+
+\subsection{Estimation par intervalle de confiance d’une fréquence ou d’une probabilité}
+
+\subsubsection{Méthode}
+
+$p_e$ n’est qu’une estimation de la fréquence théorique $p$. Pour préciser les limites de cette estimation on fait appel à des intervalles de confiances. 
+
+\end{itemize}
+
+\end{document}

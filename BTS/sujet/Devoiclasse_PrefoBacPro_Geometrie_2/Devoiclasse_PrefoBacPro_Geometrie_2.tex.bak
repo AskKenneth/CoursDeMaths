@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet} 
+
+
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Devoir en classe, préformation Bac Pro Optique}
+
+\author{\rotatebox{10}{\textsc{Géométrie}} \\ 40 minutes}
+
+\begin{document}
+
+\maketitle
+
+{\Large Nom:} 
+\hspace{60mm}
+{\Large Prénom:}
+\vspace{6mm}
+
+Note : la calculatrice est autorisée. Donc sauf mention contraire, tout résultat donné sans la moindre étape de calcul ne sera pas pris en compte...
+
+\exo{Rectangles}
+On considère un rectangle de 9cm de large et 14cm de long.
+
+\question{Donner le périmètre $\mathcal{P}_1$ et l'aire $\mathcal{A}_1$ de ce rectangle.}
+\lignes{1}
+
+\question{Ce rectangle subit un agrandissement de facteur $k = 2$. Quelles sont ses dimensions?} 
+
+\lignes{2}
+
+\question{Donner le périmètre $\mathcal{P}_2$ et l'aire $\mathcal{A}_2$ de ce nouveau rectangle.} 
+
+\lignes{2}
+
+\exo{Triangles}
+
+Le triangle $ABC$ a pour base $[AB]$, de longueur 16cm et pour hauteur $[HC]$, de longueur 5cm. 
+
+\lignes{2}
+
+\exo{Tracer \underline{au compas} la parallèle à la droite passant par le point A, en laissant les traits de construction.}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{pics/DroitePoint.pdf}
+\end{center}
+
+\exo{Tracer \underline{au compas} la perpendiculaire à la droite passant par le point A, en laissant les traits de construction.}
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{pics/DroitePoint.pdf}
+\end{center}
+
+
+
+%\trait
+
+%\begin{center}
+%Fin.
+%\end{center}
+
+\end{document}
+

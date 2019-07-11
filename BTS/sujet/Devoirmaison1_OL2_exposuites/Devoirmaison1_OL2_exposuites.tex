@@ -1,0 +1,106 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Devoir maison 1, OL-2}
+
+\author{Mathématiques}
+
+\begin{document}
+
+\maketitle
+
+\exo{Équations, inéquations}
+
+Résoudre les équations et inéquations suivantes.
+
+\begin{multicols}{2}
+
+\question{}
+$\ln(x+1) + \ln(x-2) = \ln(18)$
+
+\question{}
+$2e^{2t} + 9e^t = 5$
+
+\question{}
+$2e^{2t} - 9e^t + 4 = 0$
+
+\question{}
+$\ln(x^4) < 12$
+
+\end{multicols}
+
+\probleme{Rétinite pigmentaire}
+
+La rétinite pigmentaire est une maladie génétique caractérisée par la dégénérescence des cellules en cônes et bâtonnets responsables de la vision. Afin de freiner l'évolution de la maladie, deux traitements sont possibles.
+
+Dans cet exercice on étudie, pour ces deux traitements, l'évolution de la quantité des principes actifs présents dans le sang en fonction du temps. 
+
+\partie{Modèle discret du premier traitement, étude de suites.}
+
+Le premier traitement consiste à injecter par intraveineuse un médicament permettant une meilleure vascularisation des vaisseaux sanguins de la rétine.
+
+On injecte dans le sang à l'instant $t = 0$ une dose de 1,8 unités du médicament. On suppose que ce médicament diffuse instantanément dans le sang et qu'il est ensuite progressivement éliminé. Au bout de chaque heure après injection, sa quantité a diminué de 30\% par rapport à la valeur au début de cette heure.
+
+Dans le but d'atteindre une quantité de médicament présente dans le sang supérieure à 5 unités, on décide de réinjecter une dose de 1,8 unités toutes les heures.
+
+Pour tout entier naturel $n$, on note $u_n$ la quantité de médicaments, exprimée en unités, présente dans le sang au bout de $n$ heures.
+ 
+\question{Justifier que $u_0 = 1.8$ et que, pour tout entier naturel $n$, $u_{n+1} = 0.7u_n+1.8$.}
+
+\question{On pose, pour tout entier naturel $n$, $v_n = u_n - 6$. Démontrer que $(v_n)$ est une suite géométrique de raison 0.7 dont on donnera le premier terme $v_0$.}
+
+\question{Pour tout entier naturel $n$, exprimer $v_n$ en fonction de $n$ puis en déduire que pour tout entier naturel $n$, $u_n = 6-4.2 \times 0.7^n$.}
+
+\question{Limite}
+
+\subquestion{Déterminer la limite de la suite $(u_n)$.}
+
+\subquestion{Interpréter le résultat obtenu par rapport au but à atteindre.}
+
+\partie{}
+
+Soit $f$ la fonction définie sur $[0;+\infty[$ par $f(t) = -5e^{-t} + 5e^{-0.5t}$.
+
+On note $C$ sa courbe représentative dans le plan muni d'un repère orthonormal.
+
+\question{Limites}
+
+\subquestion{Déterminer $\lim\limits_{t \to +\infty} f(t)$}
+
+\subquestion{Donner une interprétation graphique du résultat précédent.}
+
+\question{Tableau de variation}
+
+\subquestion{Calculer $f'(t)$ pour tout réel $t$ de l'intervalle $[0;+\infty[$ et vérifier que $f'(t)$ peut s'écrire sous la forme: $f'(t) = 2.5 \cdot e^{-t} \cdot (2-e^{0.5t})$.}
+
+\subquestion{Étudier le signe de $f'(t)$ sur l'intervalle $[0;+\infty[$.}
+
+\subquestion{Dresser le tableau de variation de $f$ sur l'intervalle $[0;+\infty[$.}
+
+\question{Écrire une équation de la tangente $T$ à la courbe $C$ au point d'abscisse 0.}
+
+\trait
+
+\begin{center}
+Fin.
+\end{center}
+
+\end{document}

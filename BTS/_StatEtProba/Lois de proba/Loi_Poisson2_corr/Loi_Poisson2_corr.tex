@@ -1,0 +1,136 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Loi de Poisson, corrigé des exercices}
+
+\author{\textsc{Mathématiques}}
+
+\begin{document}
+
+\maketitle
+
+\exo{}
+
+\question{}
+$P(X=2) = 0.224$
+
+\question{}
+$P(X \leqslant 3) = 0.647$
+
+\question{}
+$P(X\geqslant 2) = 0.801$
+
+\question{}
+$E(X) = \lambda = 3$ et $\sigma(X) = \sqrt{\lambda} = \sqrt{3} \approx 1.732$
+
+
+\exo{}
+
+\question{}
+$P(X = 4) = 0.047$
+
+\question{}
+$P(X \leqslant 2) = 0.809$
+
+\question{}
+$E(X) = \lambda = 1.5$ et $\sigma(X) = \sqrt{\lambda} = \sqrt{1.5} \approx 1.225$
+
+
+\exo{}
+
+$X$ suit la loi $\mathcal{P}(2.5)$ avec un $\mathcal{P}$ comme Poisson... 
+
+\begin{itemize}
+ \item $P(A) = P(X=0) = 0.082$
+ \item $P(B) = P(X=2) = 0.544$
+ \item $P(C) = P(X \geqslant 2) = 0.713$
+\end{itemize}
+
+\exo{}
+
+\question{}
+Le paramètre $\lambda = 5$ de cette loi de Poisson signifie qu'il y a en moyenne 5 personnes qui pointent leur fraise au guichet pour chaque période de 15 minutes. 
+
+\question{}
+La période est de 15 minutes. Il s'agit donc de calculer $P(X \geqslant 4)$.
+
+$P(X\geqslant 4) = 0.735$
+
+\question{}
+$P(X\geqslant 5) = 0.560$
+
+
+\exo{}
+
+\question{}
+$X$ sui la loi binomiale $\mathcal{B}(120;0.03)$.
+
+\begin{itemize}
+ \item $P(X = 2) = 0.177$
+ \item $P(X = 5) = 0.140$
+ \item $P(X \leqslant 2) = 0.298$
+\end{itemize}
+
+\question{}
+On rappelle que l'espérance d'une loi binomiale est $np$. Ici, $np = 120 \times 0.03 = 3.6$. 
+
+\question{}
+
+\subquestion{}
+Dans certaines conditions (qui sont remplies ici, l'énoncé le sous-entend sans s'épancher sur le sujet) la loi binomiale et la loi de Poisson peuvent être sensiblement égales\footnote{Attention, elles ne sont pas rigoureusement égales, elles sont seulement de valeurs \emph{très} proches, jusqu'à plusieurs chiffres après la virgule}. Pour pouvoir être de valeurs proches, les 2 lois \emph{doivent} avoir la même espérance, c'est une condition nécessaire. Or, le paramètre $\lambda$ (ou $\mu$ selon l'humeur) d'une loi de Poisson \emph{est} sa moyenne. $Y$ suit donc la loi $\mathcal{P}(3.6)$.
+
+\subquestion{}
+On peut maintenant calculer les probabilités de la variable discrète $Y$ comme dans les exercices précédents. 
+
+\begin{itemize}
+ \item $P(X = 2) = 0.177$
+ \item $P(X = 5) = 0.138$
+ \item $P(X \leqslant 2) = 0.303$
+\end{itemize}
+
+\exo{}
+
+\question{}
+Ici, l'exercice est inversé: on connaît une probabilité bien particulière de la variable (ici, la probabilité qu'elle soit égale à 0). 
+
+On peut résoudre cette question en revenant à la formule:
+
+\begin{equation}
+ P(X=k) = \frac{e^{-\lambda} \times \lambda^k}{k!}
+ \label{Eq:Poiscaille}
+\end{equation}
+
+Ainsi, l'équation $P(X = 0) = 0.2$ équivaut à $\dfrac{e^{-\lambda} \times \lambda^0}{0!} = 0.2$ ce qui est une équation d'inconnue $\lambda$.
+
+Or, $0! = 1$ et $\lambda^0 = 1$. 
+
+La formule (\ref{Eq:Poiscaille}) donne donc:
+
+$$e^{-\lambda} = \frac{1}{5}$$
+
+$$\Leftrightarrow e^{\lambda} = 5$$
+
+$$\Leftrightarrow \lambda = \ln 5 \approx 1.609$$
+
+\question{}
+Le paramètre d'une loi de Poisson est la moyenne. Donc il n'y a ici aucun calcul à faire: $\lambda = E(X) = 2$.
+
+\question{}
+Mais c'est aussi -- dans le cadre de la loi de Poisson et uniquement dans celui-là -- le carré de l'écart-type. On rappelle que $\sigma(X) = \sqrt{\lambda}$. Donc ici, $\lambda = 2^2 = 4$.
+
+
+
+
+\end{document}
+

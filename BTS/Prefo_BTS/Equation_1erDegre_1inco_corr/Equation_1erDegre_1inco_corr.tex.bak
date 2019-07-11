@@ -1,0 +1,861 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} % avec T1 comme option  d'encodage c'est ben mieux, surtout pour taper du français.
+%\usepackage{lmodern,textcomp} % fortement conseillé pour les pdf. On peut mettre autre chose : kpfonts, fourier,...
+\usepackage[french]{babel} %Sans ça les guillemets, amarchpo
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{exercice_sheet}
+
+%\trait
+%\section*{}
+%\exo{}
+%\question{}
+%\subquestion{}
+
+\date{}
+
+
+% Title Page
+\title{Exercices équations du 1\textsuperscript{er} degré à une inconnue, corrigé}
+
+\author{Mathématiques}
+
+\begin{document}
+
+\maketitle
+
+\fiche{}
+
+\exo{Résoudre dans $\mathbb{R}$:}
+
+\question{}
+$20+x = 24 \Leftrightarrow x = 24-20 \Leftrightarrow x = 4$
+
+$\mathcal{S} = \left\lbrace 4 \right\rbrace$
+
+\question{}
+$20-x=15 \Leftrightarrow x = 5$
+
+$\mathcal{S} = \left\lbrace 5 \right\rbrace$
+
+\question{}
+$2x + 9 = 19 \Leftrightarrow x = 5$
+
+$\mathcal{S} = \left\lbrace 5 \right\rbrace$
+
+\question{}
+$3x+4 = 25 \Leftrightarrow x = 7$
+
+$\mathcal{S} = \left\lbrace 7 \right\rbrace$
+
+\question{}
+$25 + 3x = 2x + 28 \Leftrightarrow x = 3$
+
+$\mathcal{S} = \left\lbrace 3 \right\rbrace$
+
+\question{}
+$10x = 16+2x \Leftrightarrow x = 2$
+
+$\mathcal{S} = \left\lbrace 2 \right\rbrace$
+
+\exo{Résoudre dans $\mathbb{R}$:}
+
+\question{}
+$5x-3 = 3(x-7)$
+
+Dans un premier temps, on développe les parenthèses:
+
+$5x-3 = 3x-21$
+
+Puis comme précédemment: 
+
+$2x = -18 \Leftrightarrow x = -9$
+
+\Answer{$\mathcal{S} = \left\lbrace -9 \right\rbrace$}
+
+\question{}
+$2(4x-25) = 3(4x-6) \Leftrightarrow x = -8$
+
+\Answer{$\mathcal{S} = \left\lbrace -8 \right\rbrace$}
+
+\question{}
+$3x-1 = -5x + (5x-3) \times 2 \Leftrightarrow \dfrac{5}{2}$
+
+\Answer{$\mathcal{S} = \left\lbrace \dfrac{5}{2} \right\rbrace$}
+
+\question{}
+$4x-5 = 2(2x+3) \Leftrightarrow -5 = 6$
+
+On aboutit sur une égalité qui ne peut être vraie. Il n'y a donc pas de solution: \Answer{$\mathcal{S} = \emptyset$}
+
+\question{}
+$3(2x+1) = 5(3x+2) - 25 \Leftrightarrow x = 2$
+
+\Answer{$\mathcal{S} = \left\lbrace 2 \right\rbrace$}
+
+\question{}
+$6x+4 = 3(2x-4) + 16 \Leftrightarrow 0=0$
+
+\Answer{$\mathcal{S} = \mathbb{R}$}
+
+\question{}
+Ici, il y a du $x^{2}$ donc en apparence, c'est du 2nd degré. Mais comme les $x^2$ vont s'annuler, c'est en fait du 1er degré:
+
+$x^{2} + x - 8 = (x-1)(x-7) \Leftrightarrow x = \dfrac{5}{3}$
+
+\Answer{$\mathcal{S} = \left\lbrace \dfrac{5}{3} \right\rbrace$}
+
+\question{}
+On peut ici faire la même remarque que pour la question précédente: les $4x^{2}$ vont s'annuler de part et d'autre du signe \og = \fg{}:
+
+$4(x+5)(x-2) = 4x^{2} \Leftrightarrow x = \dfrac{10}{3}$
+
+\Answer{$\mathcal{S} = \left\lbrace \dfrac{10}{3} \right\rbrace$}
+
+\exo{Résoudre dans $\mathbb{R}$:}
+
+\question{}
+$\dfrac{x}{5} = 8 \Leftrightarrow x = 40$
+
+\Answer{$\mathcal{S} = \left\lbrace 40 \right\rbrace$}
+
+\question{}
+On peut mettre au même dénominateur, mais il est plus simple ici de commencer par faire passer le 7 à droite de l'égalité.
+
+$\dfrac{x}{3} + 7 = 6 \Leftrightarrow x = -3$
+
+\Answer{$\mathcal{S} = \left\lbrace -3 \right\rbrace$}
+
+\question{}
+On peut effectuer un produit en croix, en \textbf{n'}oubliant \textbf{pas} les parenthèses autour de $2x+1$:
+
+$\dfrac{x+4}{3} = 2x+1 \Leftrightarrow 3(2x+1) = x+4 \Leftrightarrow x = \dfrac{7}{5}$
+
+\Answer{$\mathcal{S} = \left\lbrace \dfrac{7}{5} \right\rbrace$}
+
+\exo{Résoudre dans $\mathbb{R}$:}
+
+On passe les \og $x$ \fg{} du même côté et les nombres seuls de l'autre côté du signe \og $=$ \fg{} .
+
+\question{}
+$\dfrac{x}{3} + 4 = 5 \Leftrightarrow \dfrac{x}{3} = 1 \Leftrightarrow x = 3$
+
+\Answer{$\mathcal{S} = \left\lbrace 3 \right\rbrace$}
+
+\question{}
+$2-\dfrac{x}{7} = 3.8 \Leftrightarrow x = -\frac{63}{5}$
+
+\Answer{$\mathcal{S} = \left\lbrace -\frac{63}{5} \right\rbrace$}
+
+\question{}
+On peut faire un produit en croix. 
+
+$\dfrac{x-2}{5} = 8 \Leftrightarrow x-2 = 40 \Leftrightarrow x = 38$
+
+\Answer{$\mathcal{S} = \left\lbrace 38 \right\rbrace$}
+
+\question{}
+$\dfrac{x+4}{3} = 1.4 \Leftrightarrow x = 0.2$
+
+\Answer{$\mathcal{S} = \left\lbrace 0.2 \right\rbrace$}
+
+\question{}
+On met ici tout au même dénominateur (y compris le $3x$ qu'on considère comme étant la fraction $\dfrac{3x}{1}$). En l'occurrence, le plus petit multiple commun de tous les dénominateurs est 14. On obtient donc:
+
+$3x-\dfrac{3}{7} = \dfrac{x}{2} - \dfrac{1}{14} \Leftrightarrow \dfrac{42x - 6}{14} = \dfrac{7x-1}{14} \Leftrightarrow 42x-6 = 7x-1$
+
+$x = \dfrac{1}{7}$
+
+\Answer{$\mathcal{S} = \left\lbrace \dfrac{1}{7} \right\rbrace$}
+
+\exo{Résoudre dans $\mathbb{R}$:}
+Dans cet exercice, le plus simple est de mettre tout le membre de droite au même dénominateur puis de faire de même pour le membre de droite pour ensuite réaliser un produit en croix. 
+
+\question{}
+$\dfrac{4x-1}{3} + 2 = \dfrac{x+1}{4} \Leftrightarrow \dfrac{4x-1+6}{3} = \dfrac{x+1}{4} \Leftrightarrow \dfrac{4x+5}{3} = \dfrac{x+1}{4}$
+
+Produit en croix:
+
+$4(4x+5) = 3(x+1) \Leftrightarrow x = -\frac{17}{13}$
+
+\Answer{$\mathcal{S} = \left\lbrace -\dfrac{17}{13} \right\rbrace$}
+
+\question{}
+$\dfrac{x}{6} + \dfrac{x}{15} + \dfrac{x}{10} - 1 = 30-10x \Leftrightarrow \dfrac{5x + 2x + 3x - 30}{30} = 30-10x \Leftrightarrow \dfrac{10x-30}{30} = 30-10x$
+
+$30(30-10x) = 10x-30 \Leftrightarrow x = 3$
+
+\Answer{$\mathcal{S} = \left\lbrace 3 \right\rbrace$}
+
+\exo{Résoudre dans $\mathbb{R}$:}
+On rappelle que ce type d'équation se résout en utilisant le fait que: 
+
+$a \times b = 0 \Leftrightarrow a = 0 \mbox{ ou } b = 0$. 
+
+\question{}
+$(3x-2)(2x+5) = 0$
+
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & 3x-2 = 0 &\mbox{ ou }& 2x+5 = 0 \\ 
+ \Leftrightarrow & x = \frac{2}{3} &\mbox{ ou }& x = -\frac{5}{2}
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -\dfrac{5}{2} ; \dfrac{2}{3} \right\rbrace$}
+ 
+\question{}
+$-5(1-5x)(x+2)^{2}$
+ 
+ 
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & 1-5x = 0 &\mbox{ ou }& (x+2)^{2} = 0 \\ 
+ \Leftrightarrow & x = \frac{1}{5} &\mbox{ ou }& x = -2
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -2 ; \dfrac{1}{5} \right\rbrace$}
+
+\exo{On pose $f(x) = (x-3)(2x+5)+(x-3)(x+2)$}
+
+\question{}
+$f(x) = 3 \, x^{2} - 2 \, x - 21$
+
+\question{}
+Pour factoriser, on cherche le facteur commun, ici $(x-3)$.
+
+$f(x) = \underline{(x-3)}(2x+5)+\underline{(x-3)}(x+2)$
+
+$f(x) = \left(x - 3\right) \left(3 \, x + 7\right)$
+
+\question{}
+$f(x) = 0 \Leftrightarrow \left(x - 3\right) \left(3 \, x + 7\right) = 0$
+ 
+ 
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & x-3 = 0 &\mbox{ ou }& 3x+7 = 0 \\ 
+ \Leftrightarrow & x = 3 &\mbox{ ou }& x = -\frac{7}{3}
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -\dfrac{7}{3} ; 3 \right\rbrace$}
+
+\exo{}
+
+\question{}
+Ici, c'est $(x-1)$ le facteur commun.
+
+$(x+3)(x-1)+(x-1)(x+5) = 0 \Leftrightarrow (x-1)(2x+8) = 0$
+ 
+ 
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & x-1 = 0 &\mbox{ ou }& 2x+8 = 0 \\ 
+ \Leftrightarrow & x = 1 &\mbox{ ou }& x = -4
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -4 ; 1 \right\rbrace$}
+
+\question{}
+Le facteur commun est ici $x$.
+
+$x^{2} - 4x = 0 \Leftrightarrow x(x-4)=0$
+ 
+ 
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & x = 0 &\mbox{ ou }& x = 4 
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace 0 ; 4 \right\rbrace$}
+
+\question{}
+Le facteur commun est $(3x-2)$
+
+$(3x-2)^{2} + 5(3x-2) = 0 \Leftrightarrow (3x-2)(3x+3) = 0$
+ 
+ 
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & 3x-2 = 0 &\mbox{ ou }& 3x+3 = 0 \\ 
+ \Leftrightarrow & x = \frac{2}{3} &\mbox{ ou }& x = -1
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -1 ; \dfrac{2}{3} \right\rbrace$}
+
+
+\question{}
+Il s'agit d'une identité remarquable (je vous conseille de les connaître). Celle de la forme $(a+b)(a-b) = a^{2} - b^{2}$
+
+$9x^{2} - 4 = 0 \Leftrightarrow (3x+2)(3x-2) = 0$
+ 
+ 
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & 3x-2 = 0 &\mbox{ ou }& 3x+2 = 0 \\ 
+ \Leftrightarrow & x = \frac{2}{3} &\mbox{ ou }& x = -\frac{2}{3}
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -\dfrac{2}{3} ; \dfrac{2}{3} \right\rbrace$}
+
+\exo{}
+
+\question{}
+On remarque que $P$ est une identité remarquable ($(a+b)^{2} = a^{2} + 2ab + b^{2}$).
+
+Ainsi: \Answer{$P = (2x+1)^{2}$}
+
+\question{}
+On remarque que l'équation peut s'écrire $P + (x-5)(2x+1) = 0$. Or, d'après la question précédente, on sait que $P = (2x+1)^{2}$. L'équation peut donc s'écrire:
+
+$(2x+1)^{2} + (x-5)(2x+1) = 0$.
+
+On peut donc factoriser par $2x+1$ afin d'obtenir une \emph{équation produit} (voir cours). 
+
+$(2x+1)^{2} + (x-5)(2x+1) = (2x+1)(3x-4)$
+
+On peut donc écrire: $P + (x-5)(2x+1) = 0 \Leftrightarrow (2x+1)(3x-4) = 0$
+ 
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & 2x+1 = 0 &\mbox{ ou }& 3x-4 = 0 \\ 
+ \Leftrightarrow & x = -\frac{1}{2} &\mbox{ ou }& x = \frac{4}{3}
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -\dfrac{1}{2} ; \dfrac{4}{3} \right\rbrace$}
+
+\exo{Soit $f(x) = \dfrac{4x+3}{2x-5}$}
+
+\question{}
+Cette question consiste à trouver les valeurs interdites. 
+
+Le dénominateur est $2x+5$. Trouver les valeurs de $x$ qui annulent le dénominateur, c'est résoudre l'équation suivante:
+
+$2x-5 = 0 \Leftrightarrow x = \frac{5}{2}$
+
+La valeur de $x$ qui annule le dénominateur est donc $\frac{5}{2}$.
+
+\question{}
+D'après la question précédente, la valeur interdite est $\frac{5}{2}$, on a donc:
+
+$\dfrac{4x+3}{2x-5} = 3$
+
+$\Leftrightarrow 3(2x-5) = 4x+3$ pour $x \neq \dfrac{5}{2}$
+
+$\Leftrightarrow x = 9$
+
+\Answer{$\mathcal{S} = \left\lbrace 9 \right\rbrace$}
+
+\exo{Soit l'équation $\dfrac{2x-1}{x+3} = \dfrac{4x-1}{2x+1}$}
+
+\question{}
+Les valeurs interdites sont les valeurs qui annulent au moins un des dénominateurs. Les trouver revient donc à résoudre les équations $x+3=0$ et $2x+1=0$.
+
+$x+3=0 \Leftrightarrow x = -3$
+
+$2x+1=0 \Leftrightarrow x = -\dfrac{1}{2}$
+
+Les valeurs interdites sont donc $-3$ et $-\dfrac{1}{2}$.
+
+On peut donc écrire (grâce au produit en croix): 
+
+$\dfrac{2x-1}{x+3} = \dfrac{4x-1}{2x+1} \Leftrightarrow (2x-1)(2x+1)=(x+3)(4x-1)$ pour $x \notin \left\lbrace -3 ; -\dfrac{1}{2} \right\rbrace$
+
+$\Leftrightarrow \cancel{4x^{2}}-1 = \cancel{4 \, x^{2}} + 11 \, x - 3$
+
+$\Leftrightarrow x = \dfrac{2}{11}$.
+
+\Answer{$\mathcal{S} = \left\lbrace \dfrac{2}{11} \right\rbrace$}
+
+\exo{Soit l'équation $\dfrac{7x+3}{x} = \dfrac{21x}{3x-2}$}
+
+Cet exercice est similaire au précédent et se résout de la même manière.
+
+\question{}
+Les valeurs interdites sont: $x=0$ et \Answer{$x=\dfrac{2}{3}$}
+
+\question{}
+\Answer{$\mathcal{S} = \left\lbrace -\dfrac{6}{5} \right\rbrace$}
+
+\exo{$\dfrac{1}{p'} = \dfrac{1}{p} + \dfrac{1}{f'}$}
+
+\question{}
+Avec $p=4$ et $f'=5$, on obtient: $\dfrac{1}{p} = \dfrac{1}{4} + \dfrac{1}{5} = \dfrac{5}{20} + \dfrac{4}{20} = \dfrac{9}{20}$.
+
+Ainsi, $\dfrac{1}{p} = \dfrac{9}{20}$, soit \Answer{$p = \dfrac{20}{9} \approx 2.22$.}
+
+\question{}
+$\dfrac{1}{p'} = \dfrac{1}{p} + \dfrac{1}{f'} \Leftrightarrow \dfrac{1}{p} = \dfrac{1}{p'} - \dfrac{1}{f'}$
+
+Ici: 
+
+$$\dfrac{1}{p} = \dfrac{1}{10} - \dfrac{1}{-4} = \dfrac{1}{10} + \dfrac{1}{4} = \dfrac{2}{20} + \dfrac{5}{20} = \dfrac{7}{20}$$
+
+Ainsi, $\dfrac{1}{p} = \dfrac{7}{20} \Leftrightarrow p = \dfrac{20}{7} \approx 2.86$.
+
+\question{}
+Pour ce faire, on va mettre au même dénominateur le membre de droite de la formule initiale:
+
+$\dfrac{1}{p'} = \dfrac{f'}{pf'} + \dfrac{p}{pf'} = \dfrac{p+f'}{pf'}$
+
+On a donc $\dfrac{1}{p'} = \dfrac{p+f'}{pf'}$. 
+
+D'où: \Answer{$p' = \dfrac{pf'}{p+f'}$}
+
+\question{}
+À la question 2, on a établi que $\dfrac{1}{p} = \dfrac{1}{p'} - \dfrac{1}{f'}$.
+
+De la même façon qu'à la question 3, on met le membre de droite au même dénominateur:
+
+$\dfrac{1}{p} = \dfrac{f'}{f'p'} - \dfrac{p'}{f'p'} = \dfrac{f'-p'}{f'p'}$
+
+On obtient ainsi: \Answer{$p = \dfrac{f'p'}{f'-p'}$}
+
+\fiche{}
+
+Dans cet fiche, les exercices qui sont à partir de l'exercice 4 sont plus difficiles. Ne les commencez que quand vous serez à l'aise sur le reste. 
+
+\exo{Résoudre dans $\mathbb{R}$ après avoir factorisé}
+
+L'exercice consiste à reconnaître une identité remarquable sous sa forme développée afin de la factoriser et de pouvoir résoudre l'équation produit obtenue.
+
+\question{}
+On reconnaît ici l'identité remarquable $a^{2}-b^{2} = (a+b)(a-b)$ sous sa forme développée où $(2x-1)$ correspond à $a$ et $(3x+5)$ correspond à $b$.
+
+Ainsi, $(2x-1)^{2} - (3x+5)^{2} = ((2x-1)+(3x+5))((2x-1)-(3x+5)) = (5x+4)(-x-6)$. 
+
+L'équation de l'énoncé est donc équivalente à:
+
+$(5x+4)(-x-6) = 0$
+
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & 5x+4 = 0 &\mbox{ ou }& -x-6 = 0 \\ 
+ \Leftrightarrow & x = -\frac{4}{5} &\mbox{ ou }& x = -6
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -6 ; -\dfrac{4}{5} \right\rbrace$}
+
+\question{}
+De la même façon que précédemment et avec la même identité remarquable, $x^{2} - (2x+3)^{2} = (3x+3)(x+3)$ 
+
+L'équation équivaut donc à:
+
+$(3x+3)(x+3) = 0$
+
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & 3x+3 = 0 &\mbox{ ou }& x+3 = 0 \\ 
+ \Leftrightarrow & x = -1 &\mbox{ ou }& x = -3
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -1 ; -3 \right\rbrace$}
+
+\question{}
+Il s'agit de l'identité remarquable $a^{2} - 2ab + b^{2} = (a-b)^{2}$ avec $a = 2(3x-5)$ et $b = 1$.
+
+On a donc: $2(3x-5)^2-(3x-5)+1 = (2(3x-5) - 1)^{2} = (6x-11)^{2}$. 
+
+L'équation donnée est donc équivalente à:
+
+$(6x-11)^{2} = 0$
+
+$\Leftrightarrow 6x-11 = 0$
+
+$\Leftrightarrow x = \dfrac{11}{6}$
+
+\Answer{$\mathcal{S} = \left\lbrace \dfrac{11}{6} \right\rbrace$}
+
+\question{}
+On reconnaît pour cette question la même identité remarquable, avec $a = 3(2x-7)$ et $b = 2$.
+
+On a donc: $9(2x-4)^{2} - 12(2x-4) + 4 = (3(2x-7) - 2)^{2} = (6x-23)^{2}$.
+
+L'équation donnée est donc équivalente à:
+
+$(6x-23)^{2} = 0$
+
+$\Leftrightarrow 6x-23 = 0$
+
+$\Leftrightarrow x = \dfrac{23}{6}$
+
+\Answer{$\mathcal{S} = \left\lbrace \dfrac{23}{6} \right\rbrace$}
+
+\exo{}
+
+\question{}
+$P$ sous sa forme actuelle ne correspond pas à une identité remarquable.
+
+\question{}
+On remarque que $P+16 = 4x^2 + 4x + 1$, ce qui correspond à l'identité remarquable $(a+b)^{2} = (a+b)(a-b)$. 
+
+Ainsi: \Answer{$Q = P+16$}
+
+\question{}
+$Q = 4x^2 + 4x + 1 = (2x+1)^{2}$
+
+\question{}
+$P = Q-a = (2x+1)^{2} - 16$
+
+Il s'agit de l'identité remarquable $a^2 - b^2$ avec $a = 2x+1$ et $b = 4$. 
+
+On a donc $P = ((2x+1)+(4))((2x+1)-(4))$
+
+\Answer{$P = (2x+5)(2x-3)$}
+
+\question{}
+$P = 0 \Leftrightarrow (2x+5)(2x-3) = 0$
+
+\[
+\begin{array}{cccc}
+ \Leftrightarrow & 2x+5 = 0 &\mbox{ ou }& 2x-3 = 0 \\ 
+ \Leftrightarrow & x = -\dfrac{5}{2} &\mbox{ ou }& x = \dfrac{3}{2}
+ \end{array}
+ \]
+
+\Answer{$\mathcal{S} = \left\lbrace -\dfrac{5}{2} ; \dfrac{3}{2} \right\rbrace$}
+
+\exo{}
+Dans cet exercice, les résolutions des équations produit obtenues ne sont pas détaillées, mais elles se font exactement comme pour les exemples précédents
+
+\question{}
+$x^2 + 6x + 5 = 0 \Leftrightarrow (x+3)^2 - 4 = 0 \Leftrightarrow (x+5)(x+1) = 0$
+
+\Answer{$\mathcal{S} = \left\lbrace -5 ; -1 \right\rbrace$}
+
+\question{}
+$x^2 - 8x + 12 = 0 \Leftrightarrow (x-4)^2 - 4 = 0 \Leftrightarrow (x-2)(x-6) = 0$
+
+\Answer{$\mathcal{S} = \left\lbrace 2 ; 6 \right\rbrace$}
+
+\question{}
+$x^2 - \dfrac{4}{3}x - \dfrac{32}{9} = 0 \Leftrightarrow \left(x-\dfrac{2}{3}\right)^2 - \dfrac{36}{9} = 0 \Leftrightarrow \left(x-\dfrac{2}{3}\right)^2 - 4 = 0$ 
+
+$\Leftrightarrow \left(x-\dfrac{8}{3}\right)\left(x+\dfrac{4}{3}\right) = 0$
+
+\Answer{$\mathcal{S} = \left\lbrace -\dfrac{4}{3} ; \dfrac{8}{3} \right\rbrace$}
+
+\question{}
+$x^2 + 2x - 2 = 0 \Leftrightarrow (x+1)^2 - 3 = 0 \Leftrightarrow (x+1+\sqrt{3})(x+1-\sqrt{3}) = 0$
+
+\Answer{$\mathcal{S} = \left\lbrace -1-\sqrt{3} ; -1+\sqrt{3} \right\rbrace$}
+
+\question{}
+$x^2 + x - 1 = 0 \Leftrightarrow \left( x + \dfrac{1}{2} \right)^2 - \dfrac{5}{4} = 0 \Leftrightarrow \left(x+\dfrac{1-\sqrt{5}}{2}\right)\left(x+\dfrac{1+\sqrt{5}}{2}\right) = 0$
+
+\Answer{$\mathcal{S} = \left\lbrace \dfrac{-1-\sqrt{5}}{2} ; \dfrac{-1+\sqrt{5}}{2} \right\rbrace$}
+
+\question{}
+$2x^2 + 3x - 5 = 0 \Leftrightarrow 2(x^2 + \dfrac{3}{2}x - \dfrac{5}{2}) = 0 \Leftrightarrow x^2 + \dfrac{3}{2}x - \dfrac{5}{2} = 0$ 
+
+$\Leftrightarrow \left (x+\dfrac{3}{4}\right )^2 - \dfrac{49}{16} = 0 \Leftrightarrow \left (x+\dfrac{5}{2}\right )(x-1) = 0$
+
+\Answer{$\mathcal{S} = \left\lbrace -\dfrac{5}{2} ; 1 \right\rbrace$}
+
+\question{}
+La dernière comporte probablement une erreur de frappe. Elle ne peut être résolue dans $\mathbb{R}$.
+
+\exo{$E: m(x-2)+3x = 3-2(1-2x)$}
+
+\question{Pour différentes valeurs de $m$}
+
+\littlestar{$m=0$} 
+
+$E$ devient:
+
+$3x = 3-2(1-2x) \Leftrightarrow 3x = 3-2+4x \Leftrightarrow x = -1$
+
+\Answer{$\mathcal{S} = \left\lbrace -1 \right\rbrace$}
+
+\littlestar{$m=-2$} 
+
+$E$ devient:
+
+$-2(x-2)+3x = 3-2(1-2x) \Leftrightarrow -2x+4+3x = 3-2+4x \Leftrightarrow x = 1$
+
+\Answer{$\mathcal{S} = \left\lbrace 1 \right\rbrace$}
+
+\littlestar{$m = -\dfrac{1}{2}$}
+
+$E$ devient:
+
+$-\dfrac{1}{2}(x-2)+3x = 3-2(1-2x) \Leftrightarrow -\dfrac{1}{2}x + 1 + 3x = 3 - 2 + 4x \Leftrightarrow \dfrac{3}{2}x = 0 \Leftrightarrow x = 0$
+
+\Answer{$\mathcal{S} = \left\lbrace 0 \right\rbrace$}
+
+\question{}\label{solution}
+On développe les 2 membres de l'équation $E$:
+$E \Leftrightarrow mx - 2m + 3x = 1+4x$
+
+$x$ est l'inconnue, donc de la même que pour n'importe quelle équation, on réunit les $x$ d'un côté de l'équation et les nombres seuls (comprendre qui ne contiennent pas $x$) de l'autre côté. 
+
+Ainsi, $E \Leftrightarrow mx + 3x - 4x = 1 + 2m \Leftrightarrow mx - x = 1 + 2m \Leftrightarrow x(m-1) = 1+2m$
+
+Finalement: 
+
+\Answer{$x = \dfrac{1+2m}{m-1}$}
+
+\question{}
+$x = 5 \Leftrightarrow \dfrac{1+2m}{m-1} = 5$
+
+Il s'agit là de résoudre l'équation ci-dessus d'inconnue $m$. 
+
+$\dfrac{1+2m}{m-1} = 5$
+
+$\Leftrightarrow 5(m-1)=1+2m$ pour $x \neq 1$ (car il s'agit d'une valeur interdite).
+
+$5m-5 = 1+2m \Leftrightarrow 3m = 6 \Leftrightarrow m=2$
+
+5 est solution de $E$ pour:
+\Answer{$m = 2$}
+
+\question{}
+1 est valeur interdite de l'expression de la solution exprimée en fonction de $m$ trouvée à la question 2. On ne peut donc pas trouver de solution pour $m=1$. 
+
+\exo{$E: (2m+1)x - 2(x+3) = 5m(x+2)$}
+
+\question{}
+De la même façon que précédemment, on cherche à exprimer la/les solution-s de l'équation en fonction de $m$.
+
+$E \Leftrightarrow 2mx+x-2x-6 = 5mx+10m$
+
+De la même façon que dans l'exercice précédent, on met d'un côté les éléments contenant $x$ et les autres de l'autre côté du signe $=$.
+
+$\Leftrightarrow 2mx+x-2x-5mx = 10m+6 \Leftrightarrow -3mx - x = 10m+6$
+$\Leftrightarrow x(-3m-1) = 10m+6$
+
+$x = \dfrac{10m+6}{-3m-1}$ 
+
+La solution à l'équation $E$ s'exprime en fonction de $m$: $x = \dfrac{-10m-6}{3m+1}$
+
+Ainsi, la solution à $E$ n'est pas calculable pour $3m+1 = 0 \Leftrightarrow m = -\dfrac{1}{3}$.
+
+On a donc $m_0 = -\dfrac{1}{3}$.
+
+\question{}
+Comme vu à la question précédente, la solution s'exprime $x=\dfrac{-10m-6}{3m+1}$.
+
+\question{Solutions pour différentes valeurs de $m$}
+
+\littlestar{$m=1$}
+
+$x = \dfrac{-10-6}{3+1}$
+
+\Answer{$x = -4$}
+
+\littlestar{$m=\dfrac{2}{3}$}
+
+$x = \dfrac{-10\times \dfrac{2}{3}-6}{3\times \dfrac{2}{3}+1}$
+
+\Answer{$x = -\dfrac{38}{9}$}
+
+\littlestar{$m=\sqrt{2}$}
+
+$x = \dfrac{-10\sqrt{2}-6}{3\sqrt{2}+1}$
+
+Mais comme a dit qu'on ne laissait pas de racines au dénominateur, on multiplie en haut et en bas par $3\sqrt{2}-1$.
+
+$x = \dfrac{(-10\sqrt{2}-6)(3\sqrt{2}-1)}{(3\sqrt{2}+1)(3\sqrt{2}-1)}$
+
+\Answer{$x = \dfrac{-8\sqrt{2} - 54}{17}$}
+
+\exo{$E: m(x+2)-(5m-3x) = 3(x+2)-2x$}
+
+\question{}
+Comme précédemment, on va exprimer la/les solution-s de l'équation en fonction de $m$.
+
+$E \Leftrightarrow mx+2m-5m+3x = 3x + 6 - 2x$
+
+$E \Leftrightarrow mx+3x-3m = x+6$
+
+$E \Leftrightarrow mx+3x-x = 6 + 3m$
+
+$E \Leftrightarrow x(m+2) = 6+3m$
+
+$E \Leftrightarrow x = \dfrac{6+3m}{2+m}$ pour $m \neq -2$ (car valeur interdite)
+
+$E \Leftrightarrow x = 3$
+
+Pour $m=-2$, $E \Leftrightarrow 0=0$, donc les solutions sont n'importe quel $x \in \mathbb{R}$.
+
+Ainsi, pour $m \in \mathbb{R} - \left\lbrace-2\right\rbrace$, la solution de l'équation est 3. 
+
+\exo{$\dfrac{x+m}{x+n} = \dfrac{m}{2}$ avec $m \in \mathbb{R}$ et $n \in \mathbb{R}$}
+
+\question{}
+Il n'y a qu'une valeur interdite pour $x$: $x = -n$ car c'est la valeur qui annule le dénominateur du membre de gauche de l'équation. 
+
+\question{}
+Produit en croix:
+
+$\dfrac{x+m}{x+n} = \dfrac{m}{2} \Leftrightarrow 2(x+m) = m(x+n)$ pour $x = -n$
+
+$\Leftrightarrow 2x+2m = mx+mn \Leftrightarrow 2x-mx = mn-2m$
+
+$\Leftrightarrow x(2-m) = m(n-2)$
+
+\Answer{$x = \dfrac{m(n-2)}{2-m}$}
+
+\question{Si $m=2$ et $n \neq 2$:}
+
+L'équation devient: $\dfrac{x+2}{x+n} = 1 \Leftrightarrow x+2 = x+n \Leftrightarrow n = 2$.
+
+On aboutit à une contradiction car on impose que $n \neq 2$. L'équation n'a donc pas de solution. 
+
+\Answer{$\mathcal{S} = \emptyset$}
+
+\question{Si $m=2$ et $n = 2$:}
+On mène le même raisonnement qu'à la question précédente, pour aboutir, de la même façon, à $n = 2$. Il s'agit cette fois de ce qui a été \emph{imposé} par l'énoncé, ce qui est vrai tout le temps. 
+
+\Answer{$\mathcal{S} = \mathbb{R}$}
+
+\question{Si $m=n \neq 2$:}
+
+L'équation est équivalente $\dfrac{x+m}{x+m} = \dfrac{m}{2} \Leftrightarrow 1 = \dfrac{m}{2} \Leftrightarrow m = 2$
+
+L'énoncé impose $m \neq 2$, on aboutit donc à une contradiction:
+
+\Answer{$\mathcal{S} = \emptyset$}
+
+\question{}
+On rappelle l'expression de la solution en fonction de $m$ et $n$ pour $n \neq 2$: $x = \dfrac{m(n-2)}{2-m}$
+
+\littlestar{$m = -3$ et $n = 0$}
+
+$x = \dfrac{-3 \times (-2)}{2+3} = \dfrac{6}{5}$
+
+\littlestar{$m = 2$ et $n = 3$}
+
+Pour $m=2$ et $n \neq -2$, on avait trouvé que $\mathcal{S} = \emptyset$.
+
+\littlestar{$m = 0$ et $n = 4$}
+
+$x = \dfrac{0 \times (4-2)}{2-0} = 0$
+
+\littlestar{$m = 4$ et $n = 4$}
+
+$x = \dfrac{4 \times (4-2)}{2-4} = -4$
+
+\exo{$E:\dfrac{mx-2}{x-4} = \dfrac{n}{2}$}
+
+\question{}
+$x-4$ ne doit pas s'annuler car c'est un dénominateur. 
+
+$x-4 = 0 \Leftrightarrow x = 4$
+
+La valeur interdite est donc 4.
+
+\question{}
+On fait cela à l'aide d'un produit en croix. 
+
+$E \Leftrightarrow 2(mx-2) = n(x-4)$ pour $x \neq -4$
+
+$E \Leftrightarrow 2mx-4 = nx-4n)$
+
+$E \Leftrightarrow x(2m-n) = 4-4n$
+
+On a donc mis l'équation sous la forme $ax=b$ avec $a = 2m-n$ et $b = 4-4n$.
+
+\question{}
+$a \neq 0 \Leftrightarrow 2m-n \neq 0 \Leftrightarrow n \neq 2m$
+
+On doit donc avoir $n \neq 2m$. 
+
+D'après le résultat de la question précédente, les solutions de l'équation s'écrivent $x = \dfrac{4-4n}{2m-n}$. 
+
+$E$ admet alors une unique solution exprimée en fonction de $m$ et $n$: \Answer{$\mathcal{S}_{1} = \left\lbrace \dfrac{4-4n}{2m-n} \right\rbrace$}
+
+\question{}
+Pour $a = 0$, $E$ devient $0 = 4-4n$. Or, $4-4n \neq 0 \Leftrightarrow n \neq 1$. Cette égalité n'est \emph{jamais} vérifiée, donc:
+
+\Answer{$\mathcal{S}_{2} = \emptyset$}
+
+\question{}
+$a=0 \Leftrightarrow n = 2m$ et $b=0 \Leftrightarrow n=1$
+
+On a donc dans ce cas $m = \dfrac{1}{2}$ et $n=1$.
+
+Donc: $E \Leftrightarrow x(2 \times\dfrac{1}{2}-1) = 4-4 \times 1 \Leftrightarrow 0=0$ pour $x \neq 4$ ce qui est toujours vérifié, sauf pour $x = 4$.
+
+\Answer{$\mathcal{S}_{3} = \mathbb{R} - \left\lbrace 4 \right\rbrace$}
+
+Que l'on peut également écrire $\mathcal{S}_{3} = ]-\infty ; 4[ \cup ]4 ; +\infty[$
+
+\question{}
+Pour $m=1$ et $n=2$, $E$ devient:
+
+$\dfrac{x-2}{x-4} = 1$
+
+$\Leftrightarrow x-2 = x-4$ pour $x \neq 4$
+
+$\Leftrightarrow -2 = -4$, cette égalité n'est jamais vérifiée. 
+
+On obtient donc:
+
+\Answer{$\mathcal{S}_{4} = \emptyset$}
+
+\question{}
+Pour $m=1$, la solution s'écrit:
+
+$x = \dfrac{4-4n}{2-n}$
+
+Cela revient donc à résoudre l'équation $\dfrac{4-4n}{2-n} = 2$
+
+$\Leftrightarrow 2(2-n) = 4-4n \Leftrightarrow n = 0$
+
+On a donc $\mathbb{S} = 2$ pour $n=0$.
+
+\question{}
+$(m;n) = \left( \dfrac{1}{2} ; -1 \right)$ revient à dire $m = \dfrac{1}{2}$ et $n = -1$.
+
+L'équation $E$ devient donc: 
+
+$\dfrac{\frac{x}{2} - 2}{x-4} = -\dfrac{1}{2} \Leftrightarrow \dfrac{1}{2} = -\dfrac{1}{2}$
+
+\Answer{$\mathcal{S}_{5} = \emptyset$}
+
+\exo{}
+
+On commence par remarquer qu'on a $a+b$ au dénominateur. $a+b$ ne doit donc pas s'annuler.
+
+$a+b = 0 \Leftrightarrow a = -b$
+
+L'égalité équivaut donc à (produit en croix):
+
+$(a+b)^{2} = 4ab$ pour $a \neq -b$
+
+$\Leftrightarrow a^2 + 2ab + b^2 = 4ab$
+
+$\Leftrightarrow a^2 - 2ab + b^2 = 0$
+
+$\Leftrightarrow (a - b)^2 = 0$
+
+$\Leftrightarrow a - b = 0$
+
+$\Leftrightarrow a = b$
+
+L'égalité est donc vérifiée lorsque:
+
+\Answer{$a=b$}
+
+
+
+
+
+%\begin{center}
+%Fin.
+%\end{center}
+
+\end{document}
